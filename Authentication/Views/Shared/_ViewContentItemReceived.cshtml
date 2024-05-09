@@ -1,0 +1,101 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    IEnumerable<ItemReceived> itemreceiveds = ViewData["ItemReceived"] as IEnumerable<ItemReceived>;
+}
+
+<tbody id="view-content-receive">
+    @{ int i = 1;
+        @if (itemreceiveds.Count() == 0)
+        {
+            <tr class="no-data">
+                <td colspan="17">Not Found Data</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (ItemReceived itemReceived in itemreceiveds)
+            {
+                <tr class="tbl-row">
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        <a id="edit-receiveditem" asp-action="EditReceived" asp-route-id="@itemReceived.Id">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a id="delete-receiveditem" asp-action="DeleteReceived" asp-route-id="@itemReceived.Id">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                    <td>
+                        @itemReceived.InboundItem.InboundOrder.order_no
+                    </td>
+                    <td>
+                        @(itemReceived.InboundItem.Item.item_code + ": " + itemReceived.InboundItem.Item.item_name)
+                    </td>
+                    <td>
+                        @itemReceived.ItemReceivedState.state
+                    </td>
+                    <td>
+                        @itemReceived.receive_qty
+                    </td>
+                    <td>
+                        @itemReceived.cost
+                    </td>
+                    <td>
+                        @itemReceived.lot_no
+                    </td>
+                    <td>
+                        @{
+                            DateTime dt;
+                            if (itemReceived.expire_date != null)
+                            {
+                                dt = Convert.ToDateTime(itemReceived.expire_date);
+                                @dt.ToString("dd/MM/yyyy");
+                            }
+                        }
+                    </td>
+                    <td>
+                        @{
+                            if (itemReceived.receive_date != null)
+                            {
+                                dt = Convert.ToDateTime(itemReceived.receive_date);
+                                @dt.ToString("dd/MM/yyyy HH:mm:ss");
+                            }
+                        }
+                    </td>
+                    <td>
+                        @itemReceived.description
+                    </td>
+                    <td>
+                        @itemReceived.create_by
+                    </td>
+                    <td>
+                        @{
+                            dt = Convert.ToDateTime(itemReceived.create_date);
+                            @dt.ToString("dd/MM/yyyy HH:mm:ss");
+                        }
+                    </td>
+                    <td>
+                        @itemReceived.edit_by
+                    </td>
+                    <td>
+                        @{
+                            if (itemReceived.edit_date != null)
+                            {
+                                dt = Convert.ToDateTime(itemReceived.edit_date);
+                                @dt.ToString("dd/MM/yyyy HH:mm:ss");
+                            }
+                        }
+                    </td>
+                </tr>
+                i = i + 1;
+            }
+        }
+    }
+</tbody>
+

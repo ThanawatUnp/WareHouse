@@ -1,0 +1,105 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<tbody id="view-content">
+    @{ int i = ViewBag.FirstRec;
+        @if (Model.Count == 0)
+        {
+            <tr class="no-data">
+                <td colspan="17">Not Found Data</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (OutboundOrder outboundOrder in Model)
+            {
+                <tr class="tbl-row">
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        <a id="edit-outboundorder" asp-action="EditOutboundOrder" asp-route-id="@outboundOrder.Id">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a id="delete-outboundorder" asp-action="DeleteOutboundOrder" asp-route-id="@outboundOrder.Id">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                    <td>
+                        @outboundOrder.StatusOutboundOrder.status
+                    </td>
+                    <td>
+                        @outboundOrder.order_no
+                    </td>
+                    <td>
+                        @outboundOrder.OrderType.order_type
+                    </td>
+                    <td>
+                        @{
+                            DateTime dt;
+                            if (outboundOrder.plan_ship_date != null)
+                            {
+                                dt = Convert.ToDateTime(outboundOrder.plan_ship_date);
+                                @dt.ToString("dd/MM/yyyy");
+                            }
+                        }
+                    </td>
+                    <td>
+                        @if (outboundOrder.Customer != null)
+                        {
+                            @(outboundOrder.Customer.customer_code + ": " + outboundOrder.Customer.customer_name)
+                        }
+                    </td>
+                    <td>
+                        @outboundOrder.invoice_no
+                    </td>
+                    <td>
+                        @outboundOrder.StatusOutboundOrder.description
+                    </td>
+                    <td>
+                        @outboundOrder.create_by
+                    </td>
+                    <td>
+                        @{
+                            dt = Convert.ToDateTime(outboundOrder.create_date);
+                            @dt.ToString("dd/MM/yyyy HH:mm:ss");
+                        }
+                    </td>
+                    <td>
+                        @outboundOrder.edit_by
+                    </td>
+                    <td>
+                        @{
+                            if (outboundOrder.edit_date != null)
+                            {
+                                dt = Convert.ToDateTime(outboundOrder.edit_date);
+                                @dt.ToString("dd/MM/yyyy HH:mm:ss");
+                            }
+                        }
+                    </td>
+                    <td>
+                        @outboundOrder.cancel_by
+                    </td>
+                    <td>
+                        @{
+                            if (outboundOrder.cancel_date != null)
+                            {
+                                dt = Convert.ToDateTime(outboundOrder.cancel_date);
+                                @dt.ToString("dd/MM/yyyy HH:mm:ss");
+                            }
+                        }
+                    </td>
+                    <td>
+                        @outboundOrder.cancel_remark
+                    </td>
+                </tr>
+                i = i + 1;
+            }
+        }
+    }
+</tbody>

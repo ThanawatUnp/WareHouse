@@ -1,0 +1,280 @@
+﻿@model IEnumerable<Authentication.Models.ItemReceived>
+@{
+    ViewData["Title"] = "Put Away";
+    ViewBag.Model = Model;
+}
+<script>
+    var vReceiveDate = "n";
+    var vExpireDate = "n";
+
+    function showHideSearch() {
+        var blockSearch = document.getElementById('search-block');
+        if (blockSearch.style.display != "none") {
+            blockSearch.style.display = 'none';
+            document.getElementById('btn-fiter').innerHTML = 'Show Filter';
+        }
+        else {
+            blockSearch.style.display = null;
+            document.getElementById('btn-fiter').innerHTML = 'Hide Filter';
+        }
+    }
+
+    function CostChanged() {
+        if (isNaN($('#txtCost').val())) {
+            $('#txtCost').val('');
+        }
+        else {
+            $('#txtCost').val((Math.floor(parseFloat($('#txtCost').val()) * 100) / 100).toFixed(2));
+        }
+    }
+
+    function Search() {
+        $.ajax({
+            url: '/PutAways/ViewContent',
+            data: {
+                //These two keys should keep consistent with the parameters ( int? ProductId , int? ProductPrice ) in action, including uppercase and lowercase.
+                ordernumber: $('#txtOrderNumber').val(),
+                itemcode: $('#txtItemCode').val(),
+                itemname: $('#txtItemName').val(),
+                state: $('#ddlState').val(),
+                receiveqty: $('#txtReceiveQty').val(),
+                cost: $('#txtCost').val(),
+                lotnumber: $('#txtLotNo').val(),
+                sexpiredate: vExpireDate,
+                startexpiredate: $('#dtExpireDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endexpiredate: $('#dtExpireDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                sreceivedate: vReceiveDate,
+                startreceivedate: $('#dtReceiveDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endreceivedate: $('#dtReceiveDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                description: $('#txtDescription').val()
+            },
+            success: function (result) {
+                $('#childLayout').html(result);
+            }
+        });
+    }
+
+    function clearSearch() {
+        globalThis.vReceiveDate = "n";
+        globalThis.vExpireDate = "n";
+        var f1 = document.getElementById('search-block');
+        var arr_input = f1.getElementsByTagName('input');
+        for (i = 0; i < arr_input.length; i++) {
+            arr_input[i].value = '';
+        }
+        $.ajax({
+            url: '/PutAways/ViewContent',
+            data: {
+                clear: 'clear'
+            },
+            success: function (result) {
+                $('#childLayout').html(result);
+            }
+        });
+    }
+
+    function OnCompleteRequest() {
+        $('#pop_up').empty();
+        $('#pop_up').delay(1000).modal('hide');
+    }
+
+    function OnFailureRequest() {
+        alert('On Failure');
+    }
+
+    $(document).ready(function () {
+        $('#dtExpireDate').daterangepicker({
+            showDropdowns: true,
+            "startDate": moment(),
+            "endDate": moment(),
+            minDate: '01/01/2021',
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+
+        $('#dtExpireDate').on('apply.daterangepicker', function (ev, picker) {
+            globalThis.vExpireDate = "y";
+            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        });
+
+        $('#dtExpireDate').on('cancel.daterangepicker', function (ev, picker) {
+            globalThis.vExpireDate = "n";
+            $(this).val('');
+        });
+
+        $('#dtReceiveDate').daterangepicker({
+            showDropdowns: true,
+            "startDate": moment(),
+            "endDate": moment(),
+            minDate: '01/01/2021',
+            dateLimit: { days: 365 },
+            maxDate: moment(),
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+
+        $('#dtReceiveDate').on('apply.daterangepicker', function (ev, picker) {
+            globalThis.vReceiveDate = "y";
+            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        });
+
+        $('#dtReceiveDate').on('cancel.daterangepicker', function (ev, picker) {
+            globalThis.vReceiveDate = "n";
+            $(this).val('');
+        });
+
+        // Put Away
+        $(document).on("click", "#ViewData table tbody tr td #putaway-receiveditem", function () {
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                url: $(this).attr('href'),
+                success: function (result) {
+                    $('#pop_up').html(result);
+                    $('#pop_up').modal('show');
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+            return false;
+        });
+
+        // Set Per Page Number
+        $(document).on("click","#tool-panel div div div div a",function () {
+            var PerPage = $(this).attr('rel');
+            $('#btn-perpage').text($(this).text());
+            $.ajax({
+                type: "GET",
+                data: { "PerPage": PerPage } ,
+                url: '@Url.Action("SetPerPage")',
+                success: function (result) {
+                    $('#childLayout').html(result);
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+        });
+
+        //Set Page Number
+        $(document).ready(function () {
+            $(document).on("click","a.page-number",function () {
+                var PageNo = $(this).text();
+                $.ajax({
+                    type: "GET",
+                    data: { "PageNo": PageNo } ,
+                    url: '@Url.Action("SetPageNo")',
+                    success: function (result) {
+                        $('#childLayout').html(result);
+                    },
+                    error: function (result) {
+                        alert('error');
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+<div id="sub-container">
+    <div class="pt-3 pb-5" id="childLayout">
+        <fieldset>
+            <legend>
+                <span class="font-weight-bold" style="font-size: 16px;">Search / View Data</span>
+            </legend>
+        </fieldset>
+        <hr class="mt-0 mb-1" style="border-top: 2px solid #bbb;" />
+        <div id="tool-panel" class="border" style="width: 100%; white-space: nowrap;">
+            <partial name="_Btn_Group" />
+        </div>
+        <div id="search-block" class="border py-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;">
+            <div class="container-fluid p-2">
+                <div class="row">
+                    <div class="col-md-6 col-xl-4">
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtOrderNumber"><b>Order Number</b></label>
+                                <input class="form-control txt-search-width-non" id="txtOrderNumber" />
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtItemCode"><b>Item Code</b></label>
+                                <input class="form-control txt-search-width-non" id="txtItemCode" />
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtItemName"><b>Item Name</b></label>
+                                <input class="form-control txt-search-width-non" id="txtItemName" />
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="ddlState"><b>State</b></label>
+                                <select id="ddlState" class="form-control txt-search-width-non" asp-items="ViewBag.StateList">
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtReceiveQty"><b>Receive Quantity</b></label>
+                                <input class="form-control txt-search-width-non" id="txtReceiveQty" type="number" min="0" step="1" onchange="this.value = parseInt(this.value);"/>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtCost"><b>Cost</b></label>
+                                <input class="form-control txt-search-width-non" id="txtCost" type="number" min="0" step="0.01" onchange="CostChanged()"/>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtLotNo"><b>Lot Number</b></label>
+                                <input class="form-control txt-search-width-non" id="txtLotNo" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="dtExpireDate"><b>Expire Date</b></label>
+                                <input id="dtExpireDate" name="dtExpireDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
+                                <div class="arrow-datetime" onclick="$('#dtExpireDate').data('daterangepicker').toggle();">
+                                    <i class="far fa-calendar-alt"></i>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="dtReceiveDate"><b>Receive Date</b></label>
+                                <input id="dtReceiveDate" name="dtReceiveDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
+                                <div class="arrow-datetime" onclick="$('#dtReceiveDate').data('daterangepicker').toggle();">
+                                    <i class="far fa-calendar-alt"></i>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtDescription"><b>Description</b></label>
+                                <input class="form-control txt-search-width-non" id="txtDescription" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="mr-3 mt-2" align="right">
+                <button class="btn bg-new-search btn-search-clear btn-search" id="btnSearch" onclick="Search()">Search</button>
+                <button class="btn btn-search-clear btn-clear" style="border: 1px solid #ced4da" onclick="clearSearch()">Clear</button>
+            </div>
+        </div>
+        <partial name="_ViewData" />
+    </div>
+</div>

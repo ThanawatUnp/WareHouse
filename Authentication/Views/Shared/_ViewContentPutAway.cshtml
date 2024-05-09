@@ -1,0 +1,76 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<tbody id="view-content">
+    @{ int i = 1;
+        @if (Model.Count == 0)
+        {
+            <tr class="no-data">
+                <td colspan="12">Not Found Data</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (ItemReceived itemReceived in Model)
+            {
+                <tr class="tbl-row">
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        <a id="putaway-receiveditem" asp-action="PutAway" asp-route-id="@itemReceived.Id">
+                            <i class="fas fa-dolly"></i>
+                        </a>
+                    </td>
+                    <td>
+                        @itemReceived.InboundItem.InboundOrder.order_no
+                    </td>
+                    <td>
+                        @(itemReceived.InboundItem.Item.item_code + ": " + itemReceived.InboundItem.Item.item_name)
+                    </td>
+                    <td>
+                        @itemReceived.ItemReceivedState.state
+                    </td>
+                    <td>
+                        @itemReceived.receive_qty
+                    </td>
+                    <td>
+                        @itemReceived.remain_putaway
+                    </td>
+                    <td>
+                        @itemReceived.cost
+                    </td>
+                    <td>
+                        @itemReceived.lot_no
+                    </td>
+                    <td>
+                        @{
+                            DateTime dt;
+                            if (itemReceived.expire_date != null)
+                            {
+                                dt = Convert.ToDateTime(itemReceived.expire_date);
+                                @dt.ToString("dd/MM/yyyy");
+                            }
+                        }
+                    </td>
+                    <td>
+                        @{
+                            if (itemReceived.receive_date != null)
+                            {
+                                dt = Convert.ToDateTime(itemReceived.receive_date);
+                                @dt.ToString("dd/MM/yyyy HH:mm:ss");
+                            }
+                        }
+                    </td>
+                    <td>
+                        @itemReceived.description
+                    </td>
+                </tr>
+                i = i + 1;
+            }
+        }
+    }
+</tbody>

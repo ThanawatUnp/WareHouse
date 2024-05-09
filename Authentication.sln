@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authentication", "Authentication\Authentication.csproj", "{2B2BAED9-FBEF-48AC-9DD6-B152180F4031}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailService", "EmailService\EmailService.csproj", "{8AF165D8-D63A-46E3-9203-891006DC9AEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B2BAED9-FBEF-48AC-9DD6-B152180F4031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B2BAED9-FBEF-48AC-9DD6-B152180F4031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B2BAED9-FBEF-48AC-9DD6-B152180F4031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B2BAED9-FBEF-48AC-9DD6-B152180F4031}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AF165D8-D63A-46E3-9203-891006DC9AEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AF165D8-D63A-46E3-9203-891006DC9AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AF165D8-D63A-46E3-9203-891006DC9AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AF165D8-D63A-46E3-9203-891006DC9AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3B89B6A-84B7-4938-8E90-97F163034699}
+	EndGlobalSection
+EndGlobal

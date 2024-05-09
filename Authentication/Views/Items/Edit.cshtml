@@ -1,0 +1,137 @@
+﻿@model Authentication.Models.Item
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Edit";
+}
+
+<script>
+    function clearForm() {
+        $('#ipItemName').val('');
+        $('#ipDescription').val('');
+        $('#ipCost').val('');
+        $('#ipUnit').val('');
+        $('#ddlQueueType').val(null);
+        $('#ddlItemCategory').val(null);
+        $('#ipFileName').val('');
+        $('#ipFileName').next('label').html('Choose File...');
+        $('#item-name').text('');
+    }
+
+    function FileBrowse_Clicked() {
+        document.body.onfocus = checkIt;
+    }
+
+    function checkIt() {
+        var vFile = document.getElementById('ipFileName');
+        console.log(vFile.value.length);
+        document.body.onfocus = null;
+        if (vFile.value.length != 0) {
+            $('#ipFileName').val('');
+            $('#ipFileName').next('label').html('Choose File...');
+        }
+    }
+
+    $("#ipCost").blur(function () {
+        if (isNaN($('#ipCost').val()) || $('#ipCost').val().trim() === '') {
+            $('#ipCost').val('');
+        }
+        else {
+            $('#ipCost').val((Math.floor(parseFloat(this.value) * 100) / 100).toFixed(2));
+        }
+    });
+
+    $(function () {
+        $('.custom-file-input').on("change", function () {
+            var filename = $(this).val().split("\\").pop();
+            $(this).next('.custom-file-label').html(filename);
+        })
+    })
+</script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<form id="edit-popup"
+      asp-action="Edit"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-update="#childLayout"
+      data-ajax-complete="OnCompleteRequest"
+      data-ajax-confirm="Do you want to Save?"
+      data-ajax-failure="OnFailureRequest">
+    <div class="modal create-popup" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>@ViewBag.Title Data</span>
+                    <button type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCompleteRequest()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5><b>Item</b></h5>
+                    <hr />
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" />
+                            <input type="hidden" asp-for="create_by" />
+                            <input type="hidden" asp-for="create_date" />
+                            <div class="form-group form-group-popup">
+                                <label asp-for="item_code" class="control-label"></label>
+                                <input asp-for="item_code" id="ipItemCode" class="primary form-control input-popup" style="cursor: not-allowed; pointer-events: none; opacity: 0.6" disabled="disabled" />
+                                <input type="hidden" asp-for="item_code" />
+                                <span asp-validation-for="item_code" class="text-danger" id="item-code"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="item_name" class="control-label"></label>
+                                <input asp-for="item_name" id="ipItemName" class="primary form-control input-popup" />
+                                <span asp-validation-for="item_name" class="text-danger" id="item-name"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="ItemCategoryId" class="control-label"></label>
+                                <select asp-for="ItemCategoryId" id="ddlItemCategory" class="form-control input-popup" asp-items="ViewBag.ItemCategoryList">
+                                </select>
+                                <span asp-validation-for="ItemCategoryId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="description" class="control-label"></label>
+                                <input asp-for="description" id="ipDescription" class="form-control input-popup" />
+                                <span asp-validation-for="description" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="cost" class="control-label"></label>
+                                <input asp-for="cost" id="ipCost" class="form-control input-popup" type="number" min="0" max="999999" onchange="CostChanged()"/>
+                                <span asp-validation-for="cost" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="unit" class="control-label"></label>
+                                <input asp-for="unit" id="ipUnit" class="form-control input-popup" type="number" min="0" />
+                                <span asp-validation-for="unit" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="QueueTypeId" class="control-label"></label>
+                                <select asp-for="QueueTypeId" id="ddlQueueType" class="form-control input-popup" asp-items="ViewBag.QueueTypeList">
+                                </select>
+                                <span asp-validation-for="QueueTypeId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="file_name" class="control-label"></label>
+                                <div class="custom-file">
+                                    <input asp-for="file_name" id="ipFileName" class="form-control custom-file-input input-popup" type="file" accept="image/png, image/jpeg, image/jpg" onclick="FileBrowse_Clicked()" />
+                                    <label asp-for="file_name" id="lbFileName" class="custom-file-label input-popup">Choose File...</label>
+                                </div>
+                                <span asp-validation-for="file_name" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-footer-pop btn-save-pop">Save</button>
+                    <button type="button" class="btn btn-footer-pop btn-clear-pop" onclick="clearForm()">Clear</button>
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCompleteRequest()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

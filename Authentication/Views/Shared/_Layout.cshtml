@@ -1,0 +1,137 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyWM / @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/pop_up.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    @*<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>*@
+</head>
+<body>
+    <script>
+        function setTHLanguage() {
+
+        }
+
+        function setUNLanguage() {
+
+        }
+    </script>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark box-shadow mx-0" style="background-color: #263849; border-bottom: 1px solid #16222C">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EasyWM / @ViewData["Title"]</a>
+                <div class="d-sm-inline-flex flex-sm-row-reverse">
+                    @*<partial name="_LoginPartial" />*@
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <ul id="menu_config" class="nav pull-right">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" style="color:white" id="nav_setting" role="button" data-toggle="dropdown" href="#">
+                                    <i class="fas fa-user text-white"></i>
+                                    <span id="ctl00_labUser" class="text-white"> @User.Identity.Name</span><b class="caret"> </b>
+                                </a>
+                                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                    <ul class="dropdown-menu dropdown-menu-right w-25" role="menu" aria-labelledby="nav_setting">
+                                        <li role="presentation">
+                                            <a onclick="if (confirm('Do you want to confirm ?')) { this.closest('form').submit(); return false; } else { return false; }" id="ctl00_linkLogout" class="text-dark" tabindex="-1">Logout</a>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul id="menu_config" class="nav pull-right">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" style="color:white" asp-area="Identity" asp-page="/Account/Login" role="button" data-toggle="dropdown">
+                                    <i class="fas fa-user text-white"></i>
+                                    <span id="ctl00_labUser" class="text-white"> Guest</span><b class="caret"> </b>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="nav_setting">
+                                    <li role="presentation">
+                                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    }
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input id="TH-lang-ico" type="image" src="~/images/icon/th.png" onclick="setTHLanguage()"/>
+                    &nbsp;
+                    &nbsp;
+                    <input id="EN-lang-ico" type="image" src="~/images/icon/un.png" onclick="setUNLanguage()"/>
+                </div>
+            </div>
+        </nav>
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <div class="container-fluid" style="flex: 1; border-top: 1px solid #365169; box-shadow: 1px 1px 3px rgb(0 0 0 / 35%); background-color: #2B4055">
+                <div class="row btn-group" style="width: 100%;" role="group">
+                    <a class="col btn btnColor-Mainmenu btnSize-MainMenu text-white btnFocus" data-role="button" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home text-white ml-md-1 mr-1 mr-md-2 my-1"></i>Home</a>
+                    <a class="col btn btnColor-Mainmenu btnSize-MainMenu text-white" data-role="button" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fas fa-shield-alt text-white ml-md-1 mr-1 mr-md-2 my-1"></i>Privacy</a>
+                    <div class="btn-group" role="group">
+                        <button class="col btn dropdown-toggle btnColor-Mainmenu btnSize-MainMenu text-white" data-toggle="dropdown"><i class="fas fa-th-list text-white ml-md-1 mr-1 mr-md-2 my-1 pl-1 pl-md-0"></i>Inbound</button>
+                        <div class="dropdown-menu" style="width: 180px !important;">
+                            <a class="dropdown-item" data-role="button" asp-area="" asp-controller="InboundOrders" asp-action="Index">&nbsp;<i class="fas fa-clipboard-list ml-md-1 mr-1 mr-md-2 my-1 pl-1 pl-md-0"></i>&nbsp;Order</a>
+                            <a class="dropdown-item" data-role="button" asp-area="" asp-controller="PutAways" asp-action="Index"><i class="fas fa-dolly-flatbed ml-md-1 mr-1 mr-md-2 my-1 pl-1 pl-md-0"></i>Put Away</a>
+                        </div>
+                    </div>
+                    <a class="col btn btnColor-Mainmenu btnSize-MainMenu text-white" data-role="button" asp-area="" asp-controller="OutboundOrders" asp-action="Index"><i class="fas fa-th-list text-white ml-md-1 mr-1 mr-md-2 my-1"></i>Outbound</a>
+                    <a href="#" class="col btn btnColor-Mainmenu btnSize-MainMenu text-white" data-role="button"><i class="fas fa-th-list text-white ml-md-1 mr-1 mr-md-2 my-1"></i>Inventory</a>
+                    <a class="col btn btnColor-Mainmenu btnSize-MainMenu text-white" data-role="button" asp-area="" asp-controller="Users" asp-action="Index"><i class="fas fa-th-list text-white ml-md-1 mr-1 mr-md-2 my-1"></i>User</a>
+                    <div class="btn-group" role="group">
+                        <button class="col btn dropdown-toggle btnColor-Mainmenu btnSize-MainMenu text-white" data-toggle="dropdown"><i class="fas fa-th-list text-white ml-md-1 mr-1 mr-md-2 my-1 pl-1 pl-md-0"></i>Item</button>
+                        <div class="dropdown-menu" style="width: 180px !important;">
+                            <a class="dropdown-item" data-role="button" asp-area="" asp-controller="Items" asp-action="Index">&nbsp;<i class="far fa-file-alt ml-md-1 mr-1 mr-md-2 my-1 pl-1 pl-md-0"></i>Item Detail</a>
+                            <a class="dropdown-item" data-role="button" asp-area="" asp-controller="ItemCategories" asp-action="Index"><i class="fas fa-th-large ml-md-1 mr-1 mr-md-2 my-1 pl-1 pl-md-0"></i>Item Category</a>
+                        </div>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button class="col btn dropdown-toggle btnColor-Mainmenu btnSize-MainMenu text-white" data-toggle="dropdown"><i class="fas fa-th-list text-white ml-md-1 mr-1 mr-md-2 my-1 pl-2 pl-md-0"></i>Location</button>
+                        <div class="dropdown-menu" style="width: 200px !important;">
+                            <a class="dropdown-item" data-role="button" asp-area="" asp-controller="Locations" asp-action="Index">&nbsp;<i class="far fa-file-alt ml-md-1 mr-1 mr-md-2 my-1 pl-2 pl-md-0"></i>Location Detail</a>
+                            <a class="dropdown-item" data-role="button" asp-area="" asp-controller="LocationCategories" asp-action="Index"><i class="fas fa-th-large ml-md-1 mr-1 mr-md-2 my-1 pl-2 pl-md-0"></i>Location Category</a>
+                        </div>
+                    </div>
+                    <a class="col btn btnColor-Mainmenu btnSize-MainMenu text-white" data-role="button" asp-area="" asp-controller="Customers" asp-action="Index"><i class="fas fa-th-list text-white ml-md-1 mr-1 mr-md-2 my-1"></i>Customer</a>
+                    <a class="col btn btnColor-Mainmenu btnSize-MainMenu text-white" data-role="button" asp-area="" asp-controller="Suppliers" asp-action="Index"><i class="fas fa-th-list text-white ml-md-1 mr-1 mr-md-2 my-1"></i>Supplier</a>
+                </div>
+            </div>
+        }
+    </header>
+    <div class="container-fluid pl-0 pr-0">
+        <div id="pop_up" style="justify-content: center"></div>
+        <div id="pop_up2" style="justify-content: center"></div>
+        <div id="pop_up3" style="justify-content: center"></div>
+        <main role="main" class="pb-3" id="viewBody">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <footer class="border-top footer text-muted">
+        <div class="container-fluid pl-5">
+            &copy; 2021 - EasyWM - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

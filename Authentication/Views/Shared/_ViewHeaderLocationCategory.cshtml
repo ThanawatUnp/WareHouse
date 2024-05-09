@@ -1,0 +1,18 @@
+﻿@foreach (var item in ViewBag.Header)
+{
+    @switch (@item)
+    {
+        case "Create By":
+        case "Create Date":
+        case "Edit By":
+        case "Edit Date":
+            <th style="min-width: 130px;">@item</th>
+            break;
+        case "Description":
+            <th style="min-width: 150px;">@item</th>
+            break;
+        case "Category Name":
+            <th style="min-width: 160px;">@item</th>
+            break;
+    }
+}

@@ -1,0 +1,165 @@
+﻿@{
+    var controllerName = this.ViewContext.RouteData.Values["controller"].ToString();
+    string style = "";
+    switch (controllerName)
+    {
+        case "ItemCategories":
+        case "Items":
+        case "Locations":
+        case "LocationCategories":
+        case "Users":
+        case "InboundOrders":
+        case "PutAways":
+        case "OutboundOrders":
+            if (controllerName == "InboundOrders")
+            {
+                if (ViewBag.Title == "Edit")
+                {
+                    style = "margin-left: auto; margin-right: auto";
+                }
+            }
+            else
+            {
+                style = "margin-left: auto; margin-right: auto";
+            }
+            break;
+        default:
+            style = null;
+            break;
+    }
+}
+<div id="ViewData" class="mt-3" style="overflow-x:auto;">
+    <table border="1" style="@style">
+        <thead>
+            <tr id="tr">
+                <th style="min-width: 70px;"></th>
+                @if (ViewBag.Title != "Edit" && (controllerName != "InboundOrders" && controllerName != "PutAways" && controllerName != "OutboundOrders"))
+                {
+                    <th style="min-width: 70px;">Detail</th>
+                }
+                @if (ViewBag.btn_edit != "N")
+                {
+                    <th style="min-width: 70px;">Edit</th>
+                }
+                @if (ViewBag.btn_del != "N")
+                {
+                    <th style="min-width: 70px;">Delete</th>
+                }
+                @if (ViewBag.btn_reset != null && ViewBag.btn_reset != "N")
+                {
+                    <th style="min-width: 70px;">Reset</th>
+                }
+                @if (ViewBag.btn_receive != null && ViewBag.btn_receive != "N")
+                {
+                    <th style="min-width: 70px;">Receive</th>
+                }
+                @if (ViewBag.btn_store != null && ViewBag.btn_store != "N")
+                {
+                    <th style="min-width: 95px;">Put Away</th>
+                }
+                @switch (@controllerName)
+                {
+                    case "InboundOrders":
+                        if (ViewBag.Title == "Edit")
+                        {
+                            <partial name="_ViewHeaderInboundOrderItem" />
+                        }
+                        else if (ViewBag.Title == "Received Item")
+                        {
+                            <partial name="_ViewHeaderReceivedItem" />
+                        }
+                        else
+                        {
+                            <partial name="_ViewHeaderInboundOrder" />
+                        }
+                        break;
+                    case "Customers":
+                        <partial name="_ViewHeaderCustomer" />
+                        break;
+                    case "Suppliers":
+                        <partial name="_ViewHeaderSupplier" />
+                        break;
+                    case "Items":
+                        <partial name="_ViewHeaderItem" />
+                        break;
+                    case "ItemCategories":
+                        <partial name="_ViewHeaderItemCategory" />
+                        break;
+                    case "Locations":
+                        <partial name="_ViewHeaderLocation" />
+                        break;
+                    case "LocationCategories":
+                        <partial name="_ViewHeaderLocationCategory" />
+                        break;
+                    case "Users":
+                        <partial name="_ViewHeaderUser" />
+                        break;
+                    case "PutAways":
+                        <partial name="_ViewHeaderPutAway" />
+                        break;
+                    case "OutboundOrders":
+                        if (ViewBag.Title == "Edit")
+                        {
+                            <partial name="_ViewHeaderOutboundOrderItem" />
+                        }
+                        else
+                        {
+                            <partial name="_ViewHeaderOutboundOrder" />
+                        }
+                        break;
+                }
+            </tr>
+        </thead>
+        @switch (controllerName)
+        {
+            case "Customers":
+                <partial name="_ViewContentCustomer" />
+                break;
+            case "Suppliers":
+                <partial name="_ViewContentSupplier" />
+                break;
+            case "Items":
+                <partial name="_ViewContentItem" />
+                break;
+            case "ItemCategories":
+                <partial name="_ViewContentItemCategory" />
+                break;
+            case "Locations":
+                <partial name="_ViewContentLocation" />
+                break;
+            case "LocationCategories":
+                <partial name="_ViewContentLocationCategory" />
+                break;
+            case "Users":
+                <partial name="_ViewContentUser" />
+                break;
+            case "InboundOrders":
+                if (ViewBag.Title == "Edit")
+                {
+                    <partial name="_ViewContentInboundOrderItem" />
+                }
+                else if (ViewBag.Title == "Received Item")
+                {
+                    <partial name="_ViewContentItemReceived" />
+                }
+                else
+                {
+                    <partial name="_ViewContentInboundOrder" />
+                }
+                break;
+            case "PutAways":
+                <partial name="_ViewContentPutAway" />
+                break;
+            case "OutboundOrders":
+                if (ViewBag.Title == "Edit")
+                {
+                    <partial name="_ViewContentOutboundOrderItem" />
+                }
+                else
+                {
+                    <partial name="_ViewContentOutboundOrder" />
+                }
+                break;
+        }
+    </table>
+</div>

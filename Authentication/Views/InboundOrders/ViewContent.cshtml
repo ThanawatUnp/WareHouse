@@ -1,0 +1,316 @@
+﻿@model IEnumerable<Authentication.Models.InboundOrder>
+
+@{
+    Layout = null;
+    ViewBag.Model = Model;
+    ViewBag.Menu = "inboundorder";
+
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#dtExpectDate').daterangepicker({
+            showDropdowns: true,
+            "startDate": moment(),
+            "endDate": moment(),
+            minDate: '01/01/2021',
+            dateLimit: { days: 720 },
+            maxDate: moment(),
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+
+        $('#dtExpectDate').on('apply.daterangepicker', function (ev, picker) {
+            globalThis.vExpectDate = "y";
+            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        });
+
+        $('#dtCreateDate').daterangepicker({
+            showDropdowns: true,
+            minDate: '01/01/2021',
+            dateLimit: { days: 365 },
+            maxDate: moment(),
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+
+        $('#dtCreateDate').on('apply.daterangepicker', function (ev, picker) {
+            globalThis.vCreateDate = "y";
+            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        });
+
+        $('#dtEditDate').daterangepicker({
+            showDropdowns: true,
+            minDate: '01/01/2021',
+            dateLimit: { days: 365 },
+            maxDate: moment(),
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+
+        $('#dtEditDate').on('apply.daterangepicker', function (ev, picker) {
+            globalThis.vEditeDate = "y";
+            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        });
+
+        $('#dtCloseDate').daterangepicker({
+            showDropdowns: true,
+            "startDate": moment(),
+            "endDate": moment(),
+            minDate: '01/01/2021',
+            dateLimit: { days: 365 },
+            maxDate: moment(),
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+
+        $('#dtCloseDate').on('apply.daterangepicker', function (ev, picker) {
+            globalThis.vCloseDate = "y";
+            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        });
+
+        $('#txtStatus').val(@Html.Raw(Json.Serialize(@ViewBag.status)));
+        $('#txtOrderNumber').val(@Html.Raw(Json.Serialize(@ViewBag.ordernumber)));
+        $('#ddlOrderType').val(@Html.Raw(Json.Serialize(@ViewBag.ordertype)));
+        $('#ddlSupplier').val(@Html.Raw(Json.Serialize(@ViewBag.supplier)));
+        $('#ddlCustomer').val(@Html.Raw(Json.Serialize(@ViewBag.customer)));
+        $('#txtDescription').val(@Html.Raw(Json.Serialize(@ViewBag.description)));
+        $('#ddlCreateBy').val(@Html.Raw(Json.Serialize(@ViewBag.createby)));
+        $('#ddlEditBy').val(@Html.Raw(Json.Serialize(@ViewBag.editby)));
+        $('#ddlCloseBy').val(@Html.Raw(Json.Serialize(@ViewBag.closeby)));
+        $('#txtCloseRemark').val(@Html.Raw(Json.Serialize(@ViewBag.closeremark)));
+
+        if (String(@Html.Raw(Json.Serialize(@ViewBag.expectdatestate))) === "y")
+            $('#dtExpectDate').daterangepicker({
+                "startDate": String(@Html.Raw(Json.Serialize(@ViewBag.startexpectdate))),
+                "endDate": String(@Html.Raw(Json.Serialize(@ViewBag.endexpectdate))),
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+
+        if (String(@Html.Raw(Json.Serialize(@ViewBag.createdatestate))) === "y")
+            $('#dtCreateDate').daterangepicker({
+                "startDate": String(@Html.Raw(Json.Serialize(@ViewBag.startcreatedate))),
+                "endDate": String(@Html.Raw(Json.Serialize(@ViewBag.endcreatedate))),
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+
+        if (String(@Html.Raw(Json.Serialize(@ViewBag.editdatestate))) === "y")
+            $('#dtEditDate').daterangepicker({
+                "startDate": String(@Html.Raw(Json.Serialize(@ViewBag.starteditdate))),
+                "endDate": String(@Html.Raw(Json.Serialize(@ViewBag.endeditdate))),
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+
+        if (String(@Html.Raw(Json.Serialize(@ViewBag.closedatestate))) === "y")
+            $('#dtCloseDate').daterangepicker({
+                "startDate": String(@Html.Raw(Json.Serialize(@ViewBag.startclosedate))),
+                "endDate": String(@Html.Raw(Json.Serialize(@ViewBag.endclosedate))),
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+
+        $('#dtExpectDate').on('cancel.daterangepicker', function (ev, picker) {
+            globalThis.vExpectDate = "n";
+            $(this).val('');
+        });
+
+        $('#dtCreateDate').on('cancel.daterangepicker', function (ev, picker) {
+            globalThis.vCreateDate = "n";
+            $(this).val('');
+        });
+
+        $('#dtEditDate').on('cancel.daterangepicker', function (ev, picker) {
+            globalThis.vEditeDate = "n";
+            $(this).val('');
+        });
+
+        $('#dtCloseDate').on('cancel.daterangepicker', function (ev, picker) {
+            globalThis.vCloseDate = "n";
+            $(this).val('');
+        });
+    });
+</script>
+<fieldset>
+    <legend>
+        <span class="font-weight-bold" style="font-size: 16px;">Search / View Data</span>
+    </legend>
+</fieldset>
+<hr class="mt-0 mb-1" style="border-top: 2px solid #bbb;" />
+<div id="tool-panel" class="border" style="width: 100%; white-space: nowrap;">
+    <partial name="_Btn_Group" />
+</div>
+<div id="search-block" class="border py-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;">
+    <div class="container-fluid p-2">
+        <div class="row">
+            <div class="col-md-6 col-xl-4">
+                <form class="form-inline frm-float-right">
+                    <div class="form-group div-frm-group-search">
+                        <label class="mx-3" for="txtStatus"><b>Status</b></label>
+                        @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
+                            <div class="dropdown-menu">
+                                <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
+                                <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
+                                <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
+                            </div>*@
+                        <input class="form-control txt-search-width-non" id="txtStatus" />
+                    </div>
+                </form>
+                <form class="form-inline frm-float-right">
+                    <div class="form-group div-frm-group-search">
+                        <label class="mx-3" for="txtOrderNumber"><b>Order Number</b></label>
+                        @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
+                            <div class="dropdown-menu">
+                                <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
+                                <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
+                                <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
+                            </div>*@
+                        <input class="form-control txt-search-width-non" id="txtOrderNumber" />
+                    </div>
+                </form>
+                <form class="form-inline frm-float-right" id="frm_txtOrderType" style="z-index: 10000 !important;">
+                    <div class="form-group div-frm-group-search">
+                        <label class="mx-3" for="txtOrderType"><b>Order Type</b></label>
+                        @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
+                            <div class="dropdown-menu">
+                                <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
+                                <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
+                                <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
+                            </div>*@
+                        <select id="ddlOrderType" class="form-control txt-search-width-non" asp-items="ViewBag.OrderTypeList">
+                        </select>
+                    </div>
+                </form>
+                <form class="form-inline frm-float-right">
+                    <div class="form-group div-frm-group-search">
+                        <label class="mx-3" for="dtExpectDate"><b>Expect Date</b></label>
+                        <input id="dtExpectDate" name="dtExpectDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
+                        <div class="arrow-datetime" onclick="$('#dtExpectDate').data('daterangepicker').toggle();">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-inline frm-float-right">
+                    <div class="form-group div-frm-group-search">
+                        <label class="mx-3" for="txtSupplierCode"><b>Supplier Code</b></label>
+                        @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
+                            <div class="dropdown-menu">
+                                <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
+                                <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
+                                <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
+                            </div>*@
+                        <select id="ddlSupplier" class="form-control txt-search-width-non" asp-items="ViewBag.SupplierList">
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 col-xl-4">
+                <form class="form-inline frm-float-right">
+                    <div class="form-group div-frm-group-search">
+                        <label class="mx-3" for="txtCustomerCode"><b>Customer Code</b></label>
+                        @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
+                            <div class="dropdown-menu">
+                                <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
+                                <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
+                                <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
+                            </div>*@
+                        <select id="ddlCustomer" class="form-control txt-search-width-non" asp-items="ViewBag.CustomerList">
+                        </select>
+                    </div>
+                </form>
+                <form class="form-inline frm-float-right">
+                    <div class="form-group div-frm-group-search">
+                        <label class="mx-3" for="txtDescription"><b>Description</b></label>
+                        @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
+                            <div class="dropdown-menu">
+                                <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
+                                <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
+                                <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
+                            </div>*@
+                        <input class="form-control  txt-search-width-non" id="txtDescription" />
+                    </div>
+                </form>
+                <form class="form-inline frm-float-right">
+                    <div class="form-group div-frm-group-search">
+                        <label class="mx-3" for="txtCreateBy"><b>Create By</b></label>
+                        <select id="ddlCreateBy" class="form-control txt-search-width-non" asp-items="ViewBag.UserList">
+                        </select>
+                    </div>
+                </form>
+                <form class="form-inline frm-float-right">
+                    <div class="form-group div-frm-group-search">
+                        <label class="mx-3" for="dtCreateDate"><b>Create Date</b></label>
+                        <input id="dtCreateDate" name="dtCreateDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
+                        <div class="arrow-datetime" onclick="$('#dtCreateDate').data('daterangepicker').toggle();">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-inline frm-float-right">
+                    <div class="form-group div-frm-group-search">
+                        <label class="mx-3" for="txtEditBy"><b>Edit By</b></label>
+                        <select id="ddlEditBy" class="form-control txt-search-width-non" asp-items="ViewBag.UserList">
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 col-xl-4">
+                <form class="form-inline frm-float-right">
+                    <div class="form-group div-frm-group-search">
+                        <label class="mx-3" for="dtEditDate"><b>Edit Date</b></label>
+                        <input id="dtEditDate" name="dtEditDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
+                        <div class="arrow-datetime" onclick="$('#dtEditDate').data('daterangepicker').toggle();">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-inline frm-float-right">
+                    <div class="form-group div-frm-group-search">
+                        <label class="mx-3" for="txtCloseBy"><b>Close By</b></label>
+                        <select id="ddlCloseBy" class="form-control txt-search-width-non" asp-items="ViewBag.UserList">
+                        </select>
+                    </div>
+                </form>
+                <form class="form-inline frm-float-right">
+                    <div class="form-group div-frm-group-search">
+                        <label class="mx-3" for="dtCloseDate"><b>Close Date</b></label>
+                        <input id="dtCloseDate" name="dtCloseDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
+                        <div class="arrow-datetime" onclick="$('#dtCloseDate').data('daterangepicker').toggle();">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-inline frm-float-right">
+                    <div class="form-group div-frm-group-search">
+                        <label class="mx-3" for="txtCloseRemark"><b>Close Remark</b></label>
+                        @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
+                            <div class="dropdown-menu">
+                                <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
+                                <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
+                                <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
+                            </div>*@
+                        <input class="form-control  txt-search-width-non" id="txtCloseRemark" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mr-3 mt-2" align="right">
+        <button class="btn bg-new-search btn-search-clear btn-search" onclick="Search()">Search</button>
+        <button class="btn btn-search-clear btn-clear" style="border: 1px solid #ced4da" onclick="clearSearch()">Clear</button>
+    </div>
+</div>
+<partial name="_ViewData" />

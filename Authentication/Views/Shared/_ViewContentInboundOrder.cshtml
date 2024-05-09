@@ -1,0 +1,115 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<tbody id="view-content">
+    @{ int i = ViewBag.FirstRec;
+        @if (Model.Count == 0)
+        {
+            <tr class="no-data">
+                <td colspan="16">Not Found Data</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (InboundOrder inboundOrder in Model)
+            {
+                <tr class="tbl-row">
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        <a id="edit-inboundorder" asp-action="EditInboundOrder" asp-route-id="@inboundOrder.Id">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </td>
+                    <td>
+                        @if (@inboundOrder.StatusInboundOrder.status != "open")
+                        {
+                            <i class="fas fa-ban" style="color: #D64141"></i>
+                        }
+                        else
+                        {
+                            <a id="delete-inboundorder" asp-action="DeleteInboundOrder" asp-route-id="@inboundOrder.Id">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        }
+                    </td>
+                    <td>
+                        @inboundOrder.StatusInboundOrder.status
+                    </td>
+                    <td>
+                        @inboundOrder.order_no
+                    </td>
+                    <td>
+                        @inboundOrder.OrderType.order_type
+                    </td>
+                    <td>
+                        @{
+                            DateTime dt;
+                            if (inboundOrder.expect_date != null)
+                            {
+                                dt = Convert.ToDateTime(inboundOrder.expect_date);
+                                @dt.ToString("dd/MM/yyyy");
+                            }
+                        }
+                    </td>
+                    <td>
+                        @if (inboundOrder.Supplier != null)
+                        {
+                            @(@inboundOrder.Supplier.supplier_code + ": " + @inboundOrder.Supplier.supplier_name)
+                        }
+                    </td>
+                    <td>
+                        @if (inboundOrder.Customer != null)
+                        {
+                            @(@inboundOrder.Customer.customer_code + ": " + @inboundOrder.Customer.customer_name)
+                        }
+                    </td>
+                    <td>
+                        @inboundOrder.StatusInboundOrder.description
+                    </td>
+                    <td>
+                        @inboundOrder.create_by
+                    </td>
+                    <td>
+                        @{
+                            dt = Convert.ToDateTime(inboundOrder.create_date);
+                            @dt.ToString("dd/MM/yyyy HH:mm:ss");
+                        }
+                    </td>
+                    <td>
+                        @inboundOrder.edit_by
+                    </td>
+                    <td>
+                        @{
+                            if (inboundOrder.edit_date != null)
+                            {
+                                dt = Convert.ToDateTime(inboundOrder.edit_date);
+                                @dt.ToString("dd/MM/yyyy HH:mm:ss");
+                            }
+                        }
+                    </td>
+                    <td>
+                        @inboundOrder.close_by
+                    </td>
+                    <td>
+                        @{
+                            if (inboundOrder.close_date != null)
+                            {
+                                dt = Convert.ToDateTime(inboundOrder.close_date);
+                                @dt.ToString("dd/MM/yyyy HH:mm:ss");
+                            }
+                        }
+                    </td>
+                    <td>
+                        @inboundOrder.close_remark
+                    </td>
+                </tr>
+                i = i + 1;
+            }
+        }
+    }
+</tbody>

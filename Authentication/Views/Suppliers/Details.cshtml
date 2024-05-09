@@ -1,0 +1,159 @@
+﻿@model Authentication.Models.Supplier
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Detail";
+}
+
+<script>
+    $(function () {
+        $("#detail-supplier input").each(function () {
+            $(this).attr('readonly', 'readonly');
+        });
+    })
+</script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<form id="detail-supplier"
+      asp-action="Details"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-complete="OnCompleteRequest"
+      data-ajax-failure="OnFailureRequest">
+    <div class="modal create-popup" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>View Detail</span>
+                    <button type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCompleteRequest()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5><b>Supplier</b></h5>
+                    <hr />
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="supplier_code" class="control-label"></label>
+                                <input asp-for="supplier_code" class="primary form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="supplier_name" class="control-label"></label>
+                                <input asp-for="supplier_name" class="primary form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="description" class="control-label"></label>
+                                <input asp-for="description" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="address1" class="control-label"></label>
+                                <input asp-for="address1" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="address2" class="control-label"></label>
+                                <input asp-for="address2" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="address3" class="control-label"></label>
+                                <input asp-for="address3" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="ProvinceId" class="control-label"></label>
+                                <input class="form-control input-popup" value="@{
+                                        if (Model.Province != null) {
+                                            @Model.Province.Province_Thai;
+                                        }
+                                }" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="DistrictId" class="control-label"></label>
+                                <input class="form-control input-popup" value="@{
+                                        if (Model.District != null) {
+                                            @Model.District.District_Thai;
+                                        }
+                                }" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="SubDistrictId" class="control-label"></label>
+                                <input class="form-control input-popup" value="@{
+                                        if (Model.SubDistrict != null) {
+                                            @Model.SubDistrict.SubDistrict_Thai;
+                                        }
+                                }" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="zipcode" class="control-label"></label>
+                                <input asp-for="zipcode" id="ipZipcode" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="phone_no" class="control-label"></label>
+                                <input asp-for="phone_no" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="mobile_no" class="control-label"></label>
+                                <input asp-for="mobile_no" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="fax_no" class="control-label"></label>
+                                <input asp-for="fax_no" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="email" class="control-label"></label>
+                                <input asp-for="email" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="contact" class="control-label"></label>
+                                <input asp-for="contact" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label class="control-label">File Name</label>
+                                <input asp-for="file_name" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="active" class="control-label"></label>
+                                <input class="form-control input-popup" value="@{  String sActive = "Active";
+                                    if (Model.active == false)
+                                    {
+                                        sActive = "Non-Active";
+                                    }
+                                    @sActive;
+                                }" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="create_by" class="control-label"></label>
+                                <input asp-for="create_by" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="create_date" class="control-label"></label>
+                                <input class="form-control input-popup" value="@{
+                                    DateTime dtCreate = Convert.ToDateTime(Model.create_date);
+                                    @dtCreate.ToString("dd/MM/yyyy HH:mm:ss");
+                                }" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="edit_by" class="control-label"></label>
+                                <input asp-for="edit_by" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="edit_date" class="control-label"></label>
+                                <input class="form-control input-popup" value="@{
+                                    if (Model.edit_date != null)
+                                    {
+                                        DateTime dtEdit = Convert.ToDateTime(Model.edit_date);
+                                        @dtEdit.ToString("dd/MM/yyyy HH:mm:ss");
+                                    }
+                                }" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCompleteRequest()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,63 @@
+﻿@model Authentication.Models.LocationCategory
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Create";
+}
+
+<script>
+    function clearForm() {
+        $('#ipCategoryName').val('');
+        $('#ipDescription').val('');
+        $('#sCategoryName').text('');
+    }
+</script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+<form asp-action="Create"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-update="#childLayout"
+      data-ajax-complete="OnCompleteRequest"
+      data-ajax-confirm="Do you want to Add?"
+      data-ajax-failure="OnFailureRequest">
+    <div class="modal create-popup" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>@ViewBag.Title Data</span>
+                    <button type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCompleteRequest()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5><b>Location Category</b></h5>
+                    <hr />
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>\
+                            <input type="hidden" asp-for="Id" />
+                            <div class="form-group form-group-popup">
+                                <label asp-for="category_name" class="control-label"></label>
+                                <input asp-for="category_name" id="ipCategoryName" class="primary form-control input-popup" />
+                                <span asp-validation-for="category_name" id="sCategoryName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="description" class="control-label"></label>
+                                <input asp-for="description" id="ipDescription" class="form-control input-popup" />
+                                <span asp-validation-for="description" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-footer-pop btn-save-pop">Save</button>
+                    <button type="button" class="btn btn-footer-pop btn-clear-pop" onclick="clearForm()">Clear</button>
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCompleteRequest()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

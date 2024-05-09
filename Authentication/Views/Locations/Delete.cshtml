@@ -1,0 +1,47 @@
+﻿@model Authentication.Models.Location
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Delete";
+}
+
+<form id="delete-popup"
+      asp-action="Delete"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-update="#childLayout"
+      data-ajax-complete="OnCompleteRequest"
+      data-ajax-confirm="Do you want to Delete?"
+      data-ajax-failure="OnFailureRequest">
+    <div class="modal create-popup" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>@ViewBag.Title Data</span>
+                    <button type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCompleteRequest()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" />
+                            <input type="hidden" asp-for="location_code" />
+                            <input type="hidden" asp-for="mix_expire" />
+                            <input type="hidden" asp-for="mix_item" />
+                            <input type="hidden" asp-for="create_date" />
+                            <h4>Do you want to delete the location code (@Model.location_code) ?</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-footer-pop btn-save-pop">Delete</button>
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCompleteRequest()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

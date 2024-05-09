@@ -1,0 +1,131 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+
+<div class="container-fluid bg-image" style="background-image: url('/images/background/BackgroundWeb.jpg'); height: 100vh; width: 100%; padding: 0 !important; margin: 0 !important; box-sizing: 0 !important; background-size: 100% 100% ">
+    <div class="wrap-login100" style="width: 100%; overflow: hidden; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex; flex-wrap: wrap; align-items: stretch; flex-direction: row-reverse; }">
+        @*<img src="~/background/BackgroundWeb.jpg" />*@
+        <!--Login-->
+        <div class="login100-form validate-form" style=" width: 1000px; min-height: 100vh; display: block; padding: 150px 150px 0px 150px;}">
+            <!--T / R / B / L-->
+            <div class="px-5" style="background-color: white; padding-top: 20px; padding-bottom: 20px; border-radius: 5px;">
+                <img class="rounded mx-auto d-block" src="~/images/background/LogoEASYWM.png" style="height: 20%; width: 25%; padding-top: 10px; padding-bottom: 20px;" />
+                <h1 class="pl-5" style="padding: 0 !important; text-align: center; font-family: 'Poppins'; font-size: 2rem;" src="">@ViewData["Title"]</h1>
+                <form id="account" method="post">
+                    <!--
+                    <h4 class="pl-5" style="padding: 0 !important; text-align: center; font-family: 'Poppins'">Use a local account to log in.</h4>
+                    -->
+                    <hr />
+
+                    <!--Input Username-->
+                    <div class="form-group">
+                        <label asp-for="Input.Username" style="font-family: 'Poppins'"></label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="input-group-text" id="basic-addon1" style="padding: 10px">
+                                    <i class="fas fa-user" alt="Responsive image" width="30" height="24"></i>
+                                </span>
+                            </div>
+                            <input asp-for="Input.Username" class="form-control" placeholder="Username" style="font-family: 'Poppins'" />
+                        </div>
+                        <span asp-validation-for="Input.Username" class="text-danger" style="font-family: 'Poppins'"></span>
+                    </div>
+
+                    <!--Input Password-->
+                    <div class="form-group">
+                        <label asp-for="Input.Password" style="font-family: 'Poppins'"></label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="input-group-text" id="basic-addon1" style="padding: 10px">
+                                    <i class="fas fa-lock" alt="Responsive image" width="30" height="24"></i>
+                                </span>
+                            </div>
+                            <input asp-for="Input.Password" class="form-control" placeholder="Password" style="font-family: 'Poppins'" />
+                        </div>
+                        <span asp-validation-for="Input.Password" class="text-danger" style="font-family: 'Poppins'"></span>
+                    </div>
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger" style="font-family: 'Poppins'"></div>
+
+                    <!--Remember me-->
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label asp-for="Input.RememberMe" style="font-family: 'Poppins'">
+                                <input asp-for="Input.RememberMe" />
+                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                            </label>
+                        </div>
+                    </div>
+
+                    <!--Button Login-->
+                    <div class="form-group">
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" style=" font-family: 'Poppins'; border-radius: 15px; padding-left: 30px; padding-right: 30px; color: white; background-color: #76E1E1; border-color: #76E1E1;">
+                                Log in
+                            </button>
+                        </div>
+                    </div>
+
+                    <!--Register-->
+                    <div class="form-group">
+                        @*<p style="text-align: center">
+                            <a id="forgot-password" asp-page="./ForgotPassword" style="font-family: 'Kollektif'">Forgot your password?</a>
+                        </p>*@
+                        
+                        <p style="text-align: center">
+                            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" style="font-family: 'Poppins'; padding-bottom: 20px">Register as a new user</a>
+                        </p>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Logo / Background -->
+        <div class="login100-more" style="width: calc(100% - 1000px); background-repeat: no-repeat; background-size: cover; background-position: center; position: relative; z-index: 1;"></div>
+
+    </div>
+</div>
+
+
+
+
+@*<div class="col-md-6 col-md-offset-2">
+        <section>
+            <h4>Use another service to log in.</h4>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                            for details on setting up this ASP.NET application to support logging in via external services.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    </div>*@
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

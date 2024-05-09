@@ -1,0 +1,103 @@
+﻿@model Authentication.Models.OutboundItem
+@{
+    Layout = null;
+    ViewData["Title"] = "Edit";
+}
+
+
+<script>
+    function clearForm() {
+        $('#ipCost').val('');
+        $('#ipQty').val('');
+        $('#ddlItem').val(null);
+        $('#ddlItemReceivedState').val(null);
+        $('#sItem').text('');
+        $('#sItemReceivedState').text('');
+        $('#sCost').text('');
+        $('#sQty').text('');
+    }
+
+    function QtyChanged() {
+        if (!Number.isInteger($('#ipQty').val())) {
+            $('#ipQty').val($('#ipQty').val() | 0);
+        }
+    }
+
+    $("#ipCost").blur(function () {
+        if (isNaN($('#ipCost').val()) || $('#ipCost').val().trim() === '') {
+            $('#ipCost').val('');
+        }
+        else {
+            $('#ipCost').val((Math.floor(parseFloat(this.value) * 100) / 100).toFixed(2));
+        }
+    });
+</script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<form id="edit-popup"
+      asp-action="EditResource"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-update="#resource"
+      data-ajax-complete="OnCompleteResource"
+      data-ajax-confirm="Do you want to Save?"
+      data-ajax-failure="OnFailureRequest">
+    <div class="modal create-popup-resource" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>@ViewBag.Title Data</span>
+                    <button type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCompleteResource()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5><b>Outbound Item</b></h5>
+                    <hr />
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" value="@Model.Id" />
+                            <input type="hidden" asp-for="OutboundOrderId" value="@Model.OutboundOrderId" />
+                            <input type="hidden" asp-for="remain_qty" value="@Model.remain_qty" />
+                            <input type="hidden" asp-for="create_by" />
+                            <input type="hidden" asp-for="create_date" />
+                            <div class="form-group form-group-popup">
+                                <label class="control-label">Order Number</label>
+                                <input class="primary form-control input-popup" style="cursor: not-allowed; pointer-events: none; opacity: 0.6" disabled="disabled" value="@ViewBag.OrderNo" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="ItemId" class="control-label"></label>
+                                <select asp-for="ItemId" id="ddlItem" class="form-control input-popup" asp-items="ViewBag.ItemList">
+                                </select>
+                                <span asp-validation-for="ItemId" class="text-danger" id="sItem"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="ItemReceivedStateId" class="control-label"></label>
+                                <select asp-for="ItemReceivedStateId" id="ddlItemReceivedState" class="form-control input-popup" asp-items="ViewBag.ItemStateList">
+                                </select>
+                                <span asp-validation-for="ItemReceivedStateId" class="text-danger" id="sItemReceivedState"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="cost" class="control-label"></label>
+                                <input asp-for="cost" id="ipCost" class="form-control input-popup">
+                                <span asp-validation-for="cost" class="text-danger" id="sCost"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="qty" class="control-label"></label>
+                                <input asp-for="qty" id="ipQty" class="form-control input-popup" onchange="QtyChanged()">
+                                <span asp-validation-for="qty" class="text-danger" id="sQty"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-footer-pop btn-save-pop">Save</button>
+                    <button type="button" class="btn btn-footer-pop btn-clear-pop" onclick="clearForm()">Clear</button>
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCompleteResource()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

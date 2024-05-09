@@ -1,0 +1,57 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<tbody id="view-content">
+    @{ int i = ViewBag.FirstRec;
+        @if (Model.Count == 0)
+        {
+            <tr class="no-data">
+                <td colspan="8">Not Found Data</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (UsersViewModel user in Model)
+            {
+                <tr class="tbl-row">
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        <a id="detail-user" asp-action="Details" asp-route-id="@user.Id">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a id="edit-user" asp-action="Edit" asp-route-id="@user.Id">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a id="delete-user" asp-action="Delete" asp-route-id="@user.Id">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a id="reset-user" asp-action="ResetPassword" asp-route-id="@user.Id">
+                            <i class="fas fa-key"></i>
+                        </a>
+                    </td>
+                    <td style="width: 130px;">
+                        @user.Username
+                    </td>
+                    <td style="width: 200px;">
+                        @user.Email
+                    </td>
+                    <td style="width: 130px;">
+                        @user.Role
+                    </td>
+                </tr>
+                i = i + 1;
+            }
+        }
+    }
+</tbody>

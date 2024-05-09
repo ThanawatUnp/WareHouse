@@ -1,0 +1,187 @@
+﻿@model Authentication.Models.ItemReceived
+@{
+    Layout = null;
+    ViewData["Title"] = "Edit";
+}
+<script>
+    if (@Html.Raw(Json.Serialize(@ViewBag.Queue)) == "FIFO") {
+        document.getElementById("dtEdtExpireDate").style.cursor = "not-allowed";
+        document.getElementById("dtEdtExpireDate").style.pointerEvents = "none";
+        document.getElementById("dtEdtExpireDate").style.opacity = "0.6";
+        document.getElementById("dtEdtExpireDate").disabled = true;
+    }
+
+    $("#ipEdtCost").blur(function () {
+        if (this.value.indexOf(".") != -1) {
+            if ((this.value.substring(this.value.indexOf(".") + 1)).length > 2) {
+                $('#sEdtCost').text('');
+            }
+            else {
+                $('#sEdtCost').text('');
+            }
+        }
+        if (isNaN(this.value) || $('#ipEdtCost').val().trim() === '') {
+            this.value = "";
+        }
+        else {
+            this.value = (Math.floor(parseFloat(this.value) * 100) / 100).toFixed(2);
+        }
+    });
+
+    $('#ipEdtReceiveQty').on('input', function (e) {
+        if (parseFloat($('#ipEdtReceiveQty').val()) <= parseFloat($('#ipEdtTmpRemainQty').val())) {
+            var result = parseFloat($('#ipEdtTmpRemainQty').val()) - parseFloat($('#ipEdtReceiveQty').val());
+            $('#ipEdtRemainQty').val(result);
+        }
+        else {
+            $('#ipEdtRemainQty').val($('#ipEdtTmpRemainQty').val());
+        }
+    });
+
+    function handler(e) {
+        if (e.target.value.trim() !== '') {
+            var currentDate = new Date();
+            var selectedDate = new Date(e.target.value);
+            if (selectedDate.getFullYear() < currentDate.getFullYear()) {
+                $('#dtEdtExpireDate').val('MM/DD/YYYY');
+            }
+            else {
+                if (selectedDate.getMonth() < currentDate.getMonth()) {
+                    $('#dtEdtExpireDate').val('MM/DD/YYYY');
+                }
+                else {
+                    if (selectedDate.getDate() < currentDate.getDate()) {
+                        $('#dtEdtExpireDate').val('MM/DD/YYYY');
+                    }
+                }
+            }
+        }
+        else {
+            $.ajax({
+                type: "GET",
+                url: '/InboundOrders/checkExpireDate',
+                data: {
+                    expire_date: $('#dtEdtExpireDate').val(),
+                    InboundItemId: $('#ipEdtInboundItemId').val(),
+                },
+                success: function (result) {
+                    if (result) {
+                        $('#sEdtExpireDate').text('');
+                    }
+                    else {
+                        $('#sEdtExpireDate').text('Please Select Date.');
+                    }
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+        }
+    }
+
+    function ClearEdtRcvItm() {
+        $('#ddlEdtItemState').val(null);
+        $('#ipEdtReceiveQty').val('');
+        $('#ipEdtCost').val('');
+        $('#ipEdtLotNo').val('');
+        $('#dtEdtExpireDate').val('MM/DD/YYYY');
+        $('#ipEdtRcvDescription').val('');
+
+        $('#sEdtItemState').text('');
+        $('#sEdtReceiveQty').text('');
+        $('#sEdtCost').text('');
+        $('#sEdtLotNo').text('');
+        $('#sEdtExpireDate').text('');
+        $('#sEdtRcvDescription').text('');
+    }
+</script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<form id="edit-receiveitem"
+      asp-action="EditReceived"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-update="#sub-resource"
+      data-ajax-complete="OnCompleteSubResource"
+      data-ajax-confirm="Do you want to Save?"
+      data-ajax-failure="OnFailureRequest">
+    <div class="modal create-popup-w70" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>@ViewBag.Title Data</span>
+                    <button type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCompleteSubResource()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5><b>Received Item</b></h5>
+                    <hr />
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" value="@Model.Id" id="ipEdtItemReceiveID" />
+                            <input type="hidden" asp-for="InboundItemId" value="@ViewBag.InboundItemId" id="ipEdtInboundItemId" />
+                            <input type="hidden" value="@ViewBag.OriginRemainQty" id="ipEdtTmpRemainQty" name="ipEdtTmpRemainQty" />
+                            <input type="hidden" asp-for="create_by" />
+                            <input type="hidden" asp-for="create_date" />
+                            <input type="hidden" asp-for="receive_date" />
+                            <input type="hidden" asp-for="status" />
+                            <input type="hidden" value="@ViewBag.Queue" id="ipQueue" />
+                            <div class="form-group form-group-popup">
+                                <label class="control-label">Order Number</label>
+                                <input class="primary form-control input-popup" style="cursor: not-allowed; pointer-events: none; opacity: 0.6" disabled="disabled" value="@ViewBag.OrderNo" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label class="control-label">Item Detail</label>
+                                <input class="primary form-control input-popup" style="cursor: not-allowed; pointer-events: none; opacity: 0.6" disabled="disabled" value="@ViewBag.ItemDetail" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label class="control-label">Remain Quantity</label>
+                                <input class="primary form-control input-popup" style="cursor: not-allowed; pointer-events: none; opacity: 0.6" disabled="disabled" value="@ViewBag.RemainQty" id="ipEdtRemainQty" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="ItemReceivedStateId" class="control-label"></label>
+                                <select asp-for="ItemReceivedStateId" id="ddlEdtItemState" class="form-control input-popup" asp-items="ViewBag.ItemStateList">
+                                </select>
+                                <span asp-validation-for="ItemReceivedStateId" class="text-danger" id="sEdtItemState"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="receive_qty" class="control-label"></label>
+                                <input asp-for="receive_qty" id="ipEdtReceiveQty" class="form-control input-popup" min="0" />
+                                <span asp-validation-for="receive_qty" class="text-danger" id="sEdtReceiveQty"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="cost" class="control-label"></label>
+                                <input asp-for="cost" id="ipEdtCost" class="form-control input-popup" type="number" min="0" step="0.01" />
+                                <span asp-validation-for="cost" class="text-danger" id="sEdtCost"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="lot_no" class="control-label"></label>
+                                <input asp-for="lot_no" id="ipEdtLotNo" class="form-control input-popup" />
+                                <span asp-validation-for="lot_no" class="text-danger" id="sEdtLotNo"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="expire_date" class="control-label"></label>
+                                <input asp-for="expire_date" class="form-control input-popup" type="date" id="dtEdtExpireDate" onchange="handler(event);" />
+                                <span asp-validation-for="expire_date" class="text-danger" id="sEdtExpireDate"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="description" class="control-label"></label>
+                                <input asp-for="description" id="ipEdtRcvDescription" class="form-control input-popup" />
+                                <span asp-validation-for="description" class="text-danger" id="sEdtRcvDescription"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-footer-pop btn-save-pop">Save</button>
+                    <button type="button" class="btn btn-footer-pop btn-clear-pop" onclick="ClearEdtRcvItm()">Clear</button>
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCompleteSubResource()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

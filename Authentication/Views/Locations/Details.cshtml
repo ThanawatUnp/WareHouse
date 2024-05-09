@@ -1,0 +1,119 @@
+﻿@model Authentication.Models.Location
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Detail";
+}
+
+<script>
+    $(function () {
+        $("#detail-location input").each(function () {
+            $(this).attr('readonly', 'readonly');
+        });
+    })
+</script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<form id="detail-location"
+      asp-action="Details"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-complete="OnCompleteRequest"
+      data-ajax-failure="OnFailureRequest">
+    <div class="modal create-popup" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>View Detail</span>
+                    <button type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCompleteRequest()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5><b>Location</b></h5>
+                    <hr />
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="location_code" class="control-label"></label>
+                                <input asp-for="location_code" class="primary form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="LocationCategoryId" class="control-label"></label>
+                                <input class="form-control input-popup" value="@{
+                                    if (Model.LocationCategory != null) {
+                                            @Model.LocationCategory.category_name;
+                                    }
+                                }" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="description" class="control-label"></label>
+                                <input asp-for="description" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="mix_expire" class="control-label"></label>
+                                <input class="form-control input-popup" value="@{  String sMixExpire = "Yes";
+                                    if (Model.mix_expire == false)
+                                    {
+                                        sMixExpire = "No";
+                                    }
+                                    @sMixExpire;
+                                }" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="mix_item" class="control-label"></label>
+                                <input class="form-control input-popup" value="@{  String sMixItem = "Yes";
+                                    if (Model.mix_item == false)
+                                    {
+                                        sMixItem = "No";
+                                    }
+                                    @sMixItem;
+                                }" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="mix_lot" class="control-label"></label>
+                                <input class="form-control input-popup" value="@{  String sMixLot = "Yes";
+                                    if (Model.mix_lot == false)
+                                    {
+                                        sMixLot = "No";
+                                    }
+                                    @sMixLot;
+                                }" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="create_by" class="control-label"></label>
+                                <input asp-for="create_by" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="create_date" class="control-label"></label>
+                                <input class="form-control input-popup" value="@{
+                                    DateTime dtCreate = Convert.ToDateTime(Model.create_date);
+                                    @dtCreate.ToString("dd/MM/yyyy HH:mm:ss");
+                                }" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="edit_by" class="control-label"></label>
+                                <input asp-for="edit_by" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="edit_date" class="control-label"></label>
+                                <input class="form-control input-popup" value="@{
+                                    if (Model.edit_date != null)
+                                    {
+                                        DateTime dtEdit = Convert.ToDateTime(Model.edit_date);
+                                        @dtEdit.ToString("dd/MM/yyyy HH:mm:ss");
+                                    }
+                                }" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCompleteRequest()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

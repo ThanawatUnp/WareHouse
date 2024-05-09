@@ -1,0 +1,19 @@
+D:\Project WMS\Test\Authentication\EmailService\bin\Debug\netcoreapp3.1\EmailService.deps.json
+D:\Project WMS\Test\Authentication\EmailService\bin\Debug\netcoreapp3.1\EmailService.dll
+D:\Project WMS\Test\Authentication\EmailService\bin\Debug\netcoreapp3.1\EmailService.pdb
+D:\Project WMS\Test\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.AssemblyReference.cache
+D:\Project WMS\Test\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfoInputs.cache
+D:\Project WMS\Test\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfo.cs
+D:\Project WMS\Test\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
+D:\Project WMS\Test\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
+D:\Project WMS\Test\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb
+D:\Backup ABSS\Enter User and Pass\Authentication\EmailService\bin\Debug\netcoreapp3.1\EmailService.deps.json
+D:\Backup ABSS\Enter User and Pass\Authentication\EmailService\bin\Debug\netcoreapp3.1\EmailService.dll
+D:\Backup ABSS\Enter User and Pass\Authentication\EmailService\bin\Debug\netcoreapp3.1\EmailService.pdb
+D:\Backup ABSS\Enter User and Pass\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.AssemblyReference.cache
+D:\Backup ABSS\Enter User and Pass\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.GeneratedMSBuildEditorConfig.editorconfig
+D:\Backup ABSS\Enter User and Pass\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfoInputs.cache
+D:\Backup ABSS\Enter User and Pass\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfo.cs
+D:\Backup ABSS\Enter User and Pass\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
+D:\Backup ABSS\Enter User and Pass\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
+D:\Backup ABSS\Enter User and Pass\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb

@@ -1,0 +1,114 @@
+﻿@model Authentication.Models.OutboundOrder
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Edit";
+}
+<script>
+    function clearForm() {
+        $('#ddlOrderType-edit').val(null);
+        $('#ddlCustomer-edit').val(null);
+        $('#ipInvoiceNo').val('');
+        $('#dtShipDate-edit').val('MM/DD/YYYY');
+        $('#ipDescription').val('');
+        $('#order-no').text('');
+        $('#sOrderType').text('');
+        $('#sCustomer').text('');
+        $('#sShipDate').text('');
+        $('#sInvoiceNo').text('');
+        $('#sDescription').text('');
+    }
+</script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+<form id="edit-popup"
+      asp-action="EditOutboundOrder"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-update="#pop_up"
+      data-ajax-complete="OnComplete"
+      data-ajax-confirm="Do you want to Save?"
+      data-ajax-failure="OnFailureRequest">
+    <div id="pop-up" class="modal create-popup-w90" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>@ViewBag.Title Data</span>
+                    <button id="btX" type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCompleteRequest()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5><b>Outbound Order</b>: @ViewBag.Status</h5>
+                    <hr />
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" id="ipOutboundOrderID" />
+                            <input type="hidden" asp-for="StatusOutboundOrderId" />
+                            <input type="hidden" asp-for="create_by" />
+                            <input type="hidden" asp-for="create_date" />
+                            <input type="hidden" asp-for="cancel_by" />
+                            <input type="hidden" asp-for="cancel_date" />
+                            <div class="form-group form-group-popup">
+                                <label asp-for="order_no" class="control-label"></label>
+                                <input asp-for="order_no" id="ipOrderNo" class="primary form-control input-popup" style="cursor: not-allowed; pointer-events: none; opacity: 0.6" disabled="disabled" />
+                                <span asp-validation-for="order_no" class="text-danger" id="order-no" style="display: block;"></span>
+                                <input type="hidden" asp-for="order_no" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="OrderTypeId" class="control-label"></label>
+                                <select asp-for="OrderTypeId" id="ddlOrderType-edit" class="form-control input-popup" asp-items="ViewBag.OrderTypeList">
+                                </select>
+                                <span asp-validation-for="OrderTypeId" class="text-danger" id="sOrderType"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="CustomerId" class="control-label"></label>
+                                <select asp-for="CustomerId" id="ddlCustomer-edit" class="form-control input-popup" asp-items="ViewBag.CustomerList">
+                                </select>
+                                <span asp-validation-for="CustomerId" class="text-danger" id="sCustomer"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="plan_ship_date" class="control-label"></label>
+                                <input asp-for="plan_ship_date" class="form-control input-popup" type="date" id="dtShipDate-edit">
+                                <span asp-validation-for="plan_ship_date" class="text-danger" id="sShipDate"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="invoice_no" class="control-label"></label>
+                                <input asp-for="invoice_no" class="form-control input-popup" id="ipInvoiceNo">
+                                <span asp-validation-for="invoice_no" class="text-danger" id="sInvoiceNo"></span>
+                            </div>
+
+                            <div class="form-group form-group-popup">
+                                <label asp-for="StatusOutboundOrder.description" class="control-label">Description</label>
+                                <input asp-for="StatusOutboundOrder.description" class="form-control input-popup" id="ipDescription" name="txtDescription">
+                                <span asp-validation-for="StatusOutboundOrder.description" class="text-danger" id="sDescription"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr id="divider" />
+                    <div id="resource">
+                        <div>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" style="padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; color: #3a94d0; border-color: #7ebfe9; border-bottom-color: #ffffff;">Resource</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tool-panel" class="border" style="width: 100%; white-space: nowrap; margin-top: 20px; background-color: #f2f5f7;">
+                            <partial name="_Btn_Group_Resource" />
+                        </div>
+                        <partial name="_ViewData" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-footer-pop btn-save-pop" id="btSave">Save</button>
+                    <button type="button" class="btn btn-footer-pop btn-clear-pop" id="btClear" onclick="clearForm()">Clear</button>
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCompleteRequest()" id="btClose">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

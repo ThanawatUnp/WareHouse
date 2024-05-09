@@ -1,0 +1,82 @@
+﻿@model Authentication.Models.UsersViewModel
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Edit";
+}
+<script>
+    $("#ddlRole option").filter(function () {
+        return $(this).text() == @Html.Raw(Json.Serialize(@ViewBag.role));
+    }).prop('selected', true);
+    function clearForm() {
+        $('#ipEmail').val('');
+        $('#ddlRole').val(null);
+        $('#sEmail').text('');
+        $('#sRole').text('');
+    }
+</script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<form id="edit-popup"
+       asp-action="Edit"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-update="#childLayout"
+      data-ajax-complete="OnCompleteRequest"
+      data-ajax-confirm="Do you want to Save?"
+      data-ajax-failure="OnFailureRequest">
+    <div class="modal create-popup" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>@ViewBag.Title a account.</span>
+                    <button type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCompleteRequest()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5><b>User</b></h5>
+                    <hr />
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" />
+                            <input type="hidden" asp-for="EmailConfirmed" />
+                            <input type="hidden" asp-for="PhoneNumberConfirmed" />
+                            <input type="hidden" asp-for="TwoFactorEnabled" />
+                            <input type="hidden" asp-for="LockoutEnabled" />
+                            <input type="hidden" asp-for="AccessFailedCount" />
+                            <div class="form-group form-group-popup">
+                                <label asp-for="Username" class="control-label"></label>
+                                <input asp-for="Username" id="ipUsername" class="primary form-control input-popup" style="cursor: not-allowed; pointer-events: none; opacity: 0.6" disabled="disabled"/>
+                                <input type="hidden" asp-for="Username" />
+                                <span asp-validation-for="Username" id="sUsername" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" id="ipEmail" class="form-control input-popup" />
+                                <span asp-validation-for="Email" id="sEmail" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="Role" for="ddlRole" class="control-label"><b>Role</b></label>
+                                <select asp-for="Role" id="ddlRole" class="form-control input-popup">
+                                    <option value="">Select</option>
+                                    <option value="0">User</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">Supervisor</option>
+                                </select>
+                                <span asp-validation-for="Role" id="sRole" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-footer-pop btn-save-pop">Save</button>
+                    <button type="button" class="btn btn-footer-pop btn-clear-pop" onclick="clearForm()">Clear</button>
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCompleteRequest()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

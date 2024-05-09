@@ -1,0 +1,148 @@
+﻿@model Authentication.Models.Inventory
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Put Away";
+}
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<script>
+    HideDivMix();
+    $('#ipQty').val('');
+
+    function LocationChanged() {
+        $('#sLocationId').text('');
+        if (isNaN($('#ddlLocation').val())) {
+            ShowDivMix();
+            $.ajax({
+                type: "GET",
+                data: { "id": $('#ddlLocation').val()},
+                dataType: 'json',
+                url: '@Url.Action("GetMixLocation")',
+                success: function (data) {
+                    $('#ipMixExpire').val(data.sMixExpire);
+                    $('#ipMixItem').val(data.sMixItem);
+                    $('#ipMixLot').val(data.sMixLot);
+                },
+                error: function (data) {
+                    alert('error');
+                }
+            });
+        }
+        else {
+            HideDivMix();
+        }
+    }
+
+    function clearForm() {
+        $('#ipQty').val('');
+        $('#ddlLocation').val(null);
+        $('#sLocationId').text('');
+        $('#sQty').text('');
+        HideDivMix();
+    }
+
+    function ShowDivMix() {
+        $('#div-mixexpire').show();
+        $('#div-mixitem').show();
+        $('#div-mixlot').show();
+    }
+
+    function HideDivMix() {
+        $('#div-mixexpire').hide();
+        $('#div-mixitem').hide();
+        $('#div-mixlot').hide();
+    }
+
+    $('#ipQty').on('input', function (e) {
+        $('#sQty').text('');
+        if (!isNaN($('#ipQty').val()) && $('#ipQty').val().length != 0) {
+            if (parseFloat($('#ipQty').val()) <= parseFloat($('#ipTmpRemainPutAway').val())) {
+                var result = parseFloat($('#ipTmpRemainPutAway').val()) - parseFloat($('#ipQty').val());
+                $('#ipRemainPutAway').val(result);
+            }
+            else {
+                $('#ipRemainPutAway').val($('#ipTmpRemainPutAway').val());
+                $('#sQty').text('Cannot be greater than '.concat($('#ipRemainPutAway').val()));
+                $('#ipQty').val('');
+            }
+        }
+        else {
+            $('#ipRemainPutAway').val($('#ipTmpRemainPutAway').val());
+        }
+
+    });
+
+
+
+</script>
+<form id="putaway-popup"
+      asp-action="PutAway"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-update="#childLayout"
+      data-ajax-complete="OnCompleteRequest"
+      data-ajax-confirm="Do you want to Save?"
+      data-ajax-failure="OnFailureRequest">
+    <div class="modal create-popup" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>Manage Data</span>
+                    <button type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCompleteRequest()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5><b>@ViewBag.Title</b></h5>
+                    <hr />
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" value="@Model.Id"/>
+                            <input type="hidden" asp-for="ItemReceivedId" id="ipItemReceivedId"/>
+                            <input type="hidden" id="ipTmpRemainPutAway" value="@ViewBag.RemainPutAway"/>
+                            <div class="form-group form-group-popup">
+                                <label class="control-label">Received Quantity</label>
+                                <input class="primary form-control input-popup" style="cursor: not-allowed; pointer-events: none; opacity: 0.6" disabled="disabled" value="@ViewBag.ReceivedQty" id="ipRcvQty" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label class="control-label">Remain Put Away</label>
+                                <input class="primary form-control input-popup" style="cursor: not-allowed; pointer-events: none; opacity: 0.6" disabled="disabled" value="@ViewBag.RemainPutAway" id="ipRemainPutAway" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="LocationId" class="control-label"></label>
+                                <select asp-for="LocationId" id="ddlLocation" class="form-control input-popup" asp-items="ViewBag.LocationList" onchange="LocationChanged()">
+                                </select>
+                                <span asp-validation-for="LocationId" class="text-danger" id="sLocationId"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="qty" class="control-label"></label>
+                                <input asp-for="qty" id="ipQty" class="form-control input-popup" min="0" />
+                                <span asp-validation-for="qty" class="text-danger" id="sQty"></span>
+                            </div>
+                            <div class="form-group form-group-popup" id="div-mixexpire">
+                                <label class="control-label">Mix Expire</label>
+                                <input class="primary form-control input-popup" disabled="disabled" style="cursor: not-allowed; pointer-events: none; opacity: 0.6; background-color: white" id="ipMixExpire" />
+                            </div>
+                            <div class="form-group form-group-popup" id="div-mixitem">
+                                <label class="control-label">Mix Item</label>
+                                <input class="primary form-control input-popup" disabled="disabled" style="cursor: not-allowed; pointer-events: none; opacity: 0.6; background-color: white" id="ipMixItem" />
+                            </div>
+                            <div class="form-group form-group-popup" id="div-mixlot">
+                                <label class="control-label">Mix Lot</label>
+                                <input class="primary form-control input-popup" disabled="disabled" style="cursor: not-allowed; pointer-events: none; opacity: 0.6; background-color: white" id="ipMixLot" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-footer-pop btn-save-pop" onclick="SaveForm()">Save</button>
+                    <button type="button" class="btn btn-footer-pop btn-clear-pop" onclick="clearForm()">Clear</button>
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCompleteRequest()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

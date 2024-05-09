@@ -1,0 +1,16 @@
+﻿@foreach (var item in ViewBag.Header)
+{
+    @switch (@item)
+    {
+        case "Username":
+        case "Role":
+            <th style="min-width: 130px;">@item</th>
+            break;
+        case "E-mail":
+            <th style="min-width: 200px;">@item</th>
+            break;
+        default:
+            <th>@item</th>
+            break;
+    }
+}

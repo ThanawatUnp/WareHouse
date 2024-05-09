@@ -1,0 +1,1017 @@
+﻿@{
+    ViewData["Title"] = "Inbound Order";
+    ViewBag.Menu = "inboundorder";
+}
+<script type="text/javascript">
+    var vExpectDate = "n";
+    var vCreateDate = "n";
+    var vEditeDate = "n";
+    var vCloseDate = "n";
+
+    function OnCompleteRequest() {
+        $('#pop_up').empty();
+        $('#pop_up').delay(1000).modal('hide');
+        $.ajax({
+            url: '/InboundOrders/ViewContent',
+            data: {
+                //These two keys should keep consistent with the parameters ( int? ProductId , int? ProductPrice ) in action, including uppercase and lowercase.
+                status: $('#txtStatus').val(),
+                ordernumber: $('#txtOrderNumber').val(),
+                ordertype: $('#ddlOrderType').val(),
+                sexpectdate: vExpectDate,
+                startexpectdate: $('#dtExpectDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endexpectdate: $('#dtExpectDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                supplier: $('#ddlSupplier').val(),
+                customer: $('#ddlCustomer').val(),
+                description: $('#txtDescription').val(),
+                createby: $('#ddlCreateBy').val(),
+                screatedate: vCreateDate,
+                startcreatedate: $('#dtCreateDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endcreatedate: $('#dtCreateDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                editby: $('#ddlEditBy').val(),
+                seditdate: vEditeDate,
+                starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                closeby: $('#ddlCloseBy').val(),
+                sclosedate: vCloseDate,
+                startclosedate: $('#dtCloseDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endclosedate: $('#dtCloseDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                closeremark: $('#txtCloseRemark').val(),
+            },
+            success: function (result) {
+                $('#childLayout').html(result);
+            }
+        });
+    }
+
+    function OnCompleteConfirmDelete() {
+        $('#pop_up2').empty();
+        $('#pop_up2').delay(1000).modal('hide');
+        $('#pop_up').empty();
+        $('#pop_up').delay(1000).modal('hide');
+    }
+
+    function OnCompleteConfirmDeleteResource() {
+        $('#pop_up3').empty();
+        $('#pop_up3').delay(1000).modal('hide');
+        OnCompleteResource();
+    }
+
+    function OnComplete() {
+        $.ajax({
+            url: '/InboundOrders/ViewContent',
+            data: {
+                //These two keys should keep consistent with the parameters ( int? ProductId , int? ProductPrice ) in action, including uppercase and lowercase.
+                status: $('#txtStatus').val(),
+                ordernumber: $('#txtOrderNumber').val(),
+                ordertype: $('#ddlOrderType').val(),
+                sexpectdate: vExpectDate,
+                startexpectdate: $('#dtExpectDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endexpectdate: $('#dtExpectDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                supplier: $('#ddlSupplier').val(),
+                customer: $('#ddlCustomer').val(),
+                description: $('#txtDescription').val(),
+                createby: $('#ddlCreateBy').val(),
+                screatedate: vCreateDate,
+                startcreatedate: $('#dtCreateDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endcreatedate: $('#dtCreateDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                editby: $('#ddlEditBy').val(),
+                seditdate: vEditeDate,
+                starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                closeby: $('#ddlCloseBy').val(),
+                sclosedate: vCloseDate,
+                startclosedate: $('#dtCloseDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endclosedate: $('#dtCloseDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                closeremark: $('#txtCloseRemark').val(),
+            },
+            success: function (result) {
+                $('#order-no').text('');
+                $('#childLayout').html(result);
+            }
+        });
+        alert('On Success');
+    }
+
+    function OnSuccessRequest() {
+        alert('On Success');
+    }
+
+    function OnFailureRequest() {
+        alert('On Failure');
+    }
+
+    function OnCompleteResource() {
+        var nodes = document.getElementById('edit-popup').getElementsByTagName('input');
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].disabled = false;
+        }
+        nodes = document.getElementById('edit-popup').getElementsByTagName('select');
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].disabled = false;
+        }
+        nodes = document.getElementById('tool-panel').getElementsByTagName('a');
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].disabled = false;
+        }
+        nodes = document.getElementById('page-number-resource').getElementsByTagName('a');
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].style.pointerEvents = "auto";
+        }
+
+        $('#view-content tr').addClass('tbl-row');
+        $('#view-content tr td a').css('cursor', 'pointer');
+
+        document.getElementById("btX").style.pointerEvents = "auto";
+        document.getElementById("btn-perpage-resource").style.pointerEvents = "auto";
+        document.getElementById("btNewResource").style.pointerEvents = "auto";
+        document.getElementById("btSave").style.pointerEvents = "auto";
+        document.getElementById("btClear").style.pointerEvents = "auto";
+        document.getElementById("btClose").style.pointerEvents = "auto";
+        $('#pop_up2').empty();
+        $('#pop_up2').delay(1000).modal('hide');
+        $('#pop-up').css({
+            overflowX: 'hidden',
+            overflowY: 'auto'
+        });
+    }
+
+    function OnCompleteSubResource() {
+        if ($('#ipEdtRemainQty').length) {
+            $('#ipTmpRemainQty').val($('#ipEdtRemainQty').val());
+            $('#ipRemainQty').val($('#ipEdtRemainQty').val());
+        }
+        else if ($('#ipEdtRemainQty').length) {
+            $('#ipTmpRemainQty').val($('#ipDltRemainQty').val());
+            $('#ipRemainQty').val($('#ipDltRemainQty').val());
+        }
+
+        if ($('#ipRemainQty').val() == 0) {
+            $('#btSaveReceiveItm').hide();
+            $('#btClearReceiveItm').hide();
+        }
+        else {
+            $('#btSaveReceiveItm').show();
+            $('#btClearReceiveItm').show();
+        }
+
+        var nodes = document.getElementById('receive-popup').getElementsByTagName('input');
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].disabled = false;
+        }
+        nodes = document.getElementById('receive-popup').getElementsByTagName('select');
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].disabled = false;
+        }
+
+        $('#view-content-receive tr').addClass('tbl-row');
+        $('#view-content-receive tr td a').css('cursor', 'pointer');
+
+        document.getElementById("btXReceiveItm").style.pointerEvents = "auto";
+        document.getElementById("btSaveReceiveItm").style.pointerEvents = "auto";
+        document.getElementById("btClearReceiveItm").style.pointerEvents = "auto";
+        document.getElementById("btCloseReceiveItm").style.pointerEvents = "auto";
+
+        $('#pop_up3').empty();
+        $('#pop_up3').delay(1000).modal('hide');
+        $('#pop-up2').css({
+            overflowX: 'hidden',
+            overflowY: 'auto'
+        });
+
+        document.getElementById("ipRcvOrderNo").disabled = true;
+        document.getElementById("ipRcvItemDetail").disabled = true;
+        document.getElementById("ipRemainQty").disabled = true;
+    }
+
+    function OnCompleteDltSubResource() {
+        $('#ipTmpRemainQty').val($('#ipDltTmpRemainQty').val());
+        $('#ipRemainQty').val($('#ipDltTmpRemainQty').val());
+
+        var nodes = document.getElementById('receive-popup').getElementsByTagName('input');
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].disabled = false;
+        }
+        nodes = document.getElementById('receive-popup').getElementsByTagName('select');
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].disabled = false;
+        }
+
+        $('#view-content-receive tr').addClass('tbl-row');
+        $('#view-content-receive tr td a').css('cursor', 'pointer');
+
+        document.getElementById("btXReceiveItm").style.pointerEvents = "auto";
+        document.getElementById("btSaveReceiveItm").style.pointerEvents = "auto";
+        document.getElementById("btClearReceiveItm").style.pointerEvents = "auto";
+        document.getElementById("btCloseReceiveItm").style.pointerEvents = "auto";
+
+        $('#pop_up3').empty();
+        $('#pop_up3').delay(1000).modal('hide');
+        $('#pop-up2').css({
+            overflowX: 'hidden',
+            overflowY: 'auto'
+        });
+
+        document.getElementById("ipRcvOrderNo").disabled = true;
+        document.getElementById("ipRcvItemDetail").disabled = true;
+        document.getElementById("ipRemainQty").disabled = true;
+    }
+
+    function OnCloseComfirmation() {
+        document.getElementById("btX").style.pointerEvents = "auto";
+        document.getElementById("btDelete").style.pointerEvents = "auto";
+        document.getElementById("btClose").style.pointerEvents = "auto";
+        $('#pop_up2').empty();
+        $('#pop_up2').delay(1000).modal('hide');
+    }
+
+    function OnCloseComfirmRes() {
+        document.getElementById("btnXRes").style.pointerEvents = "auto";
+        document.getElementById("btnDeleteRes").style.pointerEvents = "auto";
+        document.getElementById("btnCloseRes").style.pointerEvents = "auto";
+        $('#pop_up3').empty();
+        $('#pop_up3').delay(1000).modal('hide');
+    }
+
+    function OnCloseResource() {
+        OnCompleteResource();
+        $.ajax({
+            type: "GET",
+            data: { "id": $('#ipInboundOrderID').val() } ,
+            url: '@Url.Action("ViewResource")',
+            success: function (result) {
+                $('#resource').html(result);
+            },
+            error: function (result) {
+                alert('error');
+            }
+        });
+    }
+
+    function showHideSearch() {
+        var blockSearch = document.getElementById('search-block');
+        if (blockSearch.style.display != "none") {
+            blockSearch.style.display = 'none';
+            document.getElementById('btn-fiter').innerHTML = 'Show Filter';
+        }
+        else {
+            blockSearch.style.display = null;
+            document.getElementById('btn-fiter').innerHTML = 'Hide Filter';
+        }
+    }
+
+    function Search() {
+        $.ajax({
+            url: '/InboundOrders/ViewContent',
+            data: {
+                //These two keys should keep consistent with the parameters ( int? ProductId , int? ProductPrice ) in action, including uppercase and lowercase.
+                status: $('#txtStatus').val(),
+                ordernumber: $('#txtOrderNumber').val(),
+                ordertype: $('#ddlOrderType').val(),
+                sexpectdate: vExpectDate,
+                startexpectdate: $('#dtExpectDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endexpectdate: $('#dtExpectDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                supplier: $('#ddlSupplier').val(),
+                customer: $('#ddlCustomer').val(),
+                description: $('#txtDescription').val(),
+                createby: $('#ddlCreateBy').val(),
+                screatedate: vCreateDate,
+                startcreatedate: $('#dtCreateDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endcreatedate: $('#dtCreateDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                editby: $('#ddlEditBy').val(),
+                seditdate: vEditeDate,
+                starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                closeby: $('#ddlCloseBy').val(),
+                sclosedate: vCloseDate,
+                startclosedate: $('#dtCloseDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endclosedate: $('#dtCloseDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                closeremark: $('#txtCloseRemark').val(),
+            },
+            success: function (result) {
+                $('#childLayout').html(result);
+            }
+        });
+    }
+
+    function clearSearch() {
+        globalThis.vExpectDate = "n";
+        globalThis.vCreateDate = "n";
+        globalThis.vEditeDate = "n";
+        globalThis.vCloseDate = "n";
+        var f1 = document.getElementById('search-block');
+        var arr_input = f1.getElementsByTagName('input');
+        for (i = 0; i < arr_input.length; i++) {
+            arr_input[i].value = '';
+        }
+        $.ajax({
+            url: '/InboundOrders/ViewContent',
+            data: {
+                clear: 'clear'
+            },
+            success: function (result) {
+                $('#childLayout').html(result);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        // Add Inbound Order
+        $(document).on("click", "#btNew", function () {
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                url: $(this).data('url'),
+                success: function (result) {
+                    $('#pop_up').html(result);
+                    $('#pop_up').modal('show');
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+            return false;
+        });
+
+        // Edit Inbound Order
+        $(document).on("click", "#ViewData table tbody tr td #edit-inboundorder", function () {
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                url: $(this).attr('href'),
+                success: function (result) {
+                    $('#pop_up').html(result);
+                    $('#pop_up').modal('show');
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+            return false;
+        });
+
+        // Delete Inbound Order
+        $(document).on("click", "#ViewData table tbody tr td #delete-inboundorder", function () {
+            var vURL = $(this).attr('href');
+            $.ajax({
+                url: "/InboundOrders/CheckStatusDeleteOrder",
+                data: { id: vURL.substring(vURL.indexOf("/", vURL.indexOf("/", (vURL.indexOf("/") + 1)) + 1) + 1) },
+                dataType: 'json',
+                success: function (data) {
+                    if (data.result) {
+                        $.ajax({
+                            type: "GET",
+                            data: "{}",
+                            url: vURL,
+                            success: function (result) {
+                                $('#pop_up').html(result);
+                                $('#pop_up').modal('show');
+                            },
+                            error: function (result) {
+                                alert('error');
+                            }
+                        });
+                    }
+                    else {
+                        alert('Cannot delete Order Number: '.concat(data.order_no, " due to it's not in open status."));
+                    }
+                }
+            });
+            return false;
+        });
+
+        // Add Inbound Item
+        $(document).on("click", "#btNewResource", function () {
+            $.ajax({
+                type: "GET",
+                data: {
+                    Id: $('#ipInboundOrderID').val(),
+                },
+                url: $(this).data('url'),
+                success: function (result) {
+                    var nodes = document.getElementById('edit-popup').getElementsByTagName('input');
+                    for (var i = 0; i < nodes.length; i++) {
+                        nodes[i].disabled = true;
+                    }
+                    nodes = document.getElementById('edit-popup').getElementsByTagName('select');
+                    for (var i = 0; i < nodes.length; i++) {
+                        nodes[i].disabled = true;
+                    }
+                    nodes = document.getElementById('page-number-resource').getElementsByTagName('a');
+                    for (var i = 0; i < nodes.length; i++) {
+                        nodes[i].style.pointerEvents = "none";
+                    }
+
+                    $('#view-content tr td a').css('cursor', 'default');
+
+                    document.getElementById("btX").style.pointerEvents = "none";
+                    document.getElementById("btn-perpage-resource").style.pointerEvents = "none";
+                    document.getElementById("btNewResource").style.pointerEvents = "none";
+                    document.getElementById("btSave").style.pointerEvents = "none";
+                    document.getElementById("btClear").style.pointerEvents = "none";
+                    document.getElementById("btClose").style.pointerEvents = "none";
+                    $('#pop_up2').html(result);
+                    $('#pop_up2').modal('show');
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            })
+        });
+
+        // Edit Inbound Item
+        $(document).on("click", "#ViewData table tbody tr td #edit-inbounditem", function () {
+            if ($('#pop_up2').html().length == 0) {
+                $.ajax({
+                    type: "GET",
+                    data: "{}",
+                    url: $(this).attr('href'),
+                    success: function (result) {
+                        var nodes = document.getElementById('edit-popup').getElementsByTagName('input');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].disabled = true;
+                        }
+                        nodes = document.getElementById('edit-popup').getElementsByTagName('select');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].disabled = true;
+                        }
+                        nodes = document.getElementById('page-number-resource').getElementsByTagName('a');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].style.pointerEvents = "none";
+                        }
+
+                        $('#view-content tr').removeClass('tbl-row');
+                        $('#view-content tr td a').css('cursor', 'default');
+
+                        document.getElementById("btX").style.pointerEvents = "none";
+                        document.getElementById("btn-perpage-resource").style.pointerEvents = "none";
+                        document.getElementById("btNewResource").style.pointerEvents = "none";
+                        document.getElementById("btSave").style.pointerEvents = "none";
+                        document.getElementById("btClear").style.pointerEvents = "none";
+                        document.getElementById("btClose").style.pointerEvents = "none";
+                        $('#pop_up2').html(result);
+                        $('#pop_up2').modal('show');
+                    },
+                    error: function (result) {
+                        alert('error');
+                    }
+                });
+            }
+            return false;
+        });
+
+        // Delete Inbound Item
+        $(document).on("click", "#ViewData table tbody tr td #delete-inbounditem", function () {
+            if ($('#pop_up2').html().length == 0) {
+                var vURL = $(this).attr('href');
+                $.ajax({
+                    url: "/InboundOrders/CheckStatusDeleteItem",
+                    data: { id: vURL.substring(vURL.indexOf("/", vURL.indexOf("/", (vURL.indexOf("/") + 1)) + 1) + 1) },
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.result) {
+                            $.ajax({
+                                type: "GET",
+                                data: "{}",
+                                url: vURL,
+                                success: function (result) {
+                                    var nodes = document.getElementById('edit-popup').getElementsByTagName('input');
+                                    for (var i = 0; i < nodes.length; i++) {
+                                        nodes[i].disabled = true;
+                                    }
+                                    nodes = document.getElementById('edit-popup').getElementsByTagName('select');
+                                    for (var i = 0; i < nodes.length; i++) {
+                                        nodes[i].disabled = true;
+                                    }
+                                    nodes = document.getElementById('page-number-resource').getElementsByTagName('a');
+                                    for (var i = 0; i < nodes.length; i++) {
+                                        nodes[i].style.pointerEvents = "none";
+                                    }
+
+                                    $('#view-content tr').removeClass('tbl-row');
+                                    $('#view-content tr td a').css('cursor', 'default');
+
+                                    document.getElementById("btX").style.pointerEvents = "none";
+                                    document.getElementById("btn-perpage-resource").style.pointerEvents = "none";
+                                    document.getElementById("btNewResource").style.pointerEvents = "none";
+                                    document.getElementById("btSave").style.pointerEvents = "none";
+                                    document.getElementById("btClear").style.pointerEvents = "none";
+                                    document.getElementById("btClose").style.pointerEvents = "none";
+                                    $('#pop_up2').html(result);
+                                    $('#pop_up2').modal('show');
+                                },
+                                error: function (result) {
+                                    alert('error');
+                                }
+                            });
+                        }
+                        else {
+                            alert('Cannot delete Item Detail: '.concat(data.item_detail, " due to it received."));
+                        }
+                    }
+                });
+            }
+            return false;
+        });
+
+        // Receive Inbound Item
+        $(document).on("click", "#ViewData table tbody tr td #receive-inbounditem", function () {
+            if ($('#pop_up2').html().length == 0) {
+                $.ajax({
+                    type: "GET",
+                    data: "{}",
+                    url: $(this).attr('href'),
+                    success: function (result) {
+                        var nodes = document.getElementById('edit-popup').getElementsByTagName('input');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].disabled = true;
+                        }
+                        nodes = document.getElementById('edit-popup').getElementsByTagName('select');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].disabled = true;
+                        }
+                        nodes = document.getElementById('page-number-resource').getElementsByTagName('a');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].style.pointerEvents = "none";
+                        }
+
+                        $('#view-content tr').removeClass('tbl-row');
+                        $('#view-content tr td a').css('cursor', 'default');
+
+                        document.getElementById("btX").style.pointerEvents = "none";
+                        document.getElementById("btn-perpage-resource").style.pointerEvents = "none";
+                        document.getElementById("btNewResource").style.pointerEvents = "none";
+                        document.getElementById("btSave").style.pointerEvents = "none";
+                        document.getElementById("btClear").style.pointerEvents = "none";
+                        document.getElementById("btClose").style.pointerEvents = "none";
+                        $('#pop_up2').html(result);
+                        $('#pop_up2').modal('show');
+                    },
+                    error: function (result) {
+                        alert('error');
+                    }
+                });
+            }
+            return false;
+        });
+
+        // Edit Receive Inbound Item
+        $(document).on("click", "#ViewData table tbody tr td #edit-receiveditem", function () {
+            if ($('#pop_up3').html().length == 0) {
+                $.ajax({
+                    type: "GET",
+                    data: "{}",
+                    url: $(this).attr('href'),
+                    success: function (result) {
+                        var nodes = document.getElementById('receive-popup').getElementsByTagName('input');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].disabled = true;
+                        }
+                        nodes = document.getElementById('receive-popup').getElementsByTagName('select');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].disabled = true;
+                        }
+                        //nodes = document.getElementById('page-number-sub-resource').getElementsByTagName('a');
+                        //for (var i = 0; i < nodes.length; i++) {
+                        //    nodes[i].style.pointerEvents = "none";
+                        //}
+
+                        $('#view-content-receive tr').removeClass('tbl-row');
+                        $('#view-content-receive tr td a').css('cursor', 'default');
+
+                        document.getElementById("btXReceiveItm").style.pointerEvents = "none";
+                        /*document.getElementById("btn-perpage-sub-resource").style.pointerEvents = "none";*/
+                        document.getElementById("btSaveReceiveItm").style.pointerEvents = "none";
+                        document.getElementById("btClearReceiveItm").style.pointerEvents = "none";
+                        document.getElementById("btCloseReceiveItm").style.pointerEvents = "none";
+                        $('#pop_up3').html(result);
+                        $('#pop_up3').modal('show');
+                    },
+                    error: function (result) {
+                        alert('error');
+                    }
+                });
+            }
+            return false;
+        });
+
+        // Delete Receive Inbound Item
+        $(document).on("click", "#ViewData table tbody tr td #delete-receiveditem", function () {
+            if ($('#pop_up3').html().length == 0) {
+                $.ajax({
+                    type: "GET",
+                    data: "{}",
+                    url: $(this).attr('href'),
+                    success: function (result) {
+                        var nodes = document.getElementById('receive-popup').getElementsByTagName('input');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].disabled = true;
+                        }
+                        nodes = document.getElementById('receive-popup').getElementsByTagName('select');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].disabled = true;
+                        }
+
+                        $('#view-content-receive tr').removeClass('tbl-row');
+                        $('#view-content-receive tr td a').css('cursor', 'default');
+
+                        document.getElementById("btXReceiveItm").style.pointerEvents = "none";
+                        document.getElementById("btSaveReceiveItm").style.pointerEvents = "none";
+                        document.getElementById("btClearReceiveItm").style.pointerEvents = "none";
+                        document.getElementById("btCloseReceiveItm").style.pointerEvents = "none";
+                        $('#pop_up3').html(result);
+                        $('#pop_up3').modal('show');
+                    },
+                    error: function (result) {
+                        alert('error');
+                    }
+                });
+            }
+            return false;
+        });
+
+        // Set Per Page Number
+        $(document).on("click","#tool-panel div div div div a",function () {
+            var PerPage = $(this).attr('rel');
+            $('#btn-perpage').text($(this).text());
+            $.ajax({
+                type: "GET",
+                data: { "PerPage": PerPage } ,
+                url: '@Url.Action("SetPerPage")',
+                success: function (result) {
+                    $('#childLayout').html(result);
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+        });
+
+        //Set Page Number
+        $(document).ready(function () {
+            $(document).on("click","a.page-number",function () {
+                var PageNo = $(this).text();
+                $.ajax({
+                    type: "GET",
+                    data: { "PageNo": PageNo } ,
+                    url: '@Url.Action("SetPageNo")',
+                    success: function (result) {
+                        $('#childLayout').html(result);
+                    },
+                    error: function (result) {
+                        alert('error');
+                    }
+                });
+            });
+        });
+
+        // Set Per Page Number Resource
+        $(document).on("click","#btn-group-resource a",function () {
+            var PerPage = $(this).attr('rel');
+            $('#btn-perpage-resource').text($(this).text());
+            $.ajax({
+                type: "GET",
+                data: {
+                    "PerPage": PerPage,
+                    "Id": $('#ipInboundOrderID').val()
+                },
+                url: '@Url.Action("SetPerPageItem")',
+                success: function (result) {
+                    $('#resource').html(result);
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+        });
+
+        //Set Page Number Resource
+        $(document).ready(function () {
+            $('#dtExpectDate').daterangepicker({
+                showDropdowns: true,
+                "startDate": moment(),
+                minDate: '01/01/2021',
+                dateLimit: { days: 365 },
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+
+            $('#dtExpectDate').on('apply.daterangepicker', function (ev, picker) {
+                globalThis.vExpectDate = "y";
+                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+            });
+
+            $('#dtExpectDate').on('cancel.daterangepicker', function (ev, picker) {
+                globalThis.vExpectDate = "n";
+                $(this).val('');
+            });
+
+            $('#dtCreateDate').daterangepicker({
+                showDropdowns: true,
+                "startDate": moment(),
+                "endDate": moment(),
+                minDate: '01/01/2021',
+                dateLimit: { days: 365 },
+                maxDate: moment(),
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+
+            $('#dtCreateDate').on('apply.daterangepicker', function (ev, picker) {
+                globalThis.vCreateDate = "y";
+                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+            });
+
+            $('#dtCreateDate').on('cancel.daterangepicker', function (ev, picker) {
+                globalThis.vCreateDate = "n";
+                $(this).val('');
+            });
+
+            $('#dtEditDate').daterangepicker({
+                showDropdowns: true,
+                "startDate": moment(),
+                "endDate": moment(),
+                minDate: '01/01/2021',
+                dateLimit: { days: 365 },
+                maxDate: moment(),
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+
+            $('#dtEditDate').on('apply.daterangepicker', function (ev, picker) {
+                globalThis.vEditeDate = "y";
+                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+            });
+
+            $('#dtEditDate').on('cancel.daterangepicker', function (ev, picker) {
+                globalThis.vEditeDate = "n";
+                $(this).val('');
+            });
+
+            $('#dtCloseDate').daterangepicker({
+                showDropdowns: true,
+                "startDate": moment(),
+                "endDate": moment(),
+                minDate: '01/01/2021',
+                dateLimit: { days: 365 },
+                maxDate: moment(),
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+
+            $('#dtCloseDate').on('apply.daterangepicker', function (ev, picker) {
+                globalThis.vCloseDate = "y";
+                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+            });
+
+            $('#dtCloseDate').on('cancel.daterangepicker', function (ev, picker) {
+                globalThis.vCloseDate = "n";
+                $(this).val('');
+            });
+
+            $(document).on("click","a.page-number-resource",function () {
+                var PageNo = $(this).text();
+                $.ajax({
+                    type: "GET",
+                    data: {
+                        "PageNo": PageNo,
+                        "Id": $('#ipInboundOrderID').val()
+                    },
+                    url: '@Url.Action("SetPageNoItem")',
+                    success: function (result) {
+                        $('#resource').html(result);
+                    },
+                    error: function (result) {
+                        alert('error');
+                    }
+                });
+            });
+        });
+
+        // Set Per Page Number Receive
+        $(document).on("click","#btn-group-sub-resource a",function () {
+            var PerPage = $(this).attr('rel');
+            $('#btn-perpage-sub-resource').text($(this).text());
+            $.ajax({
+                type: "GET",
+                data: {
+                    "PerPage": PerPage,
+                    "Id": $('#ipInboundItemId').val()
+                },
+                url: '@Url.Action("SetPerPageReceive")',
+                success: function (result) {
+                    $('#sub-resource').html(result);
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+        });
+
+        //Set Page Number Receive
+        $(document).ready(function () {
+            $(document).on("click","a.page-number-sub-resource",function () {
+                var PageNo = $(this).text();
+                $.ajax({
+                    type: "GET",
+                    data: {
+                        "PageNo": PageNo,
+                        "Id": $('#ipInboundItemId').val()
+                    },
+                    url: '@Url.Action("SetPageNoReceive")',
+                    success: function (result) {
+                        $('#sub-resource').html(result);
+                    },
+                    error: function (result) {
+                        alert('error');
+                    }
+                });
+            });
+        });
+    });
+
+
+
+</script>
+<div id="sub-container">
+    <div class="pt-3 pb-5" id="childLayout">
+        <fieldset>
+            <legend>
+                <span class="font-weight-bold" style="font-size: 16px;">Search / View Data</span>
+            </legend>
+        </fieldset>
+        <hr class="mt-0 mb-1" style="border-top: 2px solid #bbb;" />
+        <div id="tool-panel" class="border" style="width: 100%; white-space: nowrap;">
+            <partial name="_Btn_Group" />
+        </div>
+        <div id="search-block" class="border py-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;">
+            <div class="container-fluid p-2">
+                <div class="row">
+                    <div class="col-md-6 col-xl-4">
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtStatus"><b>Status</b></label>
+                                @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
+                                <div class="dropdown-menu">
+                                    <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
+                                    <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
+                                    <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
+                                </div>*@
+                                <input class="form-control txt-search-width-non" id="txtStatus" />
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtOrderNumber"><b>Order Number</b></label>
+                                @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
+                                <div class="dropdown-menu">
+                                    <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
+                                    <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
+                                    <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
+                                </div>*@
+                                <input class="form-control txt-search-width-non" id="txtOrderNumber" />
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right" id="frm_txtOrderType" style="z-index: 10000 !important;">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtOrderType"><b>Order Type</b></label>
+                                @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
+                                <div class="dropdown-menu">
+                                    <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
+                                    <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
+                                    <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
+                                </div>*@
+                                <select id="ddlOrderType" class="form-control txt-search-width-non" asp-items="ViewBag.OrderTypeList">
+                                </select>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="dtExpectDate"><b>Expect Date</b></label>
+                                <input id="dtExpectDate" name="dtExpectDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
+                                <div class="arrow-datetime" onclick="$('#dtExpectDate').data('daterangepicker').toggle();">
+                                    <i class="far fa-calendar-alt"></i>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtSupplierCode"><b>Supplier</b></label>
+                                @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
+                                <div class="dropdown-menu">
+                                    <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
+                                    <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
+                                    <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
+                                </div>*@
+                                <select id="ddlSupplier" class="form-control txt-search-width-non" asp-items="ViewBag.SupplierList">
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtCustomerCode"><b>Customer</b></label>
+                                @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
+                                <div class="dropdown-menu">
+                                    <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
+                                    <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
+                                    <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
+                                </div>*@
+                                <select id="ddlCustomer" class="form-control txt-search-width-non" asp-items="ViewBag.CustomerList">
+                                </select>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtDescription"><b>Description</b></label>
+                                @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
+                                <div class="dropdown-menu">
+                                    <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
+                                    <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
+                                    <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
+                                </div>*@
+                                <input class="form-control  txt-search-width-non" id="txtDescription" />
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtCreateBy"><b>Create By</b></label>
+                                <select id="ddlCreateBy" class="form-control txt-search-width-non" asp-items="ViewBag.UserList">
+                                </select>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="dtCreateDate"><b>Create Date</b></label>
+                                <input id="dtCreateDate" name="dtCreateDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
+                                <div class="arrow-datetime" onclick="$('#dtCreateDate').data('daterangepicker').toggle();">
+                                    <i class="far fa-calendar-alt"></i>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtEditBy"><b>Edit By</b></label>
+                                <select id="ddlEditBy" class="form-control txt-search-width-non" asp-items="ViewBag.UserList">
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="dtEditDate"><b>Edit Date</b></label>
+                                <input id="dtEditDate" name="dtEditDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
+                                <div class="arrow-datetime" onclick="$('#dtEditDate').data('daterangepicker').toggle();">
+                                    <i class="far fa-calendar-alt"></i>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtCloseBy"><b>Close By</b></label>
+                                <select id="ddlCloseBy" class="form-control txt-search-width-non" asp-items="ViewBag.UserList">
+                                </select>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="dtCloseDate"><b>Close Date</b></label>
+                                <input id="dtCloseDate" name="dtCloseDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
+                                <div class="arrow-datetime" onclick="$('#dtCloseDate').data('daterangepicker').toggle();">
+                                    <i class="far fa-calendar-alt"></i>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtCloseRemark"><b>Close Remark</b></label>
+                                @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
+                                <div class="dropdown-menu">
+                                    <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
+                                    <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
+                                    <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
+                                </div>*@
+                                <input class="form-control  txt-search-width-non" id="txtCloseRemark" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="mr-3 mt-2" align="right">
+                <button class="btn bg-new-search btn-search-clear btn-search" onclick="Search()">Search</button>
+                <button class="btn btn-search-clear btn-clear" style="border: 1px solid #ced4da" onclick="clearSearch()">Clear</button>
+            </div>
+        </div>
+        <partial name="_ViewData" />
+    </div>
+</div>

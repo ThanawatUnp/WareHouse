@@ -1,0 +1,98 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    IEnumerable<InboundItem> inbounditems = ViewData["InboundItem"] as IEnumerable<InboundItem>;
+}
+
+
+<tbody id="view-content">
+    @{ int i = ViewBag.FirstRecItm;
+        @if (inbounditems.Count() == 0)
+        {
+            <tr class="no-data">
+                <td colspan="15">Not Found Data</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (InboundItem inboundItem in inbounditems)
+            {
+                <tr class="tbl-row">
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        @if (@inboundItem.qty == @inboundItem.remain_qty)
+                        {
+                            <a id="edit-inbounditem" asp-action="EditResource" asp-route-id="@inboundItem.Id">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        }
+                        else
+                        {
+                            <i class="fas fa-ban" style="color: #D64141"></i>
+                        }
+                    </td>
+                    <td>
+                        @if (@inboundItem.qty == @inboundItem.remain_qty)
+                        {
+                            <a id="delete-inbounditem" asp-action="DeleteResource" asp-route-id="@inboundItem.Id">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        }
+                        else
+                        {
+                            <i class="fas fa-ban" style="color: #D64141"></i>
+                        }
+                    </td>
+                    <td>
+                        <a id="receive-inbounditem" asp-action="ReceiveItem" asp-route-id="@inboundItem.Id">
+                            <i class="fas fa-truck"></i>
+                        </a>
+                    </td>
+                    <td>
+                        @inboundItem.line_no
+                    </td>
+                    <td>
+                        @(@inboundItem.Item.item_code + ": " + inboundItem.Item.item_name)
+                    </td>
+                    <td>
+                        @inboundItem.Item.ItemCategory.category_name
+                    </td>
+                    <td>
+                        @inboundItem.cost
+                    </td>
+                    <td>
+                        @inboundItem.qty
+                    </td>
+                    <td>
+                        @inboundItem.remain_qty
+                    </td>
+                    <td>
+                        @inboundItem.create_by
+                    </td>
+                    <td>
+                        @{
+                            DateTime dt = Convert.ToDateTime(inboundItem.create_date);
+                            @dt.ToString("dd/MM/yyyy HH:mm:ss");
+                        }
+                    </td>
+                    <td>
+                        @inboundItem.edit_by
+                    </td>
+                    <td>
+                        @{
+                            if (inboundItem.edit_date != null)
+                            {
+                                dt = Convert.ToDateTime(inboundItem.edit_date);
+                                @dt.ToString("dd/MM/yyyy HH:mm:ss");
+                            }
+                        }
+                    </td>
+                </tr>
+                i = i + 1;
+            }
+        }
+    }
+</tbody>

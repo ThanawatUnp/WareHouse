@@ -1,0 +1,252 @@
+﻿@model IEnumerable<Authentication.Models.UsersViewModel>
+@{
+    ViewData["Title"] = "User Management";
+    ViewBag.Model = Model;
+    ViewBag.Menu = "user";
+}
+<script>
+
+    function OnCompleteRequest() {
+        $('#pop_up').empty();
+        $('#pop_up').delay(1000).modal('hide');
+    }
+    function OnSuccessRequest() {
+        alert('On Success');
+    }
+    function OnFailureRequest() {
+        alert('On Failure');
+    }
+
+    function showHideSearch() {
+        var blockSearch = document.getElementById('search-block');
+        if (blockSearch.style.display != "none") {
+            blockSearch.style.display = 'none';
+            document.getElementById('btn-fiter').innerHTML = 'Show Filter';
+        }
+        else {
+            blockSearch.style.display = null;
+            document.getElementById('btn-fiter').innerHTML = 'Hide Filter';
+        }
+    }
+
+    function Search() {
+        $.ajax({
+            url: '/Users/ViewContent',
+            data: {
+                //These two keys should keep consistent with the parameters ( int? ProductId , int? ProductPrice ) in action, including uppercase and lowercase.
+                username: $('#txtUsername').val(),
+                email: $('#txtEmail').val(),
+                role: $("#ddlRole option:selected").text(),
+            },
+            success: function (result) {
+                $('#childLayout').html(result);
+            }
+        });
+    }
+
+    function clearSearch() {
+        var f1 = document.getElementById('search-block');
+        var arr_input = f1.getElementsByTagName('input');
+        for (i = 0; i < arr_input.length; i++) {
+            arr_input[i].value = '';
+        }
+        $.ajax({
+            url: '/Users/ViewContent',
+            data: {
+                clear: 'clear'
+            },
+            success: function (result) {
+                $('#childLayout').html(result);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        // Add User
+        $(document).on("click", "#btNew", function () {
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                url: $(this).data('url'),
+                success: function (result) {
+                    $('#pop_up').html(result);
+                    $('#pop_up').modal('show');
+                },
+                error: function (result) {
+                    console.log("error");
+                    alert('error');
+                }
+            });
+            return false;
+        });
+
+        // Edit User
+        $(document).on("click", "#ViewData table tbody tr td #edit-user", function () {
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                url: $(this).attr('href'),
+                success: function (result) {
+                    $('#pop_up').html(result);
+                    $('#pop_up').modal('show');
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+            return false;
+        });
+
+        // Delete User
+        $(document).on("click", "#ViewData table tbody tr td #delete-user", function () {
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                url: $(this).attr('href'),
+                success: function (result) {
+                    $('#pop_up').html(result);
+                    $('#pop_up').modal('show');
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+            return false;
+        });
+
+        // Detail User
+        $(document).on("click", "#ViewData table tbody tr td #detail-user", function () {
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                url: $(this).attr('href'),
+                success: function (result) {
+                    $('#pop_up').html(result);
+                    $('#pop_up').modal('show');
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+            return false;
+        });
+
+        // Reset User
+        $(document).on("click", "#ViewData table tbody tr td #reset-user", function () {
+            var vUrl = $(this).attr('href');
+            $.ajax({
+                type: "GET",
+                data: { "Id": $(this).attr('href').substring($(this).attr('href').indexOf("/", $(this).attr('href').indexOf("/", $(this).attr('href').indexOf("/") + 1) + 1) + 1) },
+                url: '/Users/ValidSelfUser',
+                success: function (data) {
+                    if (data.result) {
+                        alert('Unable to reset password.');
+                    }
+                    else {
+                        $.ajax({
+                            type: "GET",
+                            data: "{}",
+                            url: vUrl,
+                            success: function (result) {
+                                console.log('success')
+                                $('#pop_up').html(result);
+                                $('#pop_up').modal('show');
+                            },
+                            error: function (result) {
+                                alert('error');
+                            }
+                        });
+                    }
+                },
+                error: function (result) {
+                    console.log('error');
+                }
+            });
+            return false;
+        });
+
+        // Set Per Page Number
+        $(document).on("click","#tool-panel div div div div a",function () {
+            var PerPage = $(this).attr('rel');
+            $('#btn-perpage').text($(this).text());
+            $.ajax({
+                type: "GET",
+                data: { "PerPage": PerPage } ,
+                url: '@Url.Action("SetPerPage")',
+                success: function (result) {
+                    $('#childLayout').html(result);
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+        });
+
+        //Set Page Number
+        $(document).ready(function () {
+            $(document).on("click","a.page-number",function () {
+                var PageNo = $(this).text();
+                $.ajax({
+                    type: "GET",
+                    data: { "PageNo": PageNo } ,
+                    url: '@Url.Action("SetPageNo")',
+                    success: function (result) {
+                        $('#childLayout').html(result);
+                    },
+                    error: function (result) {
+                        alert('error');
+                    }
+                });
+            });
+        });
+    });
+</script>
+<div id="sub-container">
+    <div class="pt-3 pb-5" id="childLayout">
+        <fieldset>
+            <legend>
+                <span class="font-weight-bold" style="font-size: 16px;">Search / View Data</span>
+            </legend>
+        </fieldset>
+        <hr class="mt-0 mb-1" style="border-top: 2px solid #bbb;" />
+        <div id="tool-panel" class="border" style="width: 100%; white-space: nowrap;">
+            <partial name="_Btn_Group" />
+        </div>
+        <div id="search-block" class="border py-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;">
+            <div class="container-fluid p-2">
+                <div class="row">
+                    <div class="col-md-6 col-xl-4">
+                        <form class="form-inline frm-float-right" id="frm_txtOrderType" style="z-index: 10000 !important;">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtUsername"><b>Username</b></label>
+                                <input class="form-control txt-search-width-non" id="txtUsername" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtEmail"><b>E-mail</b></label>
+                                <input class="form-control txt-search-width-non" id="txtEmail" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="ddlRole"><b>Role</b></label>
+                                <select id="ddlRole" class="form-control txt-search-width-non" asp-items="ViewBag.RoleList">
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="mr-3 mt-2" align="right">
+                <button class="btn bg-new-search btn-search-clear btn-search" id="btnSearch" onclick="Search()">Search</button>
+                <button class="btn btn-search-clear btn-clear" style="border: 1px solid #ced4da" onclick="clearSearch()">Clear</button>
+            </div>
+        </div>
+        <partial name="_ViewData" />
+    </div>
+</div>

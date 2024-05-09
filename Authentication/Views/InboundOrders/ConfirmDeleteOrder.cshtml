@@ -1,0 +1,81 @@
+﻿@model Authentication.Models.InboundOrder
+@{
+    Layout = null;
+    ViewData["Title"] = "Delete Comfirmation";
+
+}
+<script>
+    function ConfirmDelete() {
+        $.ajax({
+            url: "/InboundOrders/ValidPassword",
+            data: {
+                Username: $('#ipUsername').val(),
+                Password: $('#ipPassword').val()
+            },
+            dataType: 'json',
+            success: function (data) {
+                if (data.result) {
+                    $("#delete-comfirmation").submit();
+                }
+                else {
+                    $('#ipUsername').val('');
+                    $('#ipPassword').val('');
+                    $('#sError-Msg').text('Please Check Username and Password.');
+                }
+            }
+        });
+    }
+
+    $('#ipPassword').on('input', function (e) {
+        if ($('#ipPassword').val().trim() !== '') {
+            $('#sError-Msg').text('');
+        }
+    });
+</script>
+<form id="delete-comfirmation"
+      asp-action="ConfirmDeleteOrder"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-update="#childLayout"
+      data-ajax-complete="OnCompleteConfirmDelete"
+      data-ajax-confirm="Do you want to Delete?"
+      data-ajax-failure="OnFailureRequest">
+    <div id="pop-up" class="modal delete-popup-comfirm" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>@ViewBag.Title</span>
+                    <button type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCloseComfirmation()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" id="txtInboundOrderID" />
+                            <input type="hidden" asp-for="order_no" id="txtOrderNo" />
+                            <input type="hidden" asp-for="OrderTypeId" id="txtOrderType"/>
+                            <input type="hidden" asp-for="StatusInboundOrderId" id="txtStatusInboundOrder"/>
+                            <input type="hidden" asp-for="SupplierId" id="txtSupplier"/>
+                            <input type="hidden" asp-for="CustomerId" id="txtCustomer"/>
+                            <input type="hidden" asp-for="expect_date" id="txtExpectDate"/>
+                            <input type="hidden" asp-for="create_by" id="txtCreateBy"/>
+                            <input type="hidden" asp-for="create_date" id="txtCreateDate"/>
+                            <input type="hidden" asp-for="close_by" id="txtCloseBy"/>
+                            <input type="hidden" asp-for="close_date" id="txtCloseDate"/>
+                            <h4>Username<input id="ipUsername" name="ipUsername" type="text" style="width: 200px; height: 38px; padding: 6px 12px; margin-left: 10px; border: 1px solid #ced4da; border-radius: 0.25rem; ">&nbsp;&nbsp;&nbsp;Password<input id="ipPassword" name="ipPassword" type="password" style="width: 200px; height: 38px; padding: 6px 12px; margin-left: 10px; border: 1px solid #ced4da; border-radius: 0.25rem; "></h4>
+                            <span class="text-danger" id="sError-Msg">@ViewBag.Msg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-footer-pop btn-save-pop" id="btnDelete" onclick="ConfirmDelete()">Delete</button>
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCloseComfirmation()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

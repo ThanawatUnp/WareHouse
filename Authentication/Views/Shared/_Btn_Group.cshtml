@@ -1,0 +1,326 @@
+﻿<div class="ml-2 my-2" style="width: 50%; display: inline-block;">
+    <div class="btn-group">
+        <button id="btn-fiter" class="btn text-white btn-group-submenu btn-group-hide-filter" onclick="showHideSearch()">Hide Filter</button>
+        <div class="btn-group" role="group">
+            <button id="btn-perpage" class="btn dropdown-toggle text-white custom-dropdown-toggle btn-group-submenu btn-group-hide-filter" style="margin-left: 4px!important; padding-left: 7px;" data-toggle="dropdown">Limit @ViewBag.PerPage</button>
+            <div class="dropdown-menu">
+                <a id="custom-dropdown-item" class="dropdown-item" rel="0" href="#">Limit 20</a>
+                <a id="custom-dropdown-item" class="dropdown-item" rel="1" href="#">Limit 50</a>
+                <a id="custom-dropdown-item" class="dropdown-item" rel="2" href="#">Limit 100</a>
+                <a id="custom-dropdown-item" class="dropdown-item" rel="3" href="#">Limit 500</a>
+                <a id="custom-dropdown-item" class="dropdown-item" rel="4" href="#">Limit 1000</a>
+            </div>
+        </div>
+        @if (ViewBag.Menu != "user")
+        {
+            if (ViewBag.Menu == "inboundorder")
+            {
+                <input type="button" id="btNew" class="btn bg-new-search btn-group-submenu" data-url="@Url.Action("CreateInboundOrder")" value="NEW">
+            }
+            else if (ViewBag.Menu == "outboundorder")
+            {
+                <input type="button" id="btNew" class="btn bg-new-search btn-group-submenu" data-url="@Url.Action("CreateOutboundOrder")" value="NEW">
+            }
+            else
+            {
+                if (ViewBag.Menu != "putaway")
+                {
+                    <input type="button" id="btNew" class="btn bg-new-search btn-group-submenu" data-url="@Url.Action("Create")" value="NEW">
+                }
+            }
+
+            @*if (ViewBag.Menu != "inboundorder")
+            {
+                if (ViewBag.Menu != "putaway")
+                {
+                    <input type="button" id="btNew" class="btn bg-new-search btn-group-submenu" data-url="@Url.Action("Create")" value="NEW">
+                }
+            }
+            else
+            {
+                <input type="button" id="btNew" class="btn bg-new-search btn-group-submenu" data-url="@Url.Action("CreateInboundOrder")" value="NEW">
+            }*@
+        }
+        else
+        {
+            <input type="button" id="btNew" class="btn bg-new-search btn-group-submenu" data-url="/Identity/Account/Register" value="NEW">
+        }
+    </div>
+</div>
+<div class="ml-2 my-2" style="width: 50%; display: inline-block;">
+    <div style="display: flex; justify-content: flex-end; margin-right: 30px;">
+        <span class="page-detail">
+            @ViewBag.FirstRec
+            <span class="label-ext" id="LabelTo_labResource">&nbsp;to&nbsp;</span>
+            @ViewBag.LastRec
+            [
+            <span class="label-ext" id="LabelOf_labResource">&nbsp;Page&nbsp;</span>
+            @ViewBag.PageNo
+            <span class="label-ext" id="LabelRows_labResource">&nbsp;of&nbsp;</span>
+            @ViewBag.MaxPage
+            ]
+            &nbsp;
+        </span>
+        @if (ViewBag.MaxPage > 1)
+        {
+            if (ViewBag.PageNo == 1)
+            {
+                <span class="first-page">&nbsp;First&nbsp;</span>
+            }
+            else
+            {
+                <a class="page-number" id="page-first">First</a>
+            }
+
+            int idx = 1;
+            for (int i = 1; i <= ViewBag.MaxPage; i++)
+            {
+                if (ViewBag.MaxPage <= 4)
+                {
+                    if (ViewBag.PageNo == i)
+                    {
+                        <span class="current-page">@i</span>
+                    }
+                    else
+                    {
+                        <a class="page-number">@i</a>
+                    }
+                }
+                else
+                {
+                    if (ViewBag.MaxPage == 5)
+                    {
+                        if (ViewBag.PageNo == i)
+                        {
+                            <span class="current-page">@i</span>
+                        }
+                        else
+                        {
+                            if (i == 1)
+                            {
+                                if (ViewBag.PageNo >= 4)
+                                {
+                                    <span class="hidden-page">...</span>
+                                }
+                                else
+                                {
+                                    <a class="page-number">@i</a>
+                                }
+                            }
+                            else if (i == 5)
+                            {
+                                if (ViewBag.PageNo >= 4)
+                                {
+                                    <a class="page-number">@i</a>
+                                }
+                                else
+                                {
+                                    <span class="hidden-page">...</span>
+                                }
+                            }
+                            else
+                            {
+                                <a class="page-number">@i</a>
+                            }
+
+
+                        }
+                    }
+                    else
+                    {
+                        if (idx == 1)
+                        {
+                            if (ViewBag.PageNo == i)
+                            {
+                                <span class="current-page">@i</span>
+                            }
+                            else
+                            {
+                                if (ViewBag.PageNo >= 4)
+                                {
+                                    <span class="hidden-page">...</span>
+                                }
+                                else
+                                {
+                                    <a class="page-number">@i</a>
+                                }
+                            }
+                            idx = idx + 1;
+                        }
+                        else if (idx == 2)
+                        {
+                            if (ViewBag.PageNo >= 4)
+                            {
+                                if ((ViewBag.PageNo + 1) == ViewBag.MaxPage)
+                                {
+                                    if ((ViewBag.PageNo - 2) == i)
+                                    {
+                                        <a class="page-number">@i</a>
+                                        idx = idx + 1;
+                                    }
+                                }
+                                else if (ViewBag.PageNo == ViewBag.MaxPage)
+                                {
+                                    if ((ViewBag.PageNo - 3) == i)
+                                    {
+                                        <a class="page-number">@i</a>
+                                        idx = idx + 1;
+                                    }
+                                }
+                                else
+                                {
+                                    if ((ViewBag.PageNo - 1) == i)
+                                    {
+                                        <a class="page-number">@i</a>
+                                        idx = idx + 1;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (ViewBag.PageNo == i)
+                                {
+                                    <span class="current-page">@i</span>
+                                    idx = idx + 1;
+                                }
+                                else
+                                {
+                                    <a class="page-number">@i</a>
+                                    idx = idx + 1;
+                                }
+                            }
+                        }
+                        else if (idx == 3)
+                        {
+                            if (ViewBag.PageNo >= 4)
+                            {
+                                if ((ViewBag.PageNo + 1) == ViewBag.MaxPage)
+                                {
+                                    if ((ViewBag.PageNo - 1) == i)
+                                    {
+                                        <a class="page-number">@i</a>
+                                        idx = idx + 1;
+                                    }
+                                }
+                                else if (ViewBag.PageNo == ViewBag.MaxPage)
+                                {
+                                    if ((ViewBag.PageNo - 2) == i)
+                                    {
+                                        <a class="page-number">@i</a>
+                                        idx = idx + 1;
+                                    }
+                                }
+                                else if (ViewBag.PageNo == i)
+                                {
+                                    <span class="current-page">@i</span>
+                                    idx = idx + 1;
+                                }
+                            }
+                            else
+                            {
+                                if (ViewBag.PageNo == i)
+                                {
+                                    <span class="current-page">@i</span>
+                                    idx = idx + 1;
+                                }
+                                else
+                                {
+                                    <a class="page-number">@i</a>
+                                    idx = idx + 1;
+                                }
+                            }
+                        }
+                        else if (idx == 4)
+                        {
+                            if (ViewBag.PageNo >= 4)
+                            {
+                                if (ViewBag.PageNo == ViewBag.MaxPage)
+                                {
+                                    if ((ViewBag.PageNo - 1) == i)
+                                    {
+                                        <a class="page-number">@i</a>
+                                        idx = idx + 1;
+                                    }
+                                }
+                                else
+                                {
+                                    if ((ViewBag.maxPage - 1) == ViewBag.PageNo)
+                                    {
+                                        <span class="current-page">@i</span>
+                                        idx = idx + 1;
+                                    }
+                                    else
+                                    {
+                                        if ((ViewBag.PageNo + 2) == ViewBag.MaxPage)
+                                        {
+                                            <a class="page-number">@i</a>
+                                            idx = idx + 1;
+                                        }
+                                        else
+                                        {
+                                            if ((ViewBag.PageNo + 1) == i)
+                                            {
+                                                <a class="page-number">@i</a>
+                                                idx = idx + 1;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                <a class="page-number">@i</a>
+                                idx = idx + 1;
+                            }
+                        }
+                        else if (idx == 5)
+                        {
+                            if (ViewBag.PageNo >= 4)
+                            {
+
+                                if ((ViewBag.PageNo + 2) == ViewBag.MaxPage)
+                                {
+                                    <a class="page-number">@i</a>
+                                    break;
+                                }
+                                else if ((ViewBag.PageNo + 1) == ViewBag.MaxPage)
+                                {
+                                    <a class="page-number">@i</a>
+                                    break;
+                                }
+                                else if (ViewBag.PageNo == ViewBag.MaxPage)
+                                {
+                                    <span class="current-page">@i</span>
+                                    break;
+                                }
+                                else
+                                {
+                                    <span class="hidden-page">...</span>
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                <span class="hidden-page">...</span>
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (ViewBag.PageNo == ViewBag.MaxPage)
+            {
+                <span class="last-page">&nbsp;Last&nbsp;</span>
+            }
+            else
+            {
+                <a class="page-number" id="page-last">Last</a>
+            }
+        }
+        else
+        {
+            <span class="first-page">&nbsp;First&nbsp;</span><span class="current-page">&nbsp;1&nbsp;</span><span class="last-page">&nbsp;Last&nbsp;</span>
+        }
+    </div>
+</div>

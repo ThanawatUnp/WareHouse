@@ -1,0 +1,219 @@
+﻿@model Authentication.Models.Customer
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Edit";
+}
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<script>
+    function clearForm() {
+        $('#ipCustomerName').val('');
+        $('#ipDescription').val('');
+        $('#ipAddress1').val('');
+        $('#ipAddress2').val('');
+        $('#ipAddress3').val('');
+        $('#ipZipcode').val('');
+        $('#ipPhoneNo').val('');
+        $('#ipMobileNo').val('');
+        $('#ipFaxNo').val('');
+        $('#ipEmail').val('');
+        $('#ipContact').val('');
+        $('#ipFileName').val('');
+        $('#ipFileName').next('label').html('Choose File...');
+        $('#ddlProvince').val(null);
+        $('#ddlDistrict').html('');
+        $('#ddlDistrict').append('<option value="">Select District</option>');
+        $('#ddlSubDistrict').html('');
+        $('#ddlSubDistrict').append('<option value="">Select Sub-District</option>');
+        $('#ipActive').prop('checked', true);
+        $('#customer-name').text('');
+        $('#sPhoneNo').text('');
+        $('#sMobileNo').text('');
+    }
+
+    function FileBrowse_Clicked() {
+        document.body.onfocus = checkIt;
+    }
+
+    function checkIt() {
+        var vFile = document.getElementById('ipFileName');
+        console.log(vFile.value.length);
+        document.body.onfocus = null;
+        if (vFile.value.length != 0) {
+            $('#ipFileName').val('');
+            $('#ipFileName').next('label').html('Choose File...');
+        }
+    }
+
+    $(function () {
+        $("#ddlProvince").change(function () {
+            $.getJSON("/Customers/getDistrict", { province_id: $("#ddlProvince").val() }, function (d) {
+                var row = "";
+                $("#ddlDistrict").empty();
+                $('#ddlSubDistrict').html('');
+                $('#ddlSubDistrict').append('<option value="">Select Sub-District</option>');
+                $.each(d, function (i, v) {
+                    row += "<option value=" + v.value + ">" + v.text + "</option>";
+                });
+                $("#ddlDistrict").html(row);
+            })
+        })
+        $("#ddlDistrict").change(function () {
+            $.getJSON("/Customers/getSubDistrict", { district_id: $("#ddlDistrict").val() }, function (d) {
+                var row = "";
+                $("#ddlSubDistrict").empty();
+                $.each(d, function (i, v) {
+                    row += "<option value=" + v.value + ">" + v.text + "</option>";
+                });
+                $("#ddlSubDistrict").html(row);
+            })
+
+        })
+        $("#ddlSubDistrict").change(function () {
+            $.getJSON("/Customers/getZipcode", { subdistrict_id: $("#ddlSubDistrict").val() }, function (d) {
+                $.each(d, function (i, v) {
+                    $("#ipZipcode").val(v.zipcode);
+                });
+            })
+
+        })
+        $('.custom-file-input').on("change", function () {
+            var filename = $(this).val().split("\\").pop();
+            $(this).next('.custom-file-label').html(filename);
+        })
+    })
+</script>
+<form id="edit-popup"
+      asp-action="Edit"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-update="#childLayout"
+      data-ajax-complete="OnCompleteRequest"
+      data-ajax-confirm="Do you want to Save?"
+      data-ajax-failure="OnFailureRequest">
+    <div class="modal create-popup" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>@ViewBag.Title Data</span>
+                    <button type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCompleteRequest()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5><b>Customer</b></h5>
+                    <hr />
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" />
+                            <input type="hidden" asp-for="create_by" />
+                            <input type="hidden" asp-for="create_date" />
+                            <div class="form-group form-group-popup">
+                                <label asp-for="customer_code" class="control-label"></label>
+                                <input asp-for="customer_code" class="primary form-control input-popup" style="cursor: not-allowed; pointer-events: none; opacity: 0.6" disabled="disabled" />
+                                <input type="hidden" asp-for="customer_code" />
+                                <span asp-validation-for="customer_code" class="text-danger" id="customer-code"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="customer_name" class="control-label"></label>
+                                <input asp-for="customer_name" id="ipCustomerName" class="primary form-control input-popup" />
+                                <span asp-validation-for="customer_name" class="text-danger" id="customer-name"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="description" class="control-label"></label>
+                                <input asp-for="description" id="ipDescription" class="form-control input-popup" />
+                                <span asp-validation-for="description" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="address1" class="control-label"></label>
+                                <input asp-for="address1" id="ipAddress1" class="form-control input-popup" />
+                                <span asp-validation-for="address1" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="address2" class="control-label"></label>
+                                <input asp-for="address2" id="ipAddress2" class="form-control input-popup" />
+                                <span asp-validation-for="address2" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="address3" class="control-label"></label>
+                                <input asp-for="address3" id="ipAddress3" class="form-control input-popup" />
+                                <span asp-validation-for="address3" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="ProvinceId" class="control-label"></label>
+                                <select asp-for="ProvinceId" id="ddlProvince" class="form-control input-popup" asp-items="ViewBag.ProvinceList">
+                                </select>
+                                <span asp-validation-for="ProvinceId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="DistrictId" class="control-label"></label>
+                                <select asp-for="DistrictId" id="ddlDistrict" class="form-control input-popup" asp-items="ViewBag.DistrictList">
+                                    <option value="" selected>Select District</option>
+                                </select>
+                                <span asp-validation-for="DistrictId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="SubDistrictId" class="control-label"></label>
+                                <select asp-for="SubDistrictId" id="ddlSubDistrict" class="form-control input-popup" asp-items="ViewBag.SubDistrictList">
+                                    <option value="" selected>Select Sub-District</option>
+                                </select>
+                                <span asp-validation-for="SubDistrictId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="zipcode" class="control-label"></label>
+                                <input asp-for="zipcode" id="ipZipcode" class="form-control input-popup" />
+                                <span asp-validation-for="zipcode" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="phone_no" class="control-label"></label>
+                                <input asp-for="phone_no" id="ipPhoneNo" class="form-control input-popup" placeholder="e.g. 02xxxxxxx" />
+                                <span asp-validation-for="phone_no" id="sPhoneNo" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="mobile_no" class="control-label"></label>
+                                <input asp-for="mobile_no" id="ipMobileNo" class="form-control input-popup" placeholder="e.g. 06xxxxxxxx" />
+                                <span asp-validation-for="mobile_no" id="sMobileNo" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="fax_no" class="control-label"></label>
+                                <input asp-for="fax_no" id="ipFaxNo" class="form-control input-popup" />
+                                <span asp-validation-for="fax_no" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="email" class="control-label"></label>
+                                <input asp-for="email" id="ipEmail" class="form-control input-popup" />
+                                <span asp-validation-for="email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="contact" class="control-label"></label>
+                                <input asp-for="contact" id="ipContact" class="form-control input-popup" />
+                                <span asp-validation-for="contact" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="file_name" class="control-label"></label>
+                                <div class="custom-file">
+                                    <input id="ipFileName" asp-for="file_name" class="form-control custom-file-input input-popup" type="file" accept="image/png, image/jpeg, image/jpg" onclick="FileBrowse_Clicked()" />
+                                    <label id="lbFileName" asp-for="file_name" class="custom-file-label input-popup">Choose File...</label>
+                                </div>
+                                <span asp-validation-for="file_name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-check form-group-popup" style="text-align: left; padding-top: 0; padding-left: 15px;">
+                                <label class="form-check-label" style="margin-top:38px; margin-left:20px;">
+                                    <input id="ipActive" class="form-check-input" asp-for="active" /> @Html.DisplayNameFor(model => model.active)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-footer-pop btn-save-pop">Save</button>
+                    <button type="button" class="btn btn-footer-pop btn-clear-pop" onclick="clearForm()">Clear</button>
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCompleteRequest()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

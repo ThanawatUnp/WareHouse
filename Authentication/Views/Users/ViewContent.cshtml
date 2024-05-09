@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Authentication.Models.UsersViewModel>
+
+@{
+    ViewData["Title"] = "User Management";
+    Layout = null;
+    ViewBag.Model = Model;
+    ViewBag.Menu = "user";
+}
+<script type="text/javascript">
+    $('#txtUsername').val(@Html.Raw(Json.Serialize(@ViewBag.username)));
+    $('#txtEmail').val(@Html.Raw(Json.Serialize(@ViewBag.email)));
+    $("#ddlRole option").filter(function () {
+        return $(this).text() == @Html.Raw(Json.Serialize(@ViewBag.role));
+    }).prop('selected', true);
+
+    var showAlert = "@ViewBag.showAlert";
+    var alertMessage = "@ViewBag.alertMessage";
+    if (showAlert === "True") {
+        alert(alertMessage);
+    }
+</script>
+<fieldset>
+        <legend>
+            <span class="font-weight-bold" style="font-size: 16px;">Search / View Data</span>
+        </legend>
+</fieldset>
+<hr class="mt-0 mb-1" style="border-top: 2px solid #bbb;" />
+<div id="tool-panel" class="border" style="width: 100%; white-space: nowrap;">
+        <partial name="_Btn_Group" />
+</div>
+<div id="search-block" class="border py-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;">
+        <div class="container-fluid p-2">
+            <div class="row">
+                <div class="col-md-6 col-xl-4">
+                    <form class="form-inline frm-float-right" id="frm_txtOrderType" style="z-index: 10000 !important;">
+                        <div class="form-group div-frm-group-search">
+                            <label class="mx-3" for="txtUsername"><b>Username</b></label>
+                            <input class="form-control txt-search-width-non" id="txtUsername" />
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 col-xl-4">
+                    <form class="form-inline frm-float-right">
+                        <div class="form-group div-frm-group-search">
+                            <label class="mx-3" for="txtEmail"><b>E-mail</b></label>
+                            <input class="form-control txt-search-width-non" id="txtEmail" />
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 col-xl-4">
+                    <form class="form-inline frm-float-right">
+                        <div class="form-group div-frm-group-search">
+                            <label class="mx-3" for="ddlRole"><b>Role</b></label>
+                            <select id="ddlRole" class="form-control txt-search-width-non" asp-items="ViewBag.RoleList">
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="mr-3 mt-2" align="right">
+            <button class="btn bg-new-search btn-search-clear btn-search" id="btnSearch" onclick="Search()">Search</button>
+            <button class="btn btn-search-clear btn-clear" style="border: 1px solid #ced4da" onclick="clearSearch()">Clear</button>
+        </div>
+</div>
+<partial name="_ViewData" />

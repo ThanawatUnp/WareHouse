@@ -1,0 +1,88 @@
+﻿@model Authentication.Models.Location
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Create";
+}
+<script>
+    function clearForm() {
+        $('#ipLocationCode').val('');
+        $('#ipDescription').val('');
+        $('#ddlLocationCategory').val(null);
+        $('#ipMixExpire').prop('checked', false);
+        $('#ipMixItem').prop('checked', false);
+        $('#ipMixLot').prop('checked', false);
+        $('#location-code').text('');
+    }
+</script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<form id="create-location"
+      asp-action="Create"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-update="#childLayout"
+      data-ajax-complete="OnCompleteRequest"
+      data-ajax-confirm="Do you want to Add?"
+      data-ajax-failure="OnFailureRequest">
+    <div class="modal create-popup" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>@ViewBag.Title Data</span>
+                    <button type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCompleteRequest()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5><b>Location</b></h5>
+                    <hr />
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" />
+                            <div class="form-group form-group-popup">
+                                <label asp-for="location_code" class="control-label"></label>
+                                <input asp-for="location_code" id="ipLocationCode" class="primary form-control input-popup" />
+                                <span asp-validation-for="location_code" class="text-danger" id="location-code"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="LocationCategoryId" class="control-label"></label>
+                                <select asp-for="LocationCategoryId" id="ddlLocationCategory" class="form-control input-popup" asp-items="ViewBag.LocationCategoryList">
+                                </select>
+                                <span asp-validation-for="LocationCategoryId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="description" class="control-label"></label>
+                                <input asp-for="description" id="ipDescription" class="form-control input-popup" />
+                                <span asp-validation-for="description" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-check form-group-popup" style="text-align: left; padding-top: 0; padding-left: 15px; width: 150px;">
+                                <label class="form-check-label" style="margin-top:38px; margin-left:20px;">
+                                    <input id="ipMixItem" class="form-check-input" asp-for="mix_item" /> @Html.DisplayNameFor(model => model.mix_item)
+                                </label>
+                            </div>
+                            <div class="form-group form-check form-group-popup" style="text-align: left; padding-top: 0; padding-left: 15px; width: 150px;">
+                                <label class="form-check-label" style="margin-top:38px; margin-left:20px;">
+                                    <input id="ipMixExpire" class="form-check-input" asp-for="mix_expire" /> @Html.DisplayNameFor(model => model.mix_expire)
+                                </label>
+                            </div>
+                            <div class="form-group form-check form-group-popup" style="text-align: left; padding-top: 0; padding-left: 15px; width: 150px;">
+                                <label class="form-check-label" style="margin-top:38px; margin-left:20px;">
+                                    <input id="ipMixLot" class="form-check-input" asp-for="mix_lot" /> @Html.DisplayNameFor(model => model.mix_lot)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-footer-pop btn-save-pop">Save</button>
+                    <button type="button" class="btn btn-footer-pop btn-clear-pop" onclick="clearForm()">Clear</button>
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCompleteRequest()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

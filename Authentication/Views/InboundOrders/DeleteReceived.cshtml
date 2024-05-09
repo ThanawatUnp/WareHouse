@@ -1,0 +1,53 @@
+﻿@model Authentication.Models.ItemReceived
+@{
+    Layout = null;
+    ViewData["Title"] = "Delete";
+}
+
+<form id="delete-popup"
+      asp-action="DeleteReceived"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-update="#sub-resource"
+      data-ajax-complete="OnCompleteDltSubResource"
+      data-ajax-confirm="Do you want to Delete?"
+      data-ajax-failure="OnFailureRequest">
+    <div class="modal create-popup-w60" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>@ViewBag.Title Data</span>
+                    <button type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCompleteSubResource()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5><b>Item Received</b></h5>
+                    <hr />
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" value="@ViewBag.OriginRemainQty" id="ipDltTmpRemainQty" name="ipDltTmpRemainQty" />
+                            <input type="hidden" value="@ViewBag.RemainQty" id="ipDltRemainQty" name="ipDltRemainQty" />
+                            <input type="hidden" asp-for="Id" value="@Model.Id" />
+                            <input type="hidden" asp-for="receive_qty" value="@Model.receive_qty" />
+                            <input type="hidden" asp-for="receive_date" value="@Model.receive_date" />
+                            <input type="hidden" asp-for="create_date" value="@Model.create_date" />
+                            <input type="hidden" asp-for="InboundItemId" value="@Model.InboundItemId" />
+                            <input type="hidden" asp-for="ItemReceivedStateId" value="@Model.ItemReceivedStateId" />
+                            <h4>Do you want to delete item received (@Model.InboundItem.Item.item_code: @Model.InboundItem.Item.ItemCategory.category_name) on a received date @Model.receive_date ?</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-footer-pop btn-save-pop">Delete</button>
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCompleteSubResource()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+

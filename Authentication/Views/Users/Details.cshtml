@@ -1,0 +1,58 @@
+﻿@model Authentication.Models.UsersViewModel
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Detail";
+}
+<script>
+    $(function () {
+        $("#detail-user input").each(function () {
+            $(this).attr('readonly', 'readonly');
+        });
+    })
+</script>
+<form id="detail-user"
+      asp-action="Details"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-complete="OnCompleteRequest"
+      data-ajax-failure="OnFailureRequest">
+    <div class="modal create-popup" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>View Detail</span>
+                    <button type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCompleteRequest()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5><b>User</b></h5>
+                    <hr />
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="Username" class="control-label"></label>
+                                <input asp-for="Username" class="primary form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="Email" class="control-label">E-mail</label>
+                                <input asp-for="Email" class="form-control input-popup" />
+                            </div>
+                            <div class="form-group form-group-popup">
+                                <label asp-for="Role" class="control-label"></label>
+                                <input asp-for="Role" class="form-control input-popup" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCompleteRequest()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,84 @@
+﻿@model Authentication.Models.InboundOrder
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Delete";
+}
+<script>
+    function DeleteInboundOrder() {
+        $.ajax({
+            type: "GET",
+            url: '/InboundOrders/ConfirmDeleteOrder',
+            data: {
+                id: $('#ipInboundOrderID').val(),
+            },
+            success: function (result) {
+                document.getElementById("btX").style.pointerEvents = "none";
+                document.getElementById("btDelete").style.pointerEvents = "none";
+                document.getElementById("btClose").style.pointerEvents = "none";
+                $('#pop_up2').html(result);
+                $('#pop_up2').modal('show');
+            },
+            error: function (result) {
+                alert('error');
+            }
+        });
+        return false;
+    }
+
+</script>
+<form id="delete-popup"
+      asp-action="DeleteInboundOrder"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-update="#childLayout"
+      data-ajax-complete="OnCompleteRequest"
+      data-ajax-confirm="Do you want to Delete?"
+      data-ajax-failure="OnFailureRequest">
+    <div id="pop-up" class="modal create-popup" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span>@ViewBag.Title Data</span>
+                    <button id="btX" type="button" class="close btn-x-pop" data-dismiss="modal" aria-label="Close" onclick="OnCompleteRequest()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5><b>Inbound Order</b>: @ViewBag.Status</h5>
+                    <hr />
+                    <div class="row row-popup">
+                        <div class="col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" id="ipInboundOrderID" />
+                            <input type="hidden" asp-for="order_no" />
+                            <input type="hidden" asp-for="OrderTypeId" />
+                            <input type="hidden" asp-for="StatusInboundOrderId" />
+                            <input type="hidden" asp-for="SupplierId" />
+                            <input type="hidden" asp-for="CustomerId" />
+                            <input type="hidden" asp-for="expect_date" />
+                            <input type="hidden" asp-for="create_by" />
+                            <input type="hidden" asp-for="create_date" />
+                            <input type="hidden" asp-for="close_by" />
+                            <input type="hidden" asp-for="close_date" />
+                            <h4>Do you want to delete the order number (@Model.order_no) ?</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @if (@User.IsInRole("Admin"))
+                    {
+                        <button type="submit" class="btn btn-footer-pop btn-save-pop" id="btDelete">Delete</button>
+                    }
+                    else
+                    {
+                        <button type="button" class="btn btn-footer-pop btn-save-pop" id="btDelete" onclick="DeleteInboundOrder()">Delete</button>
+                    }
+                    <button type="button" class="btn btn-foote-popr btn-close-pop" data-dismiss="modal" onclick="OnCompleteRequest()" id="btClose">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

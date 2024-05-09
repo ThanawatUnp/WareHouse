@@ -1,0 +1,76 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    IEnumerable<OutboundItem> outbounditems = ViewData["OutboundItem"] as IEnumerable<OutboundItem>;
+}
+
+
+<tbody id="view-content">
+    @{ int i = ViewBag.FirstRecItm;
+        @if (outbounditems.Count() == 0)
+        {
+            <tr class="no-data">
+                <td colspan="12">Not Found Data</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (OutboundItem outboundItem in outbounditems)
+            {
+                <tr class="tbl-row">
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        <a id="edit-outbounditem" asp-action="EditResource" asp-route-id="@outboundItem.Id">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a id="delete-outbounditem" asp-action="DeleteResource" asp-route-id="@outboundItem.Id">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                    <td>
+                        @(outboundItem.Item.item_code + ": " + outboundItem.Item.item_name)
+                    </td>
+                    <td>
+                        @outboundItem.Item.ItemCategory.category_name
+                    </td>
+                    <td>
+                        @outboundItem.ItemReceivedState.state
+                    </td>
+                    <td>
+                        @outboundItem.cost
+                    </td>
+                    <td>
+                        @outboundItem.qty
+                    </td>
+                    <td>
+                        @outboundItem.create_by
+                    </td>
+                    <td>
+                        @{
+                            DateTime dt = Convert.ToDateTime(outboundItem.create_date);
+                            @dt.ToString("dd/MM/yyyy HH:mm:ss");
+                        }
+                    </td>
+                    <td>
+                        @outboundItem.edit_by
+                    </td>
+                    <td>
+                        @{
+                            if (outboundItem.edit_date != null)
+                            {
+                                dt = Convert.ToDateTime(outboundItem.edit_date);
+                                @dt.ToString("dd/MM/yyyy HH:mm:ss");
+                            }
+                        }
+                    </td>
+                </tr>
+                i = i + 1;
+            }
+        }
+    }
+</tbody>

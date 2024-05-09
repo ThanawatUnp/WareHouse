@@ -1,0 +1,709 @@
+﻿@model IEnumerable<Authentication.Models.OutboundOrder>
+@{
+    ViewData["Title"] = "Outbound Order";
+    ViewBag.Menu = "outboundorder";
+    ViewBag.Model = Model;
+}
+<script type="text/javascript">
+    var vPlanShipDate = "n";
+    var vCreateDate = "n";
+    var vEditeDate = "n";
+    var vCancelDate = "n";
+
+    function OnComplete() {
+        $.ajax({
+            url: '/OutboundOrders/ViewContent',
+            data: {
+                //These two keys should keep consistent with the parameters ( int? ProductId , int? ProductPrice ) in action, including uppercase and lowercase.
+                status: $('#txtStatus').val(),
+                ordernumber: $('#txtOrderNumber').val(),
+                ordertype: $('#ddlOrderType').val(),
+                sshipdate: vPlanShipDate,
+                startshipdate: $('#dtPlanShipDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endshipdate: $('#dtPlanShipDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                invoiceno: $('#txtInvoiceNo').val(),
+                customer: $('#ddlCustomer').val(),
+                description: $('#txtDescription').val(),
+                createby: $('#ddlCreateBy').val(),
+                screatedate: vCreateDate,
+                startcreatedate: $('#dtCreateDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endcreatedate: $('#dtCreateDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                editby: $('#ddlEditBy').val(),
+                seditdate: vEditeDate,
+                starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                cancelby: $('#ddlCloseBy').val(),
+                scanceldate: vCancelDate,
+                startcanceldate: $('#dtCancelDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endcanceldate: $('#dtCancelDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                cancelremark: $('#txtCancelRemark').val(),
+            },
+            success: function (result) {
+                $('#order-no').text('');
+                $('#childLayout').html(result);
+            }
+        });
+        alert('On Success');
+    }
+
+    function OnCompleteRequest() {
+        $('#pop_up').empty();
+        $('#pop_up').delay(1000).modal('hide');
+        $.ajax({
+            url: '/OutboundOrders/ViewContent',
+            data: {
+                //These two keys should keep consistent with the parameters ( int? ProductId , int? ProductPrice ) in action, including uppercase and lowercase.
+                status: $('#txtStatus').val(),
+                ordernumber: $('#txtOrderNumber').val(),
+                ordertype: $('#ddlOrderType').val(),
+                sshipdate: vPlanShipDate,
+                startshipdate: $('#dtPlanShipDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endshipdate: $('#dtPlanShipDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                invoiceno: $('#txtInvoiceNo').val(),
+                customer: $('#ddlCustomer').val(),
+                description: $('#txtDescription').val(),
+                createby: $('#ddlCreateBy').val(),
+                screatedate: vCreateDate,
+                startcreatedate: $('#dtCreateDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endcreatedate: $('#dtCreateDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                editby: $('#ddlEditBy').val(),
+                seditdate: vEditeDate,
+                starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                cancelby: $('#ddlCloseBy').val(),
+                scanceldate: vCancelDate,
+                startcanceldate: $('#dtCancelDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endcanceldate: $('#dtCancelDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                cancelremark: $('#txtCancelRemark').val(),
+            },
+            success: function (result) {
+                $('#childLayout').html(result);
+            }
+        });
+    }
+
+    function OnCompleteResource() {
+        var nodes = document.getElementById('edit-popup').getElementsByTagName('input');
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].disabled = false;
+        }
+        nodes = document.getElementById('edit-popup').getElementsByTagName('select');
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].disabled = false;
+        }
+        nodes = document.getElementById('tool-panel').getElementsByTagName('a');
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].disabled = false;
+        }
+        nodes = document.getElementById('page-number-resource').getElementsByTagName('a');
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].style.pointerEvents = "auto";
+        }
+
+        $('#view-content tr').addClass('tbl-row');
+        $('#view-content tr td a').css('cursor', 'pointer');
+
+        document.getElementById("btX").style.pointerEvents = "auto";
+        document.getElementById("btn-perpage-resource").style.pointerEvents = "auto";
+        document.getElementById("btNewResource").style.pointerEvents = "auto";
+        document.getElementById("btSave").style.pointerEvents = "auto";
+        document.getElementById("btClear").style.pointerEvents = "auto";
+        document.getElementById("btClose").style.pointerEvents = "auto";
+        $('#pop_up2').empty();
+        $('#pop_up2').delay(1000).modal('hide');
+        $('#pop-up').css({
+            overflowX: 'hidden',
+            overflowY: 'auto'
+        });
+    }
+
+    function OnCompleteConfirmDelete() {
+        $('#pop_up2').empty();
+        $('#pop_up2').delay(1000).modal('hide');
+        $('#pop_up').empty();
+        $('#pop_up').delay(1000).modal('hide');
+    }
+
+    function OnCompleteConfirmDeleteResource() {
+        $('#pop_up3').empty();
+        $('#pop_up3').delay(1000).modal('hide');
+        OnCompleteResource();
+    }
+
+    function OnSuccessRequest() {
+        alert('On Success');
+    }
+
+    function OnFailureRequest() {
+        alert('On Failure');
+    }
+
+    function OnCloseComfirmation() {
+        document.getElementById("btX").style.pointerEvents = "auto";
+        document.getElementById("btDelete").style.pointerEvents = "auto";
+        document.getElementById("btClose").style.pointerEvents = "auto";
+        $('#pop_up2').empty();
+        $('#pop_up2').delay(1000).modal('hide');
+    }
+
+    function OnCloseComfirmRes() {
+        document.getElementById("btnXRes").style.pointerEvents = "auto";
+        document.getElementById("btnDeleteRes").style.pointerEvents = "auto";
+        document.getElementById("btnCloseRes").style.pointerEvents = "auto";
+        $('#pop_up3').empty();
+        $('#pop_up3').delay(1000).modal('hide');
+    }
+
+    function showHideSearch() {
+        var blockSearch = document.getElementById('search-block');
+        if (blockSearch.style.display != "none") {
+            blockSearch.style.display = 'none';
+            document.getElementById('btn-fiter').innerHTML = 'Show Filter';
+        }
+        else {
+            blockSearch.style.display = null;
+            document.getElementById('btn-fiter').innerHTML = 'Hide Filter';
+        }
+    }
+
+    function Search() {
+        $.ajax({
+            url: '/OutboundOrders/ViewContent',
+            data: {
+                //These two keys should keep consistent with the parameters ( int? ProductId , int? ProductPrice ) in action, including uppercase and lowercase.
+                status: $('#txtStatus').val(),
+                ordernumber: $('#txtOrderNumber').val(),
+                ordertype: $('#ddlOrderType').val(),
+                sshipdate: vPlanShipDate,
+                startshipdate: $('#dtPlanShipDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endshipdate: $('#dtPlanShipDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                invoiceno: $('#txtInvoiceNo').val(),
+                customer: $('#ddlCustomer').val(),
+                description: $('#txtDescription').val(),
+                createby: $('#ddlCreateBy').val(),
+                screatedate: vCreateDate,
+                startcreatedate: $('#dtCreateDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endcreatedate: $('#dtCreateDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                editby: $('#ddlEditBy').val(),
+                seditdate: vEditeDate,
+                starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                cancelby: $('#ddlCancelBy').val(),
+                scanceldate: vCancelDate,
+                startcanceldate: $('#dtCancelDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                endcanceldate: $('#dtCancelDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                cancelremark: $('#txtCancelRemark').val(),
+            },
+            success: function (result) {
+                $('#childLayout').html(result);
+            }
+        });
+    }
+
+    function clearSearch() {
+        globalThis.vPlanShipDate = "n";
+        globalThis.vCreateDate = "n";
+        globalThis.vEditeDate = "n";
+        globalThis.vCancelDate = "n";
+        var f1 = document.getElementById('search-block');
+        var arr_input = f1.getElementsByTagName('input');
+        for (i = 0; i < arr_input.length; i++) {
+            arr_input[i].value = '';
+        }
+        $.ajax({
+            url: '/OutboundOrders/ViewContent',
+            data: {
+                clear: 'clear'
+            },
+            success: function (result) {
+                $('#childLayout').html(result);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $('#dtPlanShipDate').daterangepicker({
+            showDropdowns: true,
+            "startDate": moment(),
+            minDate: '01/01/2021',
+            dateLimit: { days: 720 },
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+
+        $('#dtPlanShipDate').on('apply.daterangepicker', function (ev, picker) {
+            globalThis.vPlanShipDate = "y";
+            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        });
+
+        $('#dtPlanShipDate').on('cancel.daterangepicker', function (ev, picker) {
+            globalThis.vPlanShipDate = "n";
+            $(this).val('');
+        });
+
+        $('#dtCreateDate').daterangepicker({
+            showDropdowns: true,
+            "startDate": moment(),
+            "endDate": moment(),
+            minDate: '01/01/2021',
+            dateLimit: { days: 365 },
+            maxDate: moment(),
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+
+        $('#dtCreateDate').on('apply.daterangepicker', function (ev, picker) {
+            globalThis.vCreateDate = "y";
+            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        });
+
+        $('#dtCreateDate').on('cancel.daterangepicker', function (ev, picker) {
+            globalThis.vCreateDate = "n";
+            $(this).val('');
+        });
+
+        $('#dtEditDate').daterangepicker({
+            showDropdowns: true,
+            "startDate": moment(),
+            "endDate": moment(),
+            minDate: '01/01/2021',
+            dateLimit: { days: 365 },
+            maxDate: moment(),
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+
+        $('#dtEditDate').on('apply.daterangepicker', function (ev, picker) {
+            globalThis.vEditeDate = "y";
+            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        });
+
+        $('#dtEditDate').on('cancel.daterangepicker', function (ev, picker) {
+            globalThis.vEditeDate = "n";
+            $(this).val('');
+        });
+
+        $('#dtCancelDate').daterangepicker({
+            showDropdowns: true,
+            "startDate": moment(),
+            "endDate": moment(),
+            minDate: '01/01/2021',
+            dateLimit: { days: 365 },
+            maxDate: moment(),
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+
+        $('#dtCancelDate').on('apply.daterangepicker', function (ev, picker) {
+            globalThis.vCancelDate = "y";
+            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        });
+
+        $('#dtCancelDate').on('cancel.daterangepicker', function (ev, picker) {
+            globalThis.vCancelDate = "n";
+            $(this).val('');
+        });
+
+        // Add Outbound Order
+        $(document).on("click", "#btNew", function () {
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                url: $(this).data('url'),
+                success: function (result) {
+                    $('#pop_up').html(result);
+                    $('#pop_up').modal('show');
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+            return false;
+        });
+
+        // Edit Outbound Order
+        $(document).on("click", "#ViewData table tbody tr td #edit-outboundorder", function () {
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                url: $(this).attr('href'),
+                success: function (result) {
+                    $('#pop_up').html(result);
+                    $('#pop_up').modal('show');
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+            return false;
+        });
+
+        // Delete Outbound Order
+        $(document).on("click", "#ViewData table tbody tr td #delete-outboundorder", function () {
+            var vURL = $(this).attr('href');
+            $.ajax({
+                url: "/OutboundOrders/CheckStatusDeleteOrder",
+                data: { id: vURL.substring(vURL.indexOf("/", vURL.indexOf("/", (vURL.indexOf("/") + 1)) + 1) + 1) },
+                dataType: 'json',
+                success: function (data) {
+                    if (data.result) {
+                        $.ajax({
+                            type: "GET",
+                            data: "{}",
+                            url: vURL,
+                            success: function (result) {
+                                $('#pop_up').html(result);
+                                $('#pop_up').modal('show');
+                            },
+                            error: function (result) {
+                                alert('error');
+                            }
+                        });
+                    }
+                    else {
+                        alert('Cannot delete Order Number: '.concat(data.order_no, " due to it's not in open status."));
+                    }
+                }
+            });
+            return false;
+        });
+
+        // Add Outbound Item
+        $(document).on("click", "#btNewResource", function () {
+            $.ajax({
+                type: "GET",
+                data: {
+                    Id: $('#ipOutboundOrderID').val(),
+                },
+                url: $(this).data('url'),
+                success: function (result) {
+                    var nodes = document.getElementById('edit-popup').getElementsByTagName('input');
+                    for (var i = 0; i < nodes.length; i++) {
+                        nodes[i].disabled = true;
+                    }
+                    nodes = document.getElementById('edit-popup').getElementsByTagName('select');
+                    for (var i = 0; i < nodes.length; i++) {
+                        nodes[i].disabled = true;
+                    }
+                    nodes = document.getElementById('page-number-resource').getElementsByTagName('a');
+                    for (var i = 0; i < nodes.length; i++) {
+                        nodes[i].style.pointerEvents = "none";
+                    }
+
+                    $('#view-content tr td a').css('cursor', 'default');
+
+                    document.getElementById("btX").style.pointerEvents = "none";
+                    document.getElementById("btn-perpage-resource").style.pointerEvents = "none";
+                    document.getElementById("btNewResource").style.pointerEvents = "none";
+                    document.getElementById("btSave").style.pointerEvents = "none";
+                    document.getElementById("btClear").style.pointerEvents = "none";
+                    document.getElementById("btClose").style.pointerEvents = "none";
+                    $('#pop_up2').html(result);
+                    $('#pop_up2').modal('show');
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            })
+        });
+
+        // Edit Outbound Item
+        $(document).on("click", "#ViewData table tbody tr td #edit-outbounditem", function () {
+            if ($('#pop_up2').html().length == 0) {
+                $.ajax({
+                    type: "GET",
+                    data: "{}",
+                    url: $(this).attr('href'),
+                    success: function (result) {
+                        var nodes = document.getElementById('edit-popup').getElementsByTagName('input');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].disabled = true;
+                        }
+                        nodes = document.getElementById('edit-popup').getElementsByTagName('select');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].disabled = true;
+                        }
+                        nodes = document.getElementById('page-number-resource').getElementsByTagName('a');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].style.pointerEvents = "none";
+                        }
+
+                        $('#view-content tr').removeClass('tbl-row');
+                        $('#view-content tr td a').css('cursor', 'default');
+
+                        document.getElementById("btX").style.pointerEvents = "none";
+                        document.getElementById("btn-perpage-resource").style.pointerEvents = "none";
+                        document.getElementById("btNewResource").style.pointerEvents = "none";
+                        document.getElementById("btSave").style.pointerEvents = "none";
+                        document.getElementById("btClear").style.pointerEvents = "none";
+                        document.getElementById("btClose").style.pointerEvents = "none";
+                        $('#pop_up2').html(result);
+                        $('#pop_up2').modal('show');
+                    },
+                    error: function (result) {
+                        alert('error');
+                    }
+                });
+            }
+            return false;
+        });
+
+        // Delete Outbound Item
+        $(document).on("click", "#ViewData table tbody tr td #delete-outbounditem", function () {
+            if ($('#pop_up2').html().length == 0) {
+                $.ajax({
+                    type: "GET",
+                    data: "{}",
+                    url: $(this).attr('href'),
+                    success: function (result) {
+                        var nodes = document.getElementById('edit-popup').getElementsByTagName('input');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].disabled = true;
+                        }
+                        nodes = document.getElementById('edit-popup').getElementsByTagName('select');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].disabled = true;
+                        }
+                        nodes = document.getElementById('page-number-resource').getElementsByTagName('a');
+                        for (var i = 0; i < nodes.length; i++) {
+                            nodes[i].style.pointerEvents = "none";
+                        }
+
+                        $('#view-content tr').removeClass('tbl-row');
+                        $('#view-content tr td a').css('cursor', 'default');
+
+                        document.getElementById("btX").style.pointerEvents = "none";
+                        document.getElementById("btn-perpage-resource").style.pointerEvents = "none";
+                        document.getElementById("btNewResource").style.pointerEvents = "none";
+                        document.getElementById("btSave").style.pointerEvents = "none";
+                        document.getElementById("btClear").style.pointerEvents = "none";
+                        document.getElementById("btClose").style.pointerEvents = "none";
+                        $('#pop_up2').html(result);
+                        $('#pop_up2').modal('show');
+                    },
+                    error: function (result) {
+                        alert('error');
+                    }
+                });
+            }
+            return false;
+        });
+
+        // Set Per Page Number
+        $(document).on("click","#tool-panel div div div div a",function () {
+            var PerPage = $(this).attr('rel');
+            $('#btn-perpage').text($(this).text());
+            $.ajax({
+                type: "GET",
+                data: { "PerPage": PerPage } ,
+                url: '@Url.Action("SetPerPage")',
+                success: function (result) {
+                    $('#childLayout').html(result);
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+        });
+
+        //Set Page Number
+        $(document).ready(function () {
+            $(document).on("click","a.page-number",function () {
+                var PageNo = $(this).text();
+                $.ajax({
+                    type: "GET",
+                    data: { "PageNo": PageNo } ,
+                    url: '@Url.Action("SetPageNo")',
+                    success: function (result) {
+                        $('#childLayout').html(result);
+                    },
+                    error: function (result) {
+                        alert('error');
+                    }
+                });
+            });
+        });
+
+        // Set Per Page Number Resource
+        $(document).on("click","#btn-group-resource a",function () {
+            var PerPage = $(this).attr('rel');
+            $('#btn-perpage-resource').text($(this).text());
+            $.ajax({
+                type: "GET",
+                data: {
+                    "PerPage": PerPage,
+                    "Id": $('#ipOutboundOrderID').val()
+                },
+                url: '@Url.Action("SetPerPageItem")',
+                success: function (result) {
+                    $('#resource').html(result);
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+        });
+
+        //Set Page Number Resource
+        $(document).ready(function () {
+            $(document).on("click","a.page-number-resource",function () {
+                var PageNo = $(this).text();
+                $.ajax({
+                    type: "GET",
+                    data: {
+                        "PageNo": PageNo,
+                        "Id": $('#ipOutboundOrderID').val()
+                    },
+                    url: '@Url.Action("SetPageNoItem")',
+                    success: function (result) {
+                        $('#resource').html(result);
+                    },
+                    error: function (result) {
+                        alert('error');
+                    }
+                });
+            });
+        });
+    });
+
+
+</script>
+<div id="sub-container">
+    <div class="pt-3 pb-5" id="childLayout">
+        <fieldset>
+            <legend>
+                <span class="font-weight-bold" style="font-size: 16px;">Search / View Data</span>
+            </legend>
+        </fieldset>
+        <hr class="mt-0 mb-1" style="border-top: 2px solid #bbb;" />
+        <div id="tool-panel" class="border" style="width: 100%; white-space: nowrap;">
+            <partial name="_Btn_Group" />
+        </div>
+        <div id="search-block" class="border py-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;">
+            <div class="container-fluid p-2">
+                <div class="row">
+                    <div class="col-md-6 col-xl-4">
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtStatus"><b>Status</b></label>
+                                <input class="form-control txt-search-width-non" id="txtStatus" />
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtOrderNumber"><b>Order Number</b></label>
+                                <input class="form-control txt-search-width-non" id="txtOrderNumber" />
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right" id="frm_txtOrderType" style="z-index: 10000 !important;">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtOrderType"><b>Order Type</b></label>
+                                <select id="ddlOrderType" class="form-control txt-search-width-non" asp-items="ViewBag.OrderTypeList">
+                                </select>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="dtPlanShipDate"><b>Plan Ship Date</b></label>
+                                <input id="dtPlanShipDate" name="dtPlanShipDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
+                                <div class="arrow-datetime" onclick="$('#dtPlanShipDate').data('daterangepicker').toggle();">
+                                    <i class="far fa-calendar-alt"></i>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtInvoiceNo"><b>Invoice Number</b></label>
+                                <input class="form-control  txt-search-width-non" id="txtInvoiceNo" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtCustomerCode"><b>Customer</b></label>
+                                <select id="ddlCustomer" class="form-control txt-search-width-non" asp-items="ViewBag.CustomerList">
+                                </select>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtDescription"><b>Description</b></label>
+                                <input class="form-control  txt-search-width-non" id="txtDescription" />
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtCreateBy"><b>Create By</b></label>
+                                <select id="ddlCreateBy" class="form-control txt-search-width-non" asp-items="ViewBag.UserList">
+                                </select>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="dtCreateDate"><b>Create Date</b></label>
+                                <input id="dtCreateDate" name="dtCreateDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
+                                <div class="arrow-datetime" onclick="$('#dtCreateDate').data('daterangepicker').toggle();">
+                                    <i class="far fa-calendar-alt"></i>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtEditBy"><b>Edit By</b></label>
+                                <select id="ddlEditBy" class="form-control txt-search-width-non" asp-items="ViewBag.UserList">
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="dtEditDate"><b>Edit Date</b></label>
+                                <input id="dtEditDate" name="dtEditDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
+                                <div class="arrow-datetime" onclick="$('#dtEditDate').data('daterangepicker').toggle();">
+                                    <i class="far fa-calendar-alt"></i>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtCancelBy"><b>Cancel By</b></label>
+                                <select id="ddlCancelBy" class="form-control txt-search-width-non" asp-items="ViewBag.UserList">
+                                </select>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="dtCancelDate"><b>Cancel Date</b></label>
+                                <input id="dtCancelDate" name="dtCancelDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
+                                <div class="arrow-datetime" onclick="$('#dtCancelDate').data('daterangepicker').toggle();">
+                                    <i class="far fa-calendar-alt"></i>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtCancelRemark"><b>Cancel Remark</b></label>
+                                <input class="form-control  txt-search-width-non" id="txtCancelRemark" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="mr-3 mt-2" align="right">
+                <button class="btn bg-new-search btn-search-clear btn-search" onclick="Search()">Search</button>
+                <button class="btn btn-search-clear btn-clear" style="border: 1px solid #ced4da" onclick="clearSearch()">Clear</button>
+            </div>
+        </div>
+        <partial name="_ViewData" />
+    </div>
+</div>
