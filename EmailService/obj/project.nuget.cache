@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "49WFJDqteoSkt3u9oEfDdQj1DLL93UxlpHi3bBMUp+i3EgP2O8EAJOCti7v2ON5widorboSekV4a30RS9wzGxQ==",
+  "dgSpecHash": "pRQOHhjxc3BGcW4Un+qE8TQurnVYqUjoItr2c5vNa0DQY7p7KuABQdtYPjQlfXUOOlMeXYRTJrMNBPlMFYSuGg==",
   "success": true,
-  "projectFilePath": "D:\\Backup ABSS\\Enter User and Pass\\Authentication\\EmailService\\EmailService.csproj",
+  "projectFilePath": "D:\\Project\\WareHouse\\EmailService\\EmailService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\mailkit\\2.6.0\\mailkit.2.6.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.4\\microsoft.extensions.dependencyinjection.3.1.4.nupkg.sha512",

@@ -3722,11 +3722,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Backup ABSS\\Enter User and Pass\\Authentication\\EmailService\\EmailService.csproj",
+      "projectUniqueName": "D:\\Project\\WareHouse\\EmailService\\EmailService.csproj",
       "projectName": "EmailService",
-      "projectPath": "D:\\Backup ABSS\\Enter User and Pass\\Authentication\\EmailService\\EmailService.csproj",
+      "projectPath": "D:\\Project\\WareHouse\\EmailService\\EmailService.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\Backup ABSS\\Enter User and Pass\\Authentication\\EmailService\\obj\\",
+      "outputPath": "D:\\Project\\WareHouse\\EmailService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
