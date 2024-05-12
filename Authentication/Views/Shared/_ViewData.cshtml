@@ -11,6 +11,7 @@
         case "InboundOrders":
         case "PutAways":
         case "OutboundOrders":
+        case "Inventories":
             if (controllerName == "InboundOrders")
             {
                 if (ViewBag.Title == "Edit")
@@ -107,6 +108,9 @@
                             <partial name="_ViewHeaderOutboundOrder" />
                         }
                         break;
+                    case "Inventories":
+                        <partial name="_ViewHeaderInventory" />
+                        break;
                 }
             </tr>
         </thead>
@@ -159,6 +163,9 @@
                 {
                     <partial name="_ViewContentOutboundOrder" />
                 }
+                break;
+            case "Inventories":
+                <partial name="_ViewContentInventory" />
                 break;
         }
     </table>

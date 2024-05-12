@@ -1,9 +1,22 @@
-﻿@*@model IEnumerable<Authentication.Models.OutboundOrder>*@
+﻿@model IEnumerable<Authentication.ViewModels.Inventories>
 @{
     ViewData["Title"] = "Inventory";
     ViewBag.Menu = "inventory";
+    ViewBag.Model = Model;
 }
 <script type="text/javascript">
+
+    function showHideSearch() {
+        var blockSearch = document.getElementById('search-block');
+        if (blockSearch.style.display != "none") {
+            blockSearch.style.display = 'none';
+            document.getElementById('btn-fiter').innerHTML = 'Show Filter';
+        }
+        else {
+            blockSearch.style.display = null;
+            document.getElementById('btn-fiter').innerHTML = 'Hide Filter';
+        }
+    }
 
     $(document).ready(function () {
 
@@ -20,6 +33,53 @@
         <hr class="mt-0 mb-1" style="border-top: 2px solid #bbb;" />
         <div id="tool-panel" class="border" style="width: 100%; white-space: nowrap;">
             <partial name="_Btn_Group" />
+        </div>
+        <div id="search-block" class="border py-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;">
+            <div class="container-fluid p-2">
+                <div class="row">
+                    <div class="col-md-6 col-xl-4">
+                        <form class="form-inline frm-float-right" id="frm_txtOrderType" style="z-index: 10000 !important;">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtItemCode"><b>Item Code</b></label>
+                                <input class="form-control txt-search-width-non" id="txtItemCode" />
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtItemName"><b>Item Name</b></label>
+                                <input class="form-control txt-search-width-non" id="txtItemName" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="ddlItemCategory"><b>Item Category</b></label>
+                                <select id="ddlItemCategory" class="form-control txt-search-width-non" asp-items="ViewBag.ItemCategoryList">
+                                </select>
+                            </div>
+                        </form>
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtCost"><b>Cost</b></label>
+                                <input class="form-control txt-search-width-non" id="txtCost" type="number" min="0" max="999999" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="txtUnit"><b>Unit</b></label>
+                                <input class="form-control txt-search-width-non" id="txtUnit" type="number" min="0" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="mr-3 mt-2" align="right">
+                <button class="btn bg-new-search btn-search-clear btn-search" onclick="Search()">Search</button>
+                <button class="btn btn-search-clear btn-clear" style="border: 1px solid #ced4da" onclick="clearSearch()">Clear</button>
+            </div>
         </div>
         <partial name="_ViewData" />
     </div>

@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<tbody id="view-content">
+    @{ int i = ViewBag.FirstRec;
+        @if (Model.Count == 0)
+        {
+            <tr class="no-data">
+                <td colspan="7">Not Found Data</td>
+            </tr>
+        }
+        @*else
+        {
+            @foreach (Inventories item in Model)
+            {
+                <tr class="tbl-row">
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        <a id="detail-item" asp-action="Details" asp-route-id="@item.Id">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </td>
+                    <td style="width: 150px;">
+                        @item.itemCode
+                    </td>
+                    <td style="width: 160px;">
+                        @item.itemName
+                    </td>
+                    <td>
+                        @item.itemCategory
+                    </td>
+                    <td style="width: 110px;">
+                        @item.cost
+                    </td>
+                    <td style="width: 90px;">
+                        @item.unit
+                    </td>
+                </tr>
+                i = i + 1;
+            }
+        }*@
+    }
+</tbody>

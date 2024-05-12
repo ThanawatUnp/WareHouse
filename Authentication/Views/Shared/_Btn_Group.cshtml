@@ -23,7 +23,7 @@
             }
             else
             {
-                if (ViewBag.Menu != "putaway")
+                if (ViewBag.Menu != "putaway" && ViewBag.Menu != "inventory")
                 {
                     <input type="button" id="btNew" class="btn bg-new-search btn-group-submenu" data-url="@Url.Action("Create")" value="NEW">
                 }
