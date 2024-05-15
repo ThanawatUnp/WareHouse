@@ -1421,5 +1421,8 @@ D:\SourceCode\CSJ Rubber\Authentication\obj\Debug\netcoreapp3.1\Authentication.c
 D:\SourceCode\CSJ Rubber\Authentication\obj\Debug\netcoreapp3.1\Authentication.dll
 D:\SourceCode\CSJ Rubber\Authentication\obj\Debug\netcoreapp3.1\Authentication.pdb
 D:\SourceCode\CSJ Rubber\Authentication\obj\Debug\netcoreapp3.1\Authentication.genruntimeconfig.cache
+<<<<<<< HEAD
 D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Inventories\details.cshtml.g.cs
 D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Inventories\ViewContent.cshtml.g.cs
+=======
+>>>>>>> a1d952c1ade5f0bec78be6231906bc356647ea31
