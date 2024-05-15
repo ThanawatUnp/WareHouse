@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IronBarCode;
+using System.Drawing;
 
 namespace Authentication.Controllers
 {
@@ -74,7 +76,7 @@ namespace Authentication.Controllers
                 return NotFound();
             }
 
-            var inventory = await (from a in _context.Inventory
+            var inventories = await (from a in _context.Inventory
                               join b in _context.ItemReceived
                               on a.ItemReceivedId equals b.Id
                               join c in _context.InboundItem
@@ -92,6 +94,7 @@ namespace Authentication.Controllers
                               where (c.ItemId == id)
                               select new InventoryDetailViewModel
                               {
+                                    id              = a.Id,
                                     orderNo         = d.order_no,
                                     lotNo           = b.lot_no,
                                     itemCode        = e.item_code,
@@ -104,7 +107,19 @@ namespace Authentication.Controllers
                                     locationName    = h.category_name,
                                     status          = b.status
                               }).OrderBy(x => x.receiveDate).ToListAsync();
-            return View(inventory);
+
+            
+
+            foreach (var inventory in inventories)
+            {
+                GeneratedBarcode barcode = IronBarCode.BarcodeWriter.CreateBarcode(inventory.orderNo, BarcodeWriterEncoding.Code128);
+                barcode.ResizeTo(400, 120);
+                barcode.AddBarcodeValueTextBelowBarcode();
+                barcode.ChangeBarCodeColor(Color.Black);
+                barcode.SetMargins(10);
+                inventory.barcode = "data:image/png;base64," + barcode.ToBitmap().ToString();
+            }
+            return View(inventories);
         }
 
         public async Task<IActionResult> ViewContent(string itemcode, string itemname, string itemcategory, string clear)
