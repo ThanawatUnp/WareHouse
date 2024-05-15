@@ -401,13 +401,61 @@ namespace Authentication.Controllers
                 vOutboundOrder.edit_by = User.Identity.Name;
                 vOutboundOrder.edit_date = DateTime.Now;
                 _context.Update(vOutboundOrder);
-                await _context.SaveChangesAsync();
+
+                var item = await (from a in _context.Inventory
+                            join b in _context.ItemReceived
+                            on a.ItemReceivedId equals b.Id
+                            join c in _context.InboundItem
+                            on b.InboundItemId equals c.Id
+                            join d in _context.InboundOrder
+                            on c.InboundOrderId equals d.Id
+                            join e in _context.Item
+                            on c.ItemId equals e.Id
+                            join f in _context.ItemCategory
+                            on e.ItemCategoryId equals f.Id
+                            join g in _context.Location
+                            on a.LocationId equals g.Id
+                            join h in _context.LocationCategory
+                            on g.LocationCategoryId equals h.Id
+                            where (c.ItemId == outboundItem.ItemId)
+                            select new InventoryDetailViewModel
+                            {
+                                id              = a.Id,
+                                orderNo         = d.order_no,
+                                lotNo           = b.lot_no,
+                                itemCode        = e.item_code,
+                                itemName        = e.item_name,
+                                itemCategory    = f.category_name,
+                                cost            = b.cost,
+                                unit            = a.qty,
+                                receiveDate     = b.receive_date,
+                                locationCode    = g.location_code,
+                                locationName    = h.category_name,
+                                status          = b.status
+                            }).OrderBy(x => x.receiveDate).ToListAsync();
+
+                var sumItem = item.Sum(x => x.unit);
+                return View(outboundItem);
+                if (outboundItem.qty > sumItem)
+                {
+                    // Error over qty
+                    return View(outboundItem);
+                }
+                else if(outboundItem.qty == sumItem)
+                {
+                    // adjust inventory to zero in this item and set status inventory is out
+                }
+                else
+                {
+                    // adjust inventory and maybe set status inventory is out
+                }
 
                 outboundItem.create_date = DateTime.Now;
                 outboundItem.create_by = User.Identity.Name; //Program.username;
                 outboundItem.edit_date = null;
                 _context.Add(outboundItem);
-                await _context.SaveChangesAsync();
+               
+                //await _context.SaveChangesAsync();
                 return RedirectToAction("ViewResource", new { id = outboundItem.OutboundOrderId });
             }
 

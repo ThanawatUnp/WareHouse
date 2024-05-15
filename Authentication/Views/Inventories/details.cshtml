@@ -21,6 +21,7 @@
                         <thead>
                             <tr id="tr">
                                 <th style="min-width: 70px;"></th>
+                                <th style="min-width: 200px;">Barcode</th>
                                 <th style="min-width: 160px;">Order</th>
                                 <th style="min-width: 160px;">Lot No</th>
                                 <th style="min-width: 150px;">Item Code</th>
@@ -49,6 +50,11 @@
                                         <tr class="tbl-row">
                                             <td>
                                                 @i
+                                            </td>
+                                            <td>
+                                                <img alt="Embedded Image" width="195" height="40"
+                                                     src="@item.barcode" />
+                                                
                                             </td>
                                             <td style="width: 160px;">
                                                 @item.orderNo

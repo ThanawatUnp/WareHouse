@@ -44,6 +44,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "BarCode": {
+              "target": "Package",
+              "version": "[2024.5.3, )"
+            },
             "BlazorDateRangePicker": {
               "target": "Package",
               "version": "[3.6.0, )"
