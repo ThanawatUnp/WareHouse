@@ -1,6 +1,5 @@
 ﻿using Authentication.Data;
 using Authentication.Models;
-using Authentication.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -22,9 +21,9 @@ namespace Authentication.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var tempData = SetPageNumber(null, false, null);
+            var tempData = await SetPageNumber(null, false, null);
             var vItem = (from a in _context.Inventory 
                          join b in _context.ItemReceived
                          on a.ItemReceivedId equals b.Id
@@ -41,7 +40,7 @@ namespace Authentication.Controllers
                              d.item_name,
                              e.category_name
                          } into temp
-                         select new Inventories
+                         select new InventoryViewModel
                          {
                              id             = temp.Key.Id,
                              itemCode       = temp.Key.item_code,
@@ -65,12 +64,139 @@ namespace Authentication.Controllers
             ViewData["ItemCategoryList"] = new SelectList(itemCategory, "Id", "Name");
             ViewBag.btn_edit = "N";
             ViewBag.btn_del = "N";
-            return View(vItem.ToListAsync());
+            return View(await vItem.ToListAsync());
         }
 
-        public async Task<IActionResult> ViewContent(string itemcode, string itemname, string itemcategory, int? cost, int? unit, string clear)
+        public async Task<IActionResult> Details(Guid id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var inventory = await (from a in _context.Inventory
+                              join b in _context.ItemReceived
+                              on a.ItemReceivedId equals b.Id
+                              join c in _context.InboundItem
+                              on b.InboundItemId equals c.Id
+                              join d in _context.InboundOrder
+                              on c.InboundOrderId equals d.Id
+                              join e in _context.Item
+                              on c.ItemId equals e.Id
+                              join f in _context.ItemCategory
+                              on e.ItemCategoryId equals f.Id
+                              join g in _context.Location
+                              on a.LocationId equals g.Id
+                              join h in _context.LocationCategory
+                              on g.LocationCategoryId equals h.Id
+                              where (c.ItemId == id)
+                              select new InventoryDetailViewModel
+                              {
+                                    orderNo         = d.order_no,
+                                    lotNo           = b.lot_no,
+                                    itemCode        = e.item_code,
+                                    itemName        = e.item_name,
+                                    itemCategory    = f.category_name,
+                                    cost            = b.cost,
+                                    unit            = b.receive_qty,
+                                    receiveDate     = b.receive_date,
+                                    locationCode    = g.location_code,
+                                    locationName    = h.category_name,
+                                    status          = b.status
+                              }).OrderBy(x => x.receiveDate).ToListAsync();
+            return View(inventory);
+        }
+
+        public async Task<IActionResult> ViewContent(string itemcode, string itemname, string itemcategory, string clear)
+        {
+            IQueryable<InventoryViewModel> inventories = (from a in _context.Inventory 
+                                                 join b in _context.ItemReceived
+                                                 on a.ItemReceivedId equals b.Id
+                                                 join c in _context.InboundItem
+                                                 on b.InboundItemId equals c.Id
+                                                 join d in _context.Item
+                                                 on c.ItemId equals d.Id
+                                                 join e in _context.ItemCategory
+                                                 on d.ItemCategoryId equals e.Id
+                                                 group new { a, b, c, d, e } by new
+                                                 {
+                                                     d.Id,
+                                                     d.item_code,
+                                                     d.item_name,
+                                                     itemCategoryId = e.Id,
+                                                     e.category_name
+                                                 } into temp
+                                                 select new InventoryViewModel
+                                                 {
+                                                     id             = temp.Key.Id,
+                                                     itemCode       = temp.Key.item_code,
+                                                     itemName       = temp.Key.item_name,
+                                                     itemCategoryId = temp.Key.itemCategoryId,
+                                                     itemCategory   = temp.Key.category_name,
+                                                     cost           = temp.Sum(x => x.c.cost),
+                                                     unit           = temp.Sum(x => x.a.qty)
+                                                 });
+            setSearchState(false);
+            Temp.lSearch.Clear();
+            Temp.lSearch.Add(itemcode);
+            Temp.lSearch.Add(itemname);
+            if (itemcode != null)
+            {
+                inventories = inventories.Where(d => d.itemCode.Contains(itemcode)).AsQueryable();
+                setSearchState(true);
+            }
+            if (itemname != null)
+            {
+                inventories = inventories.Where(d => d.itemName.Contains(itemname)).AsQueryable();
+                setSearchState(true);
+            }
+            if (itemcategory != null && Guid.Parse(itemcategory) != Guid.Empty)
+            {
+                inventories = inventories.Where(d => d.itemCategoryId == Guid.Parse(itemcategory)).AsQueryable();
+                setSearchState(true);
+                Temp.lSearch.Add(itemcategory.ToString());
+            }
+            else
+            {
+                Temp.lSearch.Add(null);
+            }
+
+            if (Temp.bSearchState == false)
+            {
+                Temp.lSearch.Clear();
+                Temp.iSearchCount = 0;
+            }
+            else
+            {
+                ViewData["itemcode"] = Temp.lSearch[0];
+                ViewData["itemname"] = Temp.lSearch[1];
+                if (Temp.lSearch[2] != null)
+                {
+                    ViewData["itemcategory"] = Temp.lSearch[2].ToString();
+                }
+                else
+                {
+                    ViewData["itemcategory"] = null;
+                }
+                
+                Temp.iSearchCount += 1;
+            }
+
+            var tempData = await SetPageNumber(inventories.Count(), Temp.bSearchState, clear);
+            inventories = inventories.Skip(tempData.SkipRec).Take(tempData.PerPage);
+
+            var itemType = _context.ItemCategory.Select(s => new { Id = s.Id.ToString(), Name = s.category_name }).ToList();
+            itemType.Insert(0, new
+            {
+                Id = string.Empty,
+                Name = "Select Category"
+            });
+
+            ViewData["Header"] = lHeader;
+            ViewData["ItemCategoryList"] = new SelectList(itemType, "Id", "Name");
+            ViewBag.btn_edit = "N";
+            ViewBag.btn_del = "N";
+            return View(await inventories.ToListAsync());
         }
 
         private void setSearchState(bool state)
@@ -78,7 +204,7 @@ namespace Authentication.Controllers
             Temp.bSearchState = state;
         }
 
-        private ManagePageNumber SetPageNumber(int? total, bool searchState, string sClear)
+        private async Task<ManagePageNumber> SetPageNumber(int? total, bool searchState, string sClear)
         {
             ManagePageNumber temp = new ManagePageNumber();
 
@@ -108,7 +234,31 @@ namespace Authentication.Controllers
                 {
                     temp.PageNo = HttpContext.Session.GetInt32("IPageNo") ?? 1;
                 }
-                temp.TotalRec = _context.Item.Count();
+                temp.TotalRec = await (from a in _context.Inventory 
+                                 join b in _context.ItemReceived
+                                 on a.ItemReceivedId equals b.Id
+                                 join c in _context.InboundItem
+                                 on b.InboundItemId equals c.Id
+                                 join d in _context.Item
+                                 on c.ItemId equals d.Id
+                                 join e in _context.ItemCategory
+                                 on d.ItemCategoryId equals e.Id
+                                 group new { a, b, c, d, e } by new
+                                 {
+                                     d.Id,
+                                     d.item_code,
+                                     d.item_name,
+                                     e.category_name
+                                 } into tempInventory
+                                 select new InventoryViewModel
+                                 {
+                                     id             = tempInventory.Key.Id,
+                                     itemCode       = tempInventory.Key.item_code,
+                                     itemName       = tempInventory.Key.item_name,
+                                     itemCategory   = tempInventory.Key.category_name,
+                                     cost           = tempInventory.Sum(x => x.c.cost),
+                                     unit           = tempInventory.Sum(x => x.a.qty)
+                                 }).CountAsync();
             }
 
             temp.MaxPage = (int)Math.Ceiling((double)temp.TotalRec / (double)temp.PerPage);
@@ -160,27 +310,13 @@ namespace Authentication.Controllers
             }
             else
             {
-                string sItemCategory = Guid.Empty.ToString();
+                string itemCategory = Guid.Empty.ToString();
                 if (Temp.lSearch[2] != null)
                 {
-                    sItemCategory = Temp.lSearch[2];
+                    itemCategory = Temp.lSearch[2];
                 }
-                int? iCost = null;
-                if (Temp.lSearch[3] != null)
-                {
-                    iCost = int.Parse(Temp.lSearch[3]);
-                }
-                int? iUnit = null;
-                if (Temp.lSearch[4] != null)
-                {
-                    iUnit = int.Parse(Temp.lSearch[4]);
-                }
-                int? iQueueType = null;
-                if (Temp.lSearch[5] != null)
-                {
-                    iQueueType = int.Parse(Temp.lSearch[5]);
-                }
-                return RedirectToAction("ViewContent", new { itemcode = Temp.lSearch[0], itemname = Temp.lSearch[1], itemcategory = sItemCategory, cost = iCost, unit = iUnit, queuetype = iQueueType, createby = Temp.lSearch[6], screatedate = Temp.lSearch[7], startcreatedate = Convert.ToDateTime(Temp.lSearch[8]), endcreatedate = Convert.ToDateTime(Temp.lSearch[9]), editby = Temp.lSearch[10], seditdate = Temp.lSearch[11], starteditdate = Convert.ToDateTime(Temp.lSearch[12]), endeditdate = Convert.ToDateTime(Temp.lSearch[13]) });
+                
+                return RedirectToAction("ViewContent", new { itemcode = Temp.lSearch[0], itemname = Temp.lSearch[1], itemcategory = itemCategory });
             }
         }
 
@@ -199,27 +335,13 @@ namespace Authentication.Controllers
             }
             else
             {
-                string sItemCategory = Guid.Empty.ToString();
+                string itemCategory = Guid.Empty.ToString();
                 if (Temp.lSearch[2] != null)
                 {
-                    sItemCategory = Temp.lSearch[2];
+                    itemCategory = Temp.lSearch[2];
                 }
-                int? iCost = null;
-                if (Temp.lSearch[3] != null)
-                {
-                    iCost = int.Parse(Temp.lSearch[3]);
-                }
-                int? iUnit = null;
-                if (Temp.lSearch[4] != null)
-                {
-                    iUnit = int.Parse(Temp.lSearch[4]);
-                }
-                int? iQueueType = null;
-                if (Temp.lSearch[5] != null)
-                {
-                    iQueueType = int.Parse(Temp.lSearch[5]);
-                }
-                return RedirectToAction("ViewContent", new { itemcode = Temp.lSearch[0], itemname = Temp.lSearch[1], itemcategory = sItemCategory, cost = iCost, unit = iUnit, queuetype = iQueueType, createby = Temp.lSearch[6], screatedate = Temp.lSearch[7], startcreatedate = Convert.ToDateTime(Temp.lSearch[8]), endcreatedate = Convert.ToDateTime(Temp.lSearch[9]), editby = Temp.lSearch[10], seditdate = Temp.lSearch[11], starteditdate = Convert.ToDateTime(Temp.lSearch[12]), endeditdate = Convert.ToDateTime(Temp.lSearch[13]) });
+                
+                return RedirectToAction("ViewContent", new { itemcode = Temp.lSearch[0], itemname = Temp.lSearch[1], itemcategory = itemCategory });
             }
         }
     }
