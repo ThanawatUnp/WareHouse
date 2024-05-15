@@ -1,10 +1,22 @@
-﻿@model IEnumerable<Authentication.ViewModels.Inventories>
+﻿@model IEnumerable<Authentication.Models.InventoryViewModel>
 @{
     ViewData["Title"] = "Inventory";
     ViewBag.Menu = "inventory";
     ViewBag.Model = Model;
 }
 <script type="text/javascript">
+    function OnCompleteRequest() {
+        $('#pop_up').empty();
+        $('#pop_up').delay(1000).modal('hide');
+    }
+
+    function OnSuccessRequest() {
+        alert('On Success');
+    }
+
+    function OnFailureRequest() {
+        alert('On Failure');
+    }
 
     function showHideSearch() {
         var blockSearch = document.getElementById('search-block');
@@ -18,8 +30,90 @@
         }
     }
 
-    $(document).ready(function () {
+    function Search() {
+        $.ajax({
+            url: '/Inventories/ViewContent',
+            data: {
+                itemcode: $('#txtItemCode').val(),
+                itemname: $('#txtItemName').val(),
+                itemcategory: $('#ddlItemCategory').val()
+            },
+            success: function (result) {
+                $('#childLayout').html(result);
+            }
+        });
+    }
 
+    function clearSearch() {
+        var f1 = document.getElementById('search-block');
+        var arr_input = f1.getElementsByTagName('input');
+        for (i = 0; i < arr_input.length; i++) {
+            arr_input[i].value = '';
+        }
+        $('#ddlItemCategory').val(null);
+        $.ajax({
+            url: '/Inventories/ViewContent',
+            data: {
+                clear: 'clear'
+            },
+            success: function (result) {
+                $('#childLayout').html(result);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        // Detail Inventory
+        $(document).on("click", "#ViewData table tbody tr td #detail-item", function () {
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                url: $(this).attr('href'),
+                success: function (result) {
+                    $('#pop_up').html(result);
+                    $('#pop_up').modal('show');
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+            return false;
+        });
+
+        // Set Per Page Number
+        $(document).on("click","#tool-panel div div div div a",function () {
+            var PerPage = $(this).attr('rel');
+            $('#btn-perpage').text($(this).text());
+            $.ajax({
+                type: "GET",
+                data: { "PerPage": PerPage } ,
+                url: '@Url.Action("SetPerPage")',
+                success: function (result) {
+                    $('#childLayout').html(result);
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
+        });
+
+        //Set Page Number
+        $(document).ready(function () {
+            $(document).on("click","a.page-number",function () {
+                var PageNo = $(this).text();
+                $.ajax({
+                    type: "GET",
+                    data: { "PageNo": PageNo } ,
+                    url: '@Url.Action("SetPageNo")',
+                    success: function (result) {
+                        $('#childLayout').html(result);
+                    },
+                    error: function (result) {
+                        alert('error');
+                    }
+                });
+            });
+        });
     });
 </script>
 
@@ -44,6 +138,8 @@
                                 <input class="form-control txt-search-width-non" id="txtItemCode" />
                             </div>
                         </form>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtItemName"><b>Item Name</b></label>
@@ -57,20 +153,6 @@
                                 <label class="mx-3" for="ddlItemCategory"><b>Item Category</b></label>
                                 <select id="ddlItemCategory" class="form-control txt-search-width-non" asp-items="ViewBag.ItemCategoryList">
                                 </select>
-                            </div>
-                        </form>
-                        <form class="form-inline frm-float-right">
-                            <div class="form-group div-frm-group-search">
-                                <label class="mx-3" for="txtCost"><b>Cost</b></label>
-                                <input class="form-control txt-search-width-non" id="txtCost" type="number" min="0" max="999999" />
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
-                        <form class="form-inline frm-float-right">
-                            <div class="form-group div-frm-group-search">
-                                <label class="mx-3" for="txtUnit"><b>Unit</b></label>
-                                <input class="form-control txt-search-width-non" id="txtUnit" type="number" min="0" />
                             </div>
                         </form>
                     </div>

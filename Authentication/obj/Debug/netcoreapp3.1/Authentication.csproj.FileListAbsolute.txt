@@ -1131,3 +1131,5 @@ D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.pdb
 D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.genruntimeconfig.cache
 D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderInventory.cshtml.g.cs
 D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentInventory.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Inventories\ViewContent.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Inventories\details.cshtml.g.cs
