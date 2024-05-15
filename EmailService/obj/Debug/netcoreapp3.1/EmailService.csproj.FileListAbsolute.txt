@@ -17,3 +17,13 @@ D:\Backup ABSS\Enter User and Pass\Authentication\EmailService\obj\Debug\netcore
 D:\Backup ABSS\Enter User and Pass\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
 D:\Backup ABSS\Enter User and Pass\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
 D:\Backup ABSS\Enter User and Pass\Authentication\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb
+D:\SourceCode\CSJ Rubber\EmailService\bin\Debug\netcoreapp3.1\EmailService.deps.json
+D:\SourceCode\CSJ Rubber\EmailService\bin\Debug\netcoreapp3.1\EmailService.dll
+D:\SourceCode\CSJ Rubber\EmailService\bin\Debug\netcoreapp3.1\EmailService.pdb
+D:\SourceCode\CSJ Rubber\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.AssemblyReference.cache
+D:\SourceCode\CSJ Rubber\EmailService\obj\Debug\netcoreapp3.1\EmailService.GeneratedMSBuildEditorConfig.editorconfig
+D:\SourceCode\CSJ Rubber\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfoInputs.cache
+D:\SourceCode\CSJ Rubber\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfo.cs
+D:\SourceCode\CSJ Rubber\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
+D:\SourceCode\CSJ Rubber\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
+D:\SourceCode\CSJ Rubber\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb
