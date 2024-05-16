@@ -287,7 +287,7 @@
         <div id="search-block" class="border py-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;">
             <div class="container-fluid p-2">
                 <div class="row">
-                    <div class="col-md-6 col-xl-4">
+                    <div class="col-md-6 col-xl-5">
                         <form class="form-inline frm-float-right" id="frm_txtOrderType" style="z-index: 10000 !important;">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtCustomerCode"><b>Customer Code</b></label>
@@ -300,13 +300,14 @@
                                 <input class="form-control txt-search-width-non" id="txtCustomerName" />
                             </div>
                         </form>
-                        <form class="form-inline frm-float-right">
+
+                        @* <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtAddress1"><b>Address 1</b></label>
                                 <input class="form-control txt-search-width-non" id="txtAddress1" />
                             </div>
-                        </form>
-                        <form class="form-inline frm-float-right">
+                        </form> *@
+                        @* <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtAddress2"><b>Address 2</b></label>
                                 <input class="form-control txt-search-width-non" id="txtAddress2" />
@@ -317,7 +318,7 @@
                                 <label class="mx-3" for="txtAddress3"><b>Address 3</b></label>
                                 <input class="form-control txt-search-width-non" id="txtAddress3" />
                             </div>
-                        </form>
+                        </form> *@
                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="ddlProvince"><b>Province</b></label>
@@ -333,8 +334,6 @@
                                 </select>
                             </div>
                         </form>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="ddlSubDistrict"><b>Sub-District</b></label>
@@ -343,12 +342,22 @@
                                 </select>
                             </div>
                         </form>
-                        <form class="form-inline frm-float-right">
+                    </div>
+                    <div class="col-md-6 col-xl-5">
+                        @* <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="ddlSubDistrict"><b>Sub-District</b></label>
+                                <select id="ddlSubDistrict" class="form-control txt-search-width-non">
+                                    <option selected>Select Sub-District</option>
+                                </select>
+                            </div>
+                        </form> *@
+                       @*  <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtZipcode"><b>Zipcode</b></label>
                                 <input class="form-control txt-search-width-non" id="txtZipcode" />
                             </div>
-                        </form>
+                        </form> *@
                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtPhoneNo"><b>Phone</b></label>
@@ -363,6 +372,16 @@
                         </form>
                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
+                                <label class="mx-3" for="ddlActive"><b>Active</b></label>
+                                <select id="ddlActive" class="form-control txt-search-width-non" style="padding-left: 20px;">
+                                    <option>Select</option>
+                                    <option value="1">Active</option>
+                                    <option value="0">Non-Active</option>
+                                </select>
+                            </div>
+                        </form>
+                        @* <form class="form-inline frm-float-right">
+                            <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtFaxNo"><b>Fax</b></label>
                                 <input class="form-control txt-search-width-non" id="txtFaxNo" />
                             </div>
@@ -372,16 +391,16 @@
                                 <label class="mx-3" for="txtEmail"><b>E-Mail</b></label>
                                 <input class="form-control txt-search-width-non" id="txtEmail" />
                             </div>
-                        </form>
+                        </form> *@
                     </div>
-                    <div class="col-md-6 col-xl-4">
+                   @*  <div class="col-md-6 col-xl-4">
                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtContact"><b>Contact</b></label>
                                 <input class="form-control txt-search-width-non" id="txtContact" />
                             </div>
-                        </form>
-                        <form class="form-inline frm-float-right">
+                        </form> 
+                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="ddlActive"><b>Active</b></label>
                                 <select id="ddlActive" class="form-control txt-search-width-non" style="padding-left: 20px;">
@@ -421,7 +440,7 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
+                    </div> *@
                 </div>
             </div>
             <div class="mr-3 mt-2" align="right">

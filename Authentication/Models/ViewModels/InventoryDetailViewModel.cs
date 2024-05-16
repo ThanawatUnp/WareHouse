@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,6 +8,8 @@ namespace Authentication.Models
 {
     public class InventoryDetailViewModel
     {
+        public Guid id { get; set; }
+        public string barcode { get; set; }
         public string orderNo { get; set; }
         public string lotNo { get; set; }
         public string itemCode { get; set; }
@@ -18,5 +21,8 @@ namespace Authentication.Models
         public string locationCode { get; set; }
         public string locationName { get; set; }
         public string status { get; set; }
+        public int reserve { get; set; }
+        public string outboundList { get; set; }
+        public string qtyList { get; set; }
     }
 }

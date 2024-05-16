@@ -845,292 +845,6 @@ D:\Backup ABSS\Enter User and Pass\Authentication\Authentication\obj\Debug\netco
 D:\Backup ABSS\Enter User and Pass\Authentication\Authentication\obj\Debug\netcoreapp3.1\Authentication.dll
 D:\Backup ABSS\Enter User and Pass\Authentication\Authentication\obj\Debug\netcoreapp3.1\Authentication.pdb
 D:\Backup ABSS\Enter User and Pass\Authentication\Authentication\obj\Debug\netcoreapp3.1\Authentication.genruntimeconfig.cache
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\web.config
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\appsettings.Development.json
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\libman.json
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.StaticWebAssets.xml
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\appsettings.json
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.exe
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.deps.json
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.runtimeconfig.json
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.runtimeconfig.dev.json
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.pdb
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.Views.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.Views.pdb
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\BlazorDateRangePicker.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\MailKit.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\MimeKit.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\NETCore.MailKit.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\EmailService.dll
-D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\EmailService.pdb
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.csproj.AssemblyReference.cache
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.GeneratedMSBuildEditorConfig.editorconfig
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.AssemblyInfoInputs.cache
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.AssemblyInfo.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.csproj.CoreCompileInputs.cache
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.MvcApplicationPartsAssemblyInfo.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.MvcApplicationPartsAssemblyInfo.cache
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.RazorAssemblyInfo.cache
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.RazorAssemblyInfo.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\staticwebassets\Authentication.StaticWebAssets.Manifest.cache
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\staticwebassets\Authentication.StaticWebAssets.xml
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\scopedcss\bundle\Authentication.styles.css
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.TagHelpers.input.cache
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.TagHelpers.output.cache
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.RazorCoreGenerate.cache
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPassword.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Create.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Delete.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Details.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Edit.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Index.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Customers\ViewContent.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\ConfirmDeleteOrder.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\ConfirmDeleteResource.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\CreateInboundOrder.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\CreateResource.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\DeleteInboundOrder.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\DeleteReceived.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\DeleteResource.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\EditInboundOrder.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\EditReceived.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\EditResource.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\Index.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\ReceiveItem.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\ViewContent.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\ViewResource.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\ViewSubResource.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Inventories\Index.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\ItemCategories\Create.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\ItemCategories\Delete.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\ItemCategories\Details.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\ItemCategories\Edit.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\ItemCategories\Index.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\ItemCategories\ViewContent.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Items\Create.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Items\Delete.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Items\Details.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Items\Edit.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Items\Index.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Items\ViewContent.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\LocationCategories\Create.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\LocationCategories\Delete.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\LocationCategories\Details.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\LocationCategories\Edit.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\LocationCategories\Index.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\LocationCategories\ViewContent.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Locations\Create.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Locations\Delete.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Locations\Details.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Locations\Edit.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Locations\Index.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Locations\ViewContent.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\ConfirmDeleteOrder.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\ConfirmDeleteResource.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\CreateOutboundOrder.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\CreateResource.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\DeleteOutboundOrder.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\DeleteResource.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\EditOutboundOrder.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\EditResource.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\Index.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\ViewContent.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\ViewResource.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\PutAways\Index.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\PutAways\PutAway.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\PutAways\ViewContent.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Btn_Group.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Btn_Group_Resource.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Btn_Group_Sub_Resource.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Btn_PopUp_Footer.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentCustomer.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentInboundOrder.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentInboundOrderItem.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentItem.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentItemCategory.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentItemReceived.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentLocation.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentLocationCategory.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentOutboundOrder.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentOutboundOrderItem.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentPutAway.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentSupplier.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentUser.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewData.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderCustomer.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderInboundOrder.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderInboundOrderItem.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderItem.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderItemCategory.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderLocation.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderLocationCategory.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderOutboundOrder.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderOutboundOrderItem.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderPutAway.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderReceivedItem.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderSupplier.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderUser.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Suppliers\Create.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Suppliers\Delete.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Suppliers\Details.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Suppliers\Edit.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Suppliers\Index.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Suppliers\ViewContent.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Users\Delete.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Users\Details.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Users\Edit.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Users\Index.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Users\ResetPassword.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Users\ViewContent.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.RazorTargetAssemblyInfo.cache
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.RazorTargetAssemblyInfo.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.Views.pdb
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.csproj.CopyComplete
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.dll
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.pdb
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.genruntimeconfig.cache
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderInventory.cshtml.g.cs
-D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentInventory.cshtml.g.cs
 D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\appsettings.json
 D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\web.config
@@ -1421,5 +1135,887 @@ D:\SourceCode\CSJ Rubber\Authentication\obj\Debug\netcoreapp3.1\Authentication.c
 D:\SourceCode\CSJ Rubber\Authentication\obj\Debug\netcoreapp3.1\Authentication.dll
 D:\SourceCode\CSJ Rubber\Authentication\obj\Debug\netcoreapp3.1\Authentication.pdb
 D:\SourceCode\CSJ Rubber\Authentication\obj\Debug\netcoreapp3.1\Authentication.genruntimeconfig.cache
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Antiforgery.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Core.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authorization.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authorization.Policy.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Authorization.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Forms.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Server.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Web.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.CookiePolicy.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cors.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HostFiltering.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.Abstractions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Html.Abstractions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Abstractions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Extensions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Features.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpOverrides.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpsPolicy.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Identity.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Localization.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Localization.Routing.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Metadata.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Core.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Cors.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Localization.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Razor.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.RazorPages.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Razor.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Razor.Runtime.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCaching.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCompression.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Rewrite.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Routing.Abstractions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Routing.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.HttpSys.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.IIS.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.IISIntegration.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.Core.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Session.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Common.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Core.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.StaticFiles.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.WebSockets.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.WebUtilities.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.CSharp.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.CommandLine.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Ini.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Json.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Xml.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Composite.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Physical.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Http.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.Abstractions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Configuration.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Console.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Debug.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.EventLog.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.EventSource.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.TraceSource.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.ObjectPool.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.DataAnnotations.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.WebEncoders.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.JSInterop.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Net.Http.Headers.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.Core.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Primitives.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Registry.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\mscorlib.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\netstandard.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.AppContext.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Buffers.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Collections.Concurrent.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Collections.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Collections.NonGeneric.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Collections.Specialized.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.Annotations.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.DataAnnotations.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.EventBasedAsync.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.Primitives.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.TypeConverter.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Configuration.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Console.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Core.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Data.Common.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Data.DataSetExtensions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Data.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Contracts.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Debug.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.EventLog.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.FileVersionInfo.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Process.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.StackTrace.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.TextWriterTraceListener.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Tools.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.TraceSource.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Tracing.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Drawing.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Drawing.Primitives.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Dynamic.Runtime.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Globalization.Calendars.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Globalization.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Globalization.Extensions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.Brotli.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.FileSystem.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.ZipFile.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.DriveInfo.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Primitives.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Watcher.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.IsolatedStorage.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.MemoryMappedFiles.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.Pipelines.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.Pipes.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.UnmanagedMemoryStream.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Linq.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Linq.Expressions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Linq.Parallel.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Linq.Queryable.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Memory.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.Http.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.HttpListener.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.Mail.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.NameResolution.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.NetworkInformation.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.Ping.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.Primitives.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.Requests.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.Security.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.ServicePoint.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.Sockets.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.WebClient.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.WebHeaderCollection.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.WebProxy.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.WebSockets.Client.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.WebSockets.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Numerics.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Numerics.Vectors.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.ObjectModel.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.DispatchProxy.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.ILGeneration.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.Lightweight.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.Extensions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.Metadata.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.Primitives.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.TypeExtensions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Resources.Reader.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Resources.ResourceManager.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Resources.Writer.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.Unsafe.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.VisualC.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Extensions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Handles.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.WindowsRuntime.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Intrinsics.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Loader.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Numerics.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Formatters.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Json.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Primitives.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Xml.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.AccessControl.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Claims.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Algorithms.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Cng.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Csp.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Encoding.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Primitives.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.X509Certificates.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Xml.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Permissions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.Windows.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.SecureString.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.ServiceModel.Web.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.ServiceProcess.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.CodePages.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.Extensions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Text.Encodings.Web.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Text.Json.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Text.RegularExpressions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Channels.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Overlapped.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Dataflow.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Extensions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Parallel.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Thread.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.ThreadPool.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Timer.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Transactions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Transactions.Local.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.ValueTuple.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Web.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Web.HttpUtility.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Windows.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Windows.Extensions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.Linq.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.ReaderWriter.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.Serialization.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.XDocument.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.XmlDocument.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.XmlSerializer.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.XPath.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.XPath.XDocument.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\refs\WindowsBase.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+D:\SourceCode\CSJ Rubber\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\web.config
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\libman.json
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.StaticWebAssets.xml
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.exe
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.deps.json
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.runtimeconfig.json
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.runtimeconfig.dev.json
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.pdb
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Antiforgery.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Core.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authorization.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authorization.Policy.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Authorization.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Forms.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Server.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Web.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.CookiePolicy.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cors.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HostFiltering.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Html.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Extensions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Features.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpOverrides.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpsPolicy.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Identity.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Localization.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Localization.Routing.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Metadata.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Core.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Cors.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Localization.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Razor.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.RazorPages.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Razor.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Razor.Runtime.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCaching.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCompression.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Rewrite.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Routing.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Routing.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.HttpSys.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.IIS.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.IISIntegration.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.Core.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Session.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Common.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Core.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.StaticFiles.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.WebSockets.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.WebUtilities.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.CSharp.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.CommandLine.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Ini.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Xml.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Composite.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Http.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Configuration.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Console.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Debug.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.EventLog.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.EventSource.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.TraceSource.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.ObjectPool.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.DataAnnotations.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.WebEncoders.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.JSInterop.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Net.Http.Headers.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.Core.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Primitives.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Registry.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\mscorlib.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\netstandard.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.AppContext.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Buffers.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Collections.Concurrent.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Collections.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Collections.NonGeneric.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Collections.Specialized.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.Annotations.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.DataAnnotations.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.EventBasedAsync.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.Primitives.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.TypeConverter.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Configuration.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Console.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Core.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Data.Common.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Data.DataSetExtensions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Data.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Contracts.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Debug.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.EventLog.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.FileVersionInfo.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Process.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.StackTrace.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.TextWriterTraceListener.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Tools.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.TraceSource.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Tracing.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Drawing.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Drawing.Primitives.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Dynamic.Runtime.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Globalization.Calendars.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Globalization.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Globalization.Extensions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.Brotli.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.FileSystem.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.ZipFile.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.DriveInfo.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Primitives.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Watcher.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.IsolatedStorage.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.MemoryMappedFiles.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.Pipelines.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.Pipes.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.IO.UnmanagedMemoryStream.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Linq.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Linq.Expressions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Linq.Parallel.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Linq.Queryable.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Memory.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.Http.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.HttpListener.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.Mail.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.NameResolution.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.NetworkInformation.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.Ping.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.Primitives.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.Requests.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.Security.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.ServicePoint.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.Sockets.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.WebClient.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.WebHeaderCollection.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.WebProxy.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.WebSockets.Client.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Net.WebSockets.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Numerics.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Numerics.Vectors.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.ObjectModel.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.DispatchProxy.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.ILGeneration.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.Lightweight.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.Extensions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.Metadata.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.Primitives.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Reflection.TypeExtensions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Resources.Reader.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Resources.ResourceManager.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Resources.Writer.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.VisualC.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Extensions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Handles.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.WindowsRuntime.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Intrinsics.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Loader.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Numerics.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Formatters.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Json.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Primitives.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Xml.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Claims.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Algorithms.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Cng.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Csp.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Encoding.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Primitives.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.X509Certificates.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Xml.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Security.SecureString.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.ServiceModel.Web.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.ServiceProcess.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.Extensions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Text.RegularExpressions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Channels.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Overlapped.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Dataflow.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Extensions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Parallel.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Thread.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.ThreadPool.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Threading.Timer.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Transactions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Transactions.Local.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.ValueTuple.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Web.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Web.HttpUtility.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Windows.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.Linq.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.ReaderWriter.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.Serialization.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.XDocument.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.XmlDocument.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.XmlSerializer.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.XPath.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\System.Xml.XPath.XDocument.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\refs\WindowsBase.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.Views.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Authentication.Views.pdb
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\IronBarcodeDetection.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\IronBarCode.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\BitMiracle.LibTiff.NET.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\BlazorDateRangePicker.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\IronSoftware.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\IronSoftware.Logger.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\IronSoftware.Shared.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\IronSoftware.Drawing.Common.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\MailKit.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.ML.OnnxRuntime.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\MimeKit.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\NETCore.MailKit.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\SixLabors.Fonts.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\SixLabors.ImageSharp.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\SixLabors.ImageSharp.Drawing.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Security.AccessControl.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Text.Encoding.CodePages.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\IronBarcodeInterop.so
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\osx-arm64\native\IronBarcodeInterop.dylib
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\IronBarcodeInterop.dylib
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\IronBarcodeInterop.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\IronBarcodeInterop.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\android\native\onnxruntime.aar
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\Info.plist
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64\onnxruntime.framework\Headers\coreml_provider_factory.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64\onnxruntime.framework\Headers\cpu_provider_factory.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64\onnxruntime.framework\Headers\onnxruntime_c_api.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64\onnxruntime.framework\Headers\onnxruntime_cxx_api.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64\onnxruntime.framework\Headers\onnxruntime_cxx_inline.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64\onnxruntime.framework\Headers\onnxruntime_float16.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64\onnxruntime.framework\Headers\onnxruntime_run_options_config_keys.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64\onnxruntime.framework\Headers\onnxruntime_session_options_config_keys.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64\onnxruntime.framework\Info.plist
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64\onnxruntime.framework\onnxruntime
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64_x86_64-simulator\onnxruntime.framework\Headers\coreml_provider_factory.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64_x86_64-simulator\onnxruntime.framework\Headers\cpu_provider_factory.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64_x86_64-simulator\onnxruntime.framework\Headers\onnxruntime_c_api.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64_x86_64-simulator\onnxruntime.framework\Headers\onnxruntime_cxx_api.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64_x86_64-simulator\onnxruntime.framework\Headers\onnxruntime_cxx_inline.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64_x86_64-simulator\onnxruntime.framework\Headers\onnxruntime_float16.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64_x86_64-simulator\onnxruntime.framework\Headers\onnxruntime_run_options_config_keys.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64_x86_64-simulator\onnxruntime.framework\Headers\onnxruntime_session_options_config_keys.h
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64_x86_64-simulator\onnxruntime.framework\Info.plist
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\ios\native\onnxruntime.xcframework\ios-arm64_x86_64-simulator\onnxruntime.framework\onnxruntime
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libonnxruntime.so
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libonnxruntime.so
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\osx-arm64\native\libonnxruntime.dylib
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libonnxruntime.dylib
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\onnxruntime.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\onnxruntime.lib
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\onnxruntime_providers_shared.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\onnxruntime_providers_shared.lib
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\onnxruntime.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\onnxruntime.lib
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\onnxruntime_providers_shared.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\onnxruntime_providers_shared.lib
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\onnxruntime.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\onnxruntime.lib
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\onnxruntime_providers_shared.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\onnxruntime_providers_shared.lib
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.AccessControl.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Windows.Extensions.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\EmailService.dll
+D:\Project\WareHouse\Authentication\bin\Debug\netcoreapp3.1\EmailService.pdb
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.AssemblyInfoInputs.cache
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.AssemblyInfo.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.csproj.CoreCompileInputs.cache
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.MvcApplicationPartsAssemblyInfo.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.MvcApplicationPartsAssemblyInfo.cache
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.RazorAssemblyInfo.cache
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.RazorAssemblyInfo.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\staticwebassets\Authentication.StaticWebAssets.Manifest.cache
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\staticwebassets\Authentication.StaticWebAssets.xml
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\scopedcss\bundle\Authentication.styles.css
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.TagHelpers.input.cache
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.TagHelpers.output.cache
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.RazorCoreGenerate.cache
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPassword.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Create.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Delete.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Details.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Edit.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Index.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Customers\ViewContent.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\ConfirmDeleteOrder.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\ConfirmDeleteResource.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\CreateInboundOrder.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\CreateResource.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\DeleteInboundOrder.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\DeleteReceived.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\DeleteResource.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\EditInboundOrder.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\EditReceived.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\EditResource.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\Index.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\ReceiveItem.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\ViewContent.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\ViewResource.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\InboundOrders\ViewSubResource.cshtml.g.cs
 D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Inventories\details.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Inventories\Index.cshtml.g.cs
 D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Inventories\ViewContent.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\ItemCategories\Create.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\ItemCategories\Delete.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\ItemCategories\Details.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\ItemCategories\Edit.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\ItemCategories\Index.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\ItemCategories\ViewContent.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Items\Create.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Items\Delete.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Items\Details.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Items\Edit.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Items\Index.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Items\ViewContent.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\LocationCategories\Create.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\LocationCategories\Delete.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\LocationCategories\Details.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\LocationCategories\Edit.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\LocationCategories\Index.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\LocationCategories\ViewContent.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Locations\Create.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Locations\Delete.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Locations\Details.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Locations\Edit.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Locations\Index.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Locations\ViewContent.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\ConfirmDeleteOrder.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\ConfirmDeleteResource.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\CreateOutboundOrder.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\CreateResource.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\DeleteOutboundOrder.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\DeleteResource.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\EditOutboundOrder.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\EditResource.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\Index.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\ViewContent.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\OutboundOrders\ViewResource.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\PutAways\Index.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\PutAways\PutAway.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\PutAways\ViewContent.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Btn_Group.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Btn_Group_Resource.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Btn_Group_Sub_Resource.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Btn_PopUp_Footer.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentCustomer.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentInboundOrder.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentInboundOrderItem.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentInventory.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentItem.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentItemCategory.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentItemReceived.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentLocation.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentLocationCategory.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentOutboundOrder.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentOutboundOrderItem.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentPutAway.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentSupplier.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewContentUser.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewData.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderCustomer.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderInboundOrder.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderInboundOrderItem.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderInventory.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderItem.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderItemCategory.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderLocation.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderLocationCategory.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderOutboundOrder.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderOutboundOrderItem.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderPutAway.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderReceivedItem.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderSupplier.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewHeaderUser.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Suppliers\Create.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Suppliers\Delete.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Suppliers\Details.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Suppliers\Edit.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Suppliers\Index.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Suppliers\ViewContent.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Users\Delete.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Users\Details.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Users\Edit.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Users\Index.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Users\ResetPassword.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\Users\ViewContent.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.RazorTargetAssemblyInfo.cache
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.RazorTargetAssemblyInfo.cs
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.Views.pdb
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.csproj.CopyComplete
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.dll
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.pdb
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.genruntimeconfig.cache
+D:\Project\WareHouse\Authentication\obj\Debug\netcoreapp3.1\Authentication.csproj.AssemblyReference.cache

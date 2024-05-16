@@ -41,5 +41,7 @@ namespace Authentication.Models
         [Display(Name = "Status")]
         public Guid StatusInventoryId { get; set; }
         public virtual StatusInventory StatusInventory { get; set; }
+
+        public int reserve { get; set; }
     }
 }

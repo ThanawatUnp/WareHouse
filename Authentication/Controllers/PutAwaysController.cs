@@ -142,7 +142,7 @@ namespace Authentication.Controllers
                             }
                         }
                     }
-                }  
+                }
             }
 
             var Inventory = new Inventory()

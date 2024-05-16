@@ -401,12 +401,99 @@ namespace Authentication.Controllers
                 vOutboundOrder.edit_by = User.Identity.Name;
                 vOutboundOrder.edit_date = DateTime.Now;
                 _context.Update(vOutboundOrder);
-                await _context.SaveChangesAsync();
+
+                var items = await (from a in _context.Inventory
+                            join b in _context.ItemReceived
+                            on a.ItemReceivedId equals b.Id
+                            join c in _context.InboundItem
+                            on b.InboundItemId equals c.Id
+                            join d in _context.InboundOrder
+                            on c.InboundOrderId equals d.Id
+                            join e in _context.Item
+                            on c.ItemId equals e.Id
+                            join f in _context.ItemCategory
+                            on e.ItemCategoryId equals f.Id
+                            join g in _context.Location
+                            on a.LocationId equals g.Id
+                            join h in _context.LocationCategory
+                            on g.LocationCategoryId equals h.Id
+                            where (c.ItemId == outboundItem.ItemId && (a.reserve == 0 || a.reserve < a.qty))
+                            select new InventoryDetailViewModel
+                            {
+                                id              = a.Id,
+                                orderNo         = d.order_no,
+                                lotNo           = b.lot_no,
+                                itemCode        = e.item_code,
+                                itemName        = e.item_name,
+                                itemCategory    = f.category_name,
+                                cost            = b.cost,
+                                unit            = a.qty,
+                                receiveDate     = b.receive_date,
+                                locationCode    = g.location_code,
+                                locationName    = h.category_name,
+                                status          = b.status,
+                                reserve         = a.reserve
+                            }).OrderBy(x => x.receiveDate).ToListAsync();
+
+                int tempQty = outboundItem.qty; 
+                foreach(var item in items)
+                {
+                    if (tempQty != 0)
+                    {
+                        var inventory = await _context.Inventory.Where(x => x.Id == item.id).Select(x => x).FirstOrDefaultAsync();
+                        if (!string.IsNullOrWhiteSpace(inventory.user_define1))
+                        {
+                            inventory.user_define1 += $",{outboundItem.Id.ToString().ToUpper()}";
+                        }
+                        else
+                        {
+                            inventory.user_define1 = outboundItem.Id.ToString().ToUpper();
+                        }
+
+                        var remainReserve = item.unit - item.reserve;
+                        if (remainReserve >= tempQty)
+                        {
+                            inventory.reserve += tempQty;
+
+                            if(!string.IsNullOrWhiteSpace(inventory.user_define2))
+                            {
+                                inventory.user_define2 += $",{tempQty}";
+                            }
+                            else
+                            {
+                                inventory.user_define2 += $"{tempQty}";
+                            }
+                            tempQty = 0;
+                        }
+                        else
+                        {
+                            inventory.reserve += remainReserve;
+
+                            if (!string.IsNullOrWhiteSpace(inventory.user_define2))
+                            {
+                                inventory.user_define2 += $",{remainReserve}";
+                            }
+                            else
+                            {
+                                inventory.user_define2 += $"{remainReserve}";
+                            }
+
+                            tempQty -= remainReserve;
+                        }
+
+                        _context.Update(inventory);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
 
                 outboundItem.create_date = DateTime.Now;
                 outboundItem.create_by = User.Identity.Name; //Program.username;
                 outboundItem.edit_date = null;
                 _context.Add(outboundItem);
+               
                 await _context.SaveChangesAsync();
                 return RedirectToAction("ViewResource", new { id = outboundItem.OutboundOrderId });
             }
@@ -466,15 +553,332 @@ namespace Authentication.Controllers
                     vOutboundOrder.edit_by = User.Identity.Name;
                     vOutboundOrder.edit_date = DateTime.Now;
                     _context.Update(vOutboundOrder);
-                    await _context.SaveChangesAsync();
+
+                    var checkOutbountItem = await _context.OutboundItem.Where(x => x.Id == outboundItem.Id).AsNoTracking().FirstOrDefaultAsync();
+                    if(checkOutbountItem.qty != outboundItem.qty)
+                    {
+                        int tempQty = 0;
+                        if (checkOutbountItem.qty > outboundItem.qty)
+                        {
+                            tempQty = checkOutbountItem.qty - outboundItem.qty;
+                            var inventories = await (from a in _context.Inventory
+                                                join b in _context.ItemReceived
+                                                on a.ItemReceivedId equals b.Id
+                                                join c in _context.InboundItem
+                                                on b.InboundItemId equals c.Id
+                                                join d in _context.InboundOrder
+                                                on c.InboundOrderId equals d.Id
+                                                join e in _context.Item
+                                                on c.ItemId equals e.Id
+                                                join f in _context.ItemCategory
+                                                on e.ItemCategoryId equals f.Id
+                                                join g in _context.Location
+                                                on a.LocationId equals g.Id
+                                                join h in _context.LocationCategory
+                                                on g.LocationCategoryId equals h.Id
+                                                where (c.ItemId == checkOutbountItem.ItemId && a.user_define1.Contains(checkOutbountItem.Id.ToString().ToUpper()))
+                                                select new InventoryDetailViewModel
+                                                {
+                                                    id              = a.Id,
+                                                    orderNo         = d.order_no,
+                                                    lotNo           = b.lot_no,
+                                                    itemCode        = e.item_code,
+                                                    itemName        = e.item_name,
+                                                    itemCategory    = f.category_name,
+                                                    cost            = b.cost,
+                                                    unit            = a.qty,
+                                                    receiveDate     = b.receive_date,
+                                                    locationCode    = g.location_code,
+                                                    locationName    = h.category_name,
+                                                    status          = b.status,
+                                                    reserve         = a.reserve,
+                                                    outboundList    = a.user_define1,
+                                                    qtyList         = a.user_define2
+                                                }).OrderByDescending(x => x.receiveDate).ToListAsync();
+
+                            foreach (var item in inventories)
+                            {
+                                if (tempQty != 0)
+                                {
+                                    var inventory = await _context.Inventory.Where(x => x.Id == item.id).Select(x => x).FirstOrDefaultAsync();
+                                    var subOutboundId = item.outboundList.Split(",");
+                                    var subQty = item.qtyList.Split(",");
+
+                                    var index = Array.IndexOf(subOutboundId, checkOutbountItem.Id.ToString().ToUpper());
+                                    var qty = Convert.ToInt32(subQty[index]);
+
+                                    if (tempQty >= qty)
+                                    {
+                                        if (tempQty == qty)
+                                        {
+                                            inventory.reserve -= tempQty;
+                                        }
+                                        else
+                                        {
+                                            inventory.reserve -= qty;
+                                        }
+                                        tempQty -= qty;
+
+                                        if (subOutboundId.Count() == 1)
+                                        {
+                                            inventory.user_define1 = null;
+                                            inventory.user_define2 = null;
+                                        }
+                                        else
+                                        {
+                                            if (index == (subOutboundId.Count() - 1))
+                                            {
+                                                inventory.user_define1 = inventory.user_define1.Replace($",{checkOutbountItem.Id.ToString().ToUpper()}", "");
+                                            }
+                                            else
+                                            {
+                                                inventory.user_define1 = inventory.user_define1.Replace($"{checkOutbountItem.Id.ToString().ToUpper()},", "");
+                                            }
+                                        }
+
+                                        string updateQty = "";
+                                        for (int i = 0; i < subQty.Length; i++)
+                                        {
+                                            if (i != index)
+                                            {
+                                                updateQty += $"{subQty[i]},";
+                                            }
+                                        }
+
+                                        if (string.IsNullOrWhiteSpace(updateQty))
+                                        {
+                                            inventory.user_define2 = null;
+                                        }
+                                        else
+                                        {
+                                            updateQty = updateQty.Substring(0, updateQty.Length - 1);
+                                            inventory.user_define2 = updateQty;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        inventory.reserve -= tempQty;
+                                        string updateQty = "";
+                                        for (int i = 0; i < subQty.Length; i++)
+                                        {
+                                            if (i != index)
+                                            {
+                                                updateQty += $"{subQty[i]},";
+                                            }
+                                            else
+                                            {
+                                                int currentReserve = qty - tempQty;
+                                                updateQty += $"{currentReserve},";
+                                            }
+                                        }
+
+                                        if (string.IsNullOrWhiteSpace(updateQty))
+                                        {
+                                            inventory.user_define2 = null;
+                                        }
+                                        else
+                                        {
+                                            updateQty = updateQty.Substring(0, updateQty.Length - 1);
+                                            inventory.user_define2 = updateQty;
+                                        }
+                                        tempQty = 0;
+                                    }
+                                    _context.Update(inventory);
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                            }
+
+                        }
+                        else if (checkOutbountItem.qty < outboundItem.qty)
+                        {
+                            tempQty = outboundItem.qty - checkOutbountItem.qty;
+                            var inventories = await (from a in _context.Inventory
+                                                join b in _context.ItemReceived
+                                                on a.ItemReceivedId equals b.Id
+                                                join c in _context.InboundItem
+                                                on b.InboundItemId equals c.Id
+                                                join d in _context.InboundOrder
+                                                on c.InboundOrderId equals d.Id
+                                                join e in _context.Item
+                                                on c.ItemId equals e.Id
+                                                join f in _context.ItemCategory
+                                                on e.ItemCategoryId equals f.Id
+                                                join g in _context.Location
+                                                on a.LocationId equals g.Id
+                                                join h in _context.LocationCategory
+                                                on g.LocationCategoryId equals h.Id
+                                                where (c.ItemId == checkOutbountItem.ItemId && (a.reserve == 0 || a.reserve < a.qty))
+                                                select new InventoryDetailViewModel
+                                                {
+                                                    id              = a.Id,
+                                                    orderNo         = d.order_no,
+                                                    lotNo           = b.lot_no,
+                                                    itemCode        = e.item_code,
+                                                    itemName        = e.item_name,
+                                                    itemCategory    = f.category_name,
+                                                    cost            = b.cost,
+                                                    unit            = a.qty,
+                                                    receiveDate     = b.receive_date,
+                                                    locationCode    = g.location_code,
+                                                    locationName    = h.category_name,
+                                                    status          = b.status,
+                                                    reserve         = a.reserve,
+                                                    outboundList    = a.user_define1,
+                                                    qtyList         = a.user_define2
+                                                }).OrderByDescending(x => x.receiveDate).ToListAsync();
+
+                            var existOutbound = inventories.Where(x => x.outboundList != null && x.outboundList.Contains(checkOutbountItem.Id.ToString().ToUpper())).ToList();
+
+                            foreach(var item in existOutbound)
+                            {
+                                if (tempQty != 0)
+                                {
+                                    var inventory = await _context.Inventory.Where(x => x.Id == item.id).Select(x => x).FirstOrDefaultAsync();
+                                    var subOutboundId = item.outboundList.Split(",");
+                                    var subQty = item.qtyList.Split(",");
+
+                                    var index = Array.IndexOf(subOutboundId, checkOutbountItem.Id.ToString().ToUpper());
+                                    var qty = Convert.ToInt32(subQty[index]);
+
+                                    if (tempQty <= (item.unit - item.reserve))
+                                    {
+                                        inventory.reserve += tempQty;
+
+                                        string updateQty = "";
+                                        for (int i = 0; i < subQty.Length; i++)
+                                        {
+                                            if (i != index)
+                                            {
+                                                updateQty += $"{subQty[i]},";
+                                            }
+                                            else
+                                            {
+                                                var sumQty = qty + tempQty;
+                                                updateQty += $"{sumQty},";
+                                            }
+                                        }
+
+                                        if (string.IsNullOrWhiteSpace(updateQty))
+                                        {
+                                            inventory.user_define2 = null;
+                                        }
+                                        else
+                                        {
+                                            updateQty = updateQty.Substring(0, updateQty.Length - 1);
+                                            inventory.user_define2 = updateQty;
+                                        }
+
+                                        tempQty = 0;
+                                    }
+                                    else
+                                    {
+                                        var remainReserve = item.unit - item.reserve;
+                                        inventory.reserve += remainReserve;
+
+                                        string updateQty = "";
+                                        for (int i = 0; i < subQty.Length; i++)
+                                        {
+                                            if (i != index)
+                                            {
+                                                updateQty += $"{subQty[i]},";
+                                            }
+                                            else
+                                            {
+                                                var sumQty = qty + remainReserve;
+                                                updateQty += $"{sumQty},";
+                                            }
+                                        }
+
+                                        if (string.IsNullOrWhiteSpace(updateQty))
+                                        {
+                                            inventory.user_define2 = null;
+                                        }
+                                        else
+                                        {
+                                            updateQty = updateQty.Substring(0, updateQty.Length - 1);
+                                            inventory.user_define2 = updateQty;
+                                        }
+
+                                        tempQty -= remainReserve;
+
+
+                                    }
+                                    _context.Update(inventory);
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                            }
+
+                            var nonExistOutbound = inventories.Where(x => x.outboundList == null || (x.outboundList != null && !x.outboundList.Contains(checkOutbountItem.Id.ToString().ToUpper()))).ToList();
+
+                            foreach(var item in nonExistOutbound)
+                            {
+                                if(tempQty != 0)
+                                {
+                                    var inventory = await _context.Inventory.Where(x => x.Id == item.id).Select(x => x).FirstOrDefaultAsync();
+                                    if (!string.IsNullOrWhiteSpace(inventory.user_define1))
+                                    {
+                                        inventory.user_define1 += $",{outboundItem.Id.ToString().ToUpper()}";
+                                    }
+                                    else
+                                    {
+                                        inventory.user_define1 = outboundItem.Id.ToString().ToUpper();
+                                    }
+
+                                    var remainReserve = item.unit - item.reserve;
+                                    if (remainReserve >= tempQty)
+                                    {
+                                        inventory.reserve += tempQty;
+
+                                        if (!string.IsNullOrWhiteSpace(inventory.user_define2))
+                                        {
+                                            inventory.user_define2 += $",{tempQty}";
+                                        }
+                                        else
+                                        {
+                                            inventory.user_define2 += $"{tempQty}";
+                                        }
+                                        tempQty = 0;
+                                    }
+                                    else
+                                    {
+                                        inventory.reserve += remainReserve;
+
+                                        if (!string.IsNullOrWhiteSpace(inventory.user_define2))
+                                        {
+                                            inventory.user_define2 += $",{remainReserve}";
+                                        }
+                                        else
+                                        {
+                                            inventory.user_define2 += $"{remainReserve}";
+                                        }
+
+                                        tempQty -= remainReserve;
+                                    }
+
+                                    _context.Update(inventory);
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                    }
 
                     outboundItem.edit_date = DateTime.Now;
                     outboundItem.edit_by = User.Identity.Name;
                     _context.Update(outboundItem);
                     await _context.SaveChangesAsync();
+
                     return RedirectToAction("ViewResource", new { id = outboundItem.OutboundOrderId });
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (DbUpdateConcurrencyException ex)
                 {
                     if (!ItemExists(outboundItem.Id))
                     {
@@ -519,6 +923,93 @@ namespace Authentication.Controllers
                 try
                 {
                     var vItem = await _context.OutboundItem.FindAsync(outboundItem.Id);
+
+                    var inventories = await (from a in _context.Inventory
+                                        join b in _context.ItemReceived
+                                        on a.ItemReceivedId equals b.Id
+                                        join c in _context.InboundItem
+                                        on b.InboundItemId equals c.Id
+                                        join d in _context.InboundOrder
+                                        on c.InboundOrderId equals d.Id
+                                        join e in _context.Item
+                                        on c.ItemId equals e.Id
+                                        join f in _context.ItemCategory
+                                        on e.ItemCategoryId equals f.Id
+                                        join g in _context.Location
+                                        on a.LocationId equals g.Id
+                                        join h in _context.LocationCategory
+                                        on g.LocationCategoryId equals h.Id
+                                        where (c.ItemId == vItem.ItemId && a.user_define1.Contains(vItem.Id.ToString().ToUpper()))
+                                        select new InventoryDetailViewModel
+                                        {
+                                            id              = a.Id,
+                                            orderNo         = d.order_no,
+                                            lotNo           = b.lot_no,
+                                            itemCode        = e.item_code,
+                                            itemName        = e.item_name,
+                                            itemCategory    = f.category_name,
+                                            cost            = b.cost,
+                                            unit            = a.qty,
+                                            receiveDate     = b.receive_date,
+                                            locationCode    = g.location_code,
+                                            locationName    = h.category_name,
+                                            status          = b.status,
+                                            reserve         = a.reserve,
+                                            outboundList    = a.user_define1,
+                                            qtyList         = a.user_define2
+                                        }).OrderBy(x => x.receiveDate).ToListAsync();
+
+                    foreach(var item in inventories)
+                    {
+                        var subOutboundId = item.outboundList.Split(",");
+                        var subQty = item.qtyList.Split(",");
+
+                        var index = Array.IndexOf(subOutboundId, vItem.Id.ToString().ToUpper());
+
+                        var subtractQty = Convert.ToInt32(subQty[index]);
+                        var itemInventory = await _context.Inventory.Where(x => x.Id == item.id).Select(x => x).FirstOrDefaultAsync();
+                        itemInventory.reserve -= subtractQty;
+
+                        if (subOutboundId.Count() == 1)
+                        {
+                            itemInventory.user_define1 = null;
+                            itemInventory.user_define2 = null;
+                        }
+                        else
+                        {
+                            if(index == (subOutboundId.Count() - 1))
+                            {
+                                itemInventory.user_define1 = itemInventory.user_define1.Replace($",{vItem.Id.ToString().ToUpper()}", "");
+                            }
+                            else
+                            {
+                                itemInventory.user_define1 = itemInventory.user_define1.Replace($"{vItem.Id.ToString().ToUpper()},", "");
+                            }
+
+                            string updateQty = "";
+                            for(int i = 0; i < subQty.Length; i++)
+                            {
+                                if(i != index)
+                                {
+                                    updateQty += $"{subQty[i]},"; 
+                                }
+                            }
+
+                            if(string.IsNullOrWhiteSpace(updateQty))
+                            {
+                                itemInventory.user_define2 = null;
+                            }
+                            else
+                            {
+                                updateQty = updateQty.Substring(0, updateQty.Length - 1);
+                                itemInventory.user_define2 = updateQty;
+                            }
+                        }
+
+                        _context.Update(itemInventory);
+                    }
+
+
                     _context.OutboundItem.Remove(vItem);
                     await _context.SaveChangesAsync();
                     return RedirectToAction("ViewResource", new { id = outboundItem.OutboundOrderId });
@@ -1129,7 +1620,7 @@ namespace Authentication.Controllers
         }
 
         [AcceptVerbs("GET", "POST")]
-        public JsonResult CheckQuantity(int qty)
+        public async Task<JsonResult> CheckQuantity(Guid Id, Guid ItemId, int qty)
         {
             if (qty == 0)
             {
@@ -1137,7 +1628,92 @@ namespace Authentication.Controllers
             }
             else
             {
-                return Json(true);
+                if(ItemId != Guid.Empty)
+                {
+                    var item = await (from a in _context.Inventory
+                                join b in _context.ItemReceived
+                                on a.ItemReceivedId equals b.Id
+                                join c in _context.InboundItem
+                                on b.InboundItemId equals c.Id
+                                join d in _context.InboundOrder
+                                on c.InboundOrderId equals d.Id
+                                join e in _context.Item
+                                on c.ItemId equals e.Id
+                                join f in _context.ItemCategory
+                                on e.ItemCategoryId equals f.Id
+                                join g in _context.Location
+                                on a.LocationId equals g.Id
+                                join h in _context.LocationCategory
+                                on g.LocationCategoryId equals h.Id
+                                where (c.ItemId == ItemId)
+                                select new InventoryDetailViewModel
+                                {
+                                    id              = a.Id,
+                                    orderNo         = d.order_no,
+                                    lotNo           = b.lot_no,
+                                    itemCode        = e.item_code,
+                                    itemName        = e.item_name,
+                                    itemCategory    = f.category_name,
+                                    cost            = b.cost,
+                                    unit            = a.qty,
+                                    receiveDate     = b.receive_date,
+                                    locationCode    = g.location_code,
+                                    locationName    = h.category_name,
+                                    status          = b.status,
+                                    reserve         = a.reserve,
+                                    outboundList    = a.user_define1,
+                                    qtyList         = a.user_define2
+                                }).OrderBy(x => x.receiveDate).ToListAsync();
+
+                    var checkInventory = await _context.Inventory.Where(x => x.user_define1.Contains(Id.ToString().ToUpper())).FirstOrDefaultAsync();
+                    if(checkInventory == null)
+                    {
+                        var sumItem = item.Sum(x => x.unit) - item.Sum(x => x.reserve);
+                        if (qty <= sumItem)
+                        {
+                            return Json(true);
+                        }
+                        else
+                        {
+                            return Json($"limit {sumItem} items.");
+                        }
+                    }
+                    else
+                    {
+                        int sumReserve = 0;
+                        foreach(var element in item)
+                        {
+                            if(!string.IsNullOrWhiteSpace(element.outboundList))
+                            {
+                                if (element.outboundList.Contains(Id.ToString().ToUpper()))
+                                {
+                                    var subOutboundId = element.outboundList.Split(",");
+                                    var subQty = element.qtyList.Split(",");
+
+                                    var index = Array.IndexOf(subOutboundId, Id.ToString().ToUpper());
+
+                                    sumReserve += Convert.ToInt32(subQty[index]);
+                                }
+                            }
+                        }
+
+                        var sumItem = item.Sum(x => x.unit) - item.Sum(x => x.reserve) + sumReserve;
+                        if (qty <= sumItem)
+                        {
+                            return Json(true);
+                        }
+                        else
+                        {
+                            return Json($"limit {sumItem} items.");
+                        }
+
+                    }
+                    
+                }
+                else
+                {
+                    return Json($"Please select a item first.");
+                }
             }
         }
     }

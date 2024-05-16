@@ -27,6 +27,7 @@ D:\SourceCode\CSJ Rubber\EmailService\obj\Debug\netcoreapp3.1\EmailService.Assem
 D:\SourceCode\CSJ Rubber\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
 D:\SourceCode\CSJ Rubber\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
 D:\SourceCode\CSJ Rubber\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb
+<<<<<<< HEAD
 D:\Project\WareHouse\EmailService\bin\Debug\netcoreapp3.1\EmailService.deps.json
 D:\Project\WareHouse\EmailService\bin\Debug\netcoreapp3.1\EmailService.dll
 D:\Project\WareHouse\EmailService\bin\Debug\netcoreapp3.1\EmailService.pdb
@@ -37,3 +38,5 @@ D:\Project\WareHouse\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyI
 D:\Project\WareHouse\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
 D:\Project\WareHouse\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
 D:\Project\WareHouse\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb
+=======
+>>>>>>> a1d952c1ade5f0bec78be6231906bc356647ea31
