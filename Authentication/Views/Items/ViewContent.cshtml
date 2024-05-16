@@ -90,7 +90,7 @@
 <div id="search-block" class="border py-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;">
     <div class="container-fluid p-2">
         <div class="row">
-            <div class="col-md-6 col-xl-4">
+            <div class="col-md-6 col-xl-5">
                 <form class="form-inline frm-float-right" id="frm_txtOrderType" style="z-index: 10000 !important;">
                     <div class="form-group div-frm-group-search">
                         <label class="mx-3" for="txtItemCode"><b>Item Code</b></label>
@@ -110,35 +110,16 @@
                         </select>
                     </div>
                 </form>
-                <form class="form-inline frm-float-right">
-                    <div class="form-group div-frm-group-search">
-                        <label class="mx-3" for="txtCost"><b>Cost</b></label>
-                        <input class="form-control txt-search-width-non" id="txtCost" type="number" min="0" max="999999" />
-                    </div>
-                </form>
+
             </div>
-            <div class="col-md-6 col-xl-4">
-                <form class="form-inline frm-float-right">
-                    <div class="form-group div-frm-group-search">
-                        <label class="mx-3" for="txtUnit"><b>Unit</b></label>
-                        <input class="form-control txt-search-width-non" id="txtUnit" type="number" min="0" />
-                    </div>
-                </form>
-                <form class="form-inline frm-float-right">
-                    <div class="form-group div-frm-group-search">
-                        <label class="mx-3" for="ddlQueueType"><b>Export Category</b></label>
-                        <select id="ddlQueueType" class="form-control txt-search-width-non" asp-items="ViewBag.QueueTypeList">
-                        </select>
-                    </div>
-                </form>
+            <div class="col-md-6 col-xl-5">
+
                 <form class="form-inline frm-float-right">
                     <div class="form-group div-frm-group-search">
                         <label class="mx-3" for="txtCreateBy"><b>Create By</b></label>
                         <input class="form-control txt-search-width-non" id="txtCreateBy" />
                     </div>
                 </form>
-            </div>
-            <div class="col-md-6 col-xl-4">
                 <form class="form-inline frm-float-right">
                     <div class="form-group div-frm-group-search">
                         <label class="mx-3" for="dtCreateDate"><b>Create Date</b></label>
@@ -148,22 +129,8 @@
                         </div>
                     </div>
                 </form>
-                <form class="form-inline frm-float-right">
-                    <div class="form-group div-frm-group-search">
-                        <label class="mx-3" for="txtEditBy"><b>Edit By</b></label>
-                        <input class="form-control txt-search-width-non" id="txtEditBy" />
-                    </div>
-                </form>
-                <form class="form-inline frm-float-right">
-                    <div class="form-group div-frm-group-search">
-                        <label class="mx-3" for="dtEditDate"><b>Edit Date</b></label>
-                        <input id="dtEditDate" name="dtEditDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
-                        <div class="arrow-datetime" onclick="$('#dtEditDate').data('daterangepicker').toggle();">
-                            <i class="far fa-calendar-alt"></i>
-                        </div>
-                    </div>
-                </form>
             </div>
+
         </div>
     </div>
     <div class="mr-3 mt-2" align="right">

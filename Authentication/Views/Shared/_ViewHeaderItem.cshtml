@@ -2,12 +2,12 @@
 {
     @switch (@item)
     {
-        case "Unit":
+       @*  case "Unit":
             <th style="min-width: 90px;">@item</th>
             break;
         case "Cost":
             <th style="min-width: 110px;">@item</th>
-            break;
+            break; *@
         case "Create By":
         case "Create Date":
         case "Edit By":
@@ -22,9 +22,9 @@
             <th style="min-width: 150px;">@item</th>
             break;
         case "Item Name":
-        case "Export Category":
+       @*  case "Export Category":
             <th style="min-width: 160px;">@item</th>
-            break;
+            break; *@
         default:
             <th>@item</th>
             break;

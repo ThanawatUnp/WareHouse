@@ -17,7 +17,8 @@ namespace Authentication.Controllers
     public class ItemsController : Controller
     {
         private readonly WMContext _context;
-        private string[] lHeader = { "Item Code", "Item Name", "Item Category", "Description", "Cost", "Unit", "Export Category", "Create By", "Create Date", "Edit By", "Edit Date" };
+        //private string[] lHeader = { "Item Code", "Item Name", "Item Category", "Description", "Cost", "Unit", "Export Category", "Create By", "Create Date", "Edit By", "Edit Date" };
+        private string[] lHeader = { "Item Code", "Item Name", "Item Category", "Description", "Create By", "Create Date", "Edit By", "Edit Date" };
 
         public ItemsController(WMContext context)
         {

@@ -52,7 +52,7 @@
                                 <label asp-for="description" class="control-label"></label>
                                 <input asp-for="description" class="form-control input-popup" />
                             </div>
-                            <div class="form-group form-group-popup">
+                           @*  <div class="form-group form-group-popup">
                                 <label asp-for="mix_expire" class="control-label"></label>
                                 <input class="form-control input-popup" value="@{  String sMixExpire = "Yes";
                                     if (Model.mix_expire == false)
@@ -81,7 +81,7 @@
                                     }
                                     @sMixLot;
                                 }" />
-                            </div>
+                            </div> *@
                             <div class="form-group form-group-popup">
                                 <label asp-for="create_by" class="control-label"></label>
                                 <input asp-for="create_by" class="form-control input-popup" />

@@ -166,7 +166,8 @@ namespace Authentication.Controllers
                                orderby S.create_date ascending
                                select S).Skip(tempData.SkipRecItm).Take(tempData.PerPageItm);
 
-            string[] lHeaderItem = { "Item Name", "Item Type", "State", "Cost", "Quantity Order", "Create By", "Create Date", "Edit By", "Edit Date" };
+            //string[] lHeaderItem = { "Item Name", "Item Type", "State", "Cost", "Quantity Order", "Create By", "Create Date", "Edit By", "Edit Date" };
+            string[] lHeaderItem = { "Item Name", "Item Type", "State", "Quantity Order", "Create By", "Create Date", "Edit By", "Edit Date" };
 
             ViewData["OutboundItem"] = outboundItem;
             ViewData["OrderTypeList"] = new SelectList(orderType, "Id", "Type");

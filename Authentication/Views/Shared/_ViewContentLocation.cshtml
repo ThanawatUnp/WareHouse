@@ -48,33 +48,7 @@
                     <td style="width: 150px;">
                         @location.description
                     </td>
-                    <td style="width: 90px;">
-                        @{ String sMixItem = "No";
-                            if (@location.mix_item == true)
-                            {
-                                sMixItem = "Yes";
-                            }
-                            @sMixItem.ToString();
-                        }
-                    </td>
-                    <td style="width: 100px;">
-                        @{ String sMixExpire = "No";
-                            if (@location.mix_expire == true)
-                            {
-                                sMixExpire = "Yes";
-                            }
-                            @sMixExpire.ToString();
-                        }
-                    </td>
-                    <td style="width: 90px;">
-                        @{ String sMixLot = "No";
-                            if (@location.mix_lot == true)
-                            {
-                                sMixLot = "Yes";
-                            }
-                            @sMixLot.ToString();
-                        }
-                    </td>
+                   
                     <td style="width: 130px;">
                         @location.create_by
                     </td>

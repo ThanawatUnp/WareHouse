@@ -79,11 +79,11 @@
                                 </select>
                                 <span asp-validation-for="ItemReceivedStateId" class="text-danger" id="sItemReceivedState"></span>
                             </div>
-                            <div class="form-group form-group-popup">
+                            @* <div class="form-group form-group-popup">
                                 <label asp-for="cost" class="control-label"></label>
                                 <input asp-for="cost" id="ipCost" class="form-control input-popup">
                                 <span asp-validation-for="cost" class="text-danger" id="sCost"></span>
-                            </div>
+                            </div> *@
                             <div class="form-group form-group-popup">
                                 <label asp-for="qty" class="control-label"></label>
                                 <input asp-for="qty" id="ipQty" class="form-control input-popup" onchange="QtyChanged()">

@@ -94,7 +94,7 @@
 <div id="search-block" class="border py-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;">
     <div class="container-fluid p-2">
         <div class="row">
-            <div class="col-md-6 col-xl-4">
+            <div class="col-md-6 col-xl-5">
                 <form class="form-inline frm-float-right">
                     <div class="form-group div-frm-group-search">
                         <label class="mx-3" for="txtOrderNumber"><b>Order Number</b></label>
@@ -113,35 +113,10 @@
                         <input class="form-control txt-search-width-non" id="txtItemName" />
                     </div>
                 </form>
-                <form class="form-inline frm-float-right">
-                    <div class="form-group div-frm-group-search">
-                        <label class="mx-3" for="ddlState"><b>State</b></label>
-                        <select id="ddlState" class="form-control txt-search-width-non" asp-items="ViewBag.StateList">
-                        </select>
-                    </div>
-                </form>
+
             </div>
-            <div class="col-md-6 col-xl-4">
-                <form class="form-inline frm-float-right">
-                    <div class="form-group div-frm-group-search">
-                        <label class="mx-3" for="txtReceiveQty"><b>Receive Quantity</b></label>
-                        <input class="form-control txt-search-width-non" id="txtReceiveQty" type="number" min="0" step="1" onchange="this.value = parseInt(this.value);" />
-                    </div>
-                </form>
-                <form class="form-inline frm-float-right">
-                    <div class="form-group div-frm-group-search">
-                        <label class="mx-3" for="txtCost"><b>Cost</b></label>
-                        <input class="form-control txt-search-width-non" id="txtCost" type="number" min="0" step="0.01" onchange="CostChanged()" />
-                    </div>
-                </form>
-                <form class="form-inline frm-float-right">
-                    <div class="form-group div-frm-group-search">
-                        <label class="mx-3" for="txtLotNo"><b>Lot Number</b></label>
-                        <input class="form-control txt-search-width-non" id="txtLotNo" />
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-6 col-xl-4">
+
+            <div class="col-md-6 col-xl-5">
                 <form class="form-inline frm-float-right">
                     <div class="form-group div-frm-group-search">
                         <label class="mx-3" for="dtExpireDate"><b>Expire Date</b></label>
@@ -162,8 +137,9 @@
                 </form>
                 <form class="form-inline frm-float-right">
                     <div class="form-group div-frm-group-search">
-                        <label class="mx-3" for="txtDescription"><b>Description</b></label>
-                        <input class="form-control txt-search-width-non" id="txtDescription" />
+                        <label class="mx-3" for="ddlState"><b>State</b></label>
+                        <select id="ddlState" class="form-control txt-search-width-non" asp-items="ViewBag.StateList">
+                        </select>
                     </div>
                 </form>
             </div>

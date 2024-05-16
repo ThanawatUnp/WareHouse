@@ -16,7 +16,9 @@ namespace Authentication.Controllers
     public class LocationsController : Controller
     {
         private readonly WMContext _context;
-        private string[] lHeader = { "Location Code", "Location Category", "Description", "Mix Item", "Mix Expire", "Mix Lot", "Create By", "Create Date", "Edit By", "Edit Date" };
+        private string[] lHeader = { "Location Code", "Location Category", "Description", "Create By", "Create Date", "Edit By", "Edit Date" };
+
+        //private string[] lHeader = { "Location Code", "Location Category", "Description", "Mix Item", "Mix Expire", "Mix Lot", "Create By", "Create Date", "Edit By", "Edit Date" };
 
         public LocationsController(WMContext context)
         {

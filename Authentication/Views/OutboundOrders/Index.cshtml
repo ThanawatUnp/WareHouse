@@ -23,20 +23,20 @@
                 endshipdate: $('#dtPlanShipDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
                 invoiceno: $('#txtInvoiceNo').val(),
                 customer: $('#ddlCustomer').val(),
-                description: $('#txtDescription').val(),
+                //description: $('#txtDescription').val(),
                 createby: $('#ddlCreateBy').val(),
                 screatedate: vCreateDate,
                 startcreatedate: $('#dtCreateDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
                 endcreatedate: $('#dtCreateDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                editby: $('#ddlEditBy').val(),
-                seditdate: vEditeDate,
-                starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
-                endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                cancelby: $('#ddlCloseBy').val(),
-                scanceldate: vCancelDate,
-                startcanceldate: $('#dtCancelDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
-                endcanceldate: $('#dtCancelDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                cancelremark: $('#txtCancelRemark').val(),
+                // editby: $('#ddlEditBy').val(),
+                // seditdate: vEditeDate,
+                // starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                // endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                // cancelby: $('#ddlCloseBy').val(),
+                // scanceldate: vCancelDate,
+                // startcanceldate: $('#dtCancelDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                // endcanceldate: $('#dtCancelDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                // cancelremark: $('#txtCancelRemark').val(),
             },
             success: function (result) {
                 $('#order-no').text('');
@@ -61,20 +61,20 @@
                 endshipdate: $('#dtPlanShipDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
                 invoiceno: $('#txtInvoiceNo').val(),
                 customer: $('#ddlCustomer').val(),
-                description: $('#txtDescription').val(),
+                //description: $('#txtDescription').val(),
                 createby: $('#ddlCreateBy').val(),
                 screatedate: vCreateDate,
                 startcreatedate: $('#dtCreateDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
                 endcreatedate: $('#dtCreateDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                editby: $('#ddlEditBy').val(),
-                seditdate: vEditeDate,
-                starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
-                endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                cancelby: $('#ddlCloseBy').val(),
-                scanceldate: vCancelDate,
-                startcanceldate: $('#dtCancelDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
-                endcanceldate: $('#dtCancelDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                cancelremark: $('#txtCancelRemark').val(),
+                // editby: $('#ddlEditBy').val(),
+                // seditdate: vEditeDate,
+                // starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                // endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                // cancelby: $('#ddlCloseBy').val(),
+                // scanceldate: vCancelDate,
+                // startcanceldate: $('#dtCancelDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                // endcanceldate: $('#dtCancelDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                // cancelremark: $('#txtCancelRemark').val(),
             },
             success: function (result) {
                 $('#childLayout').html(result);
@@ -179,20 +179,20 @@
                 endshipdate: $('#dtPlanShipDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
                 invoiceno: $('#txtInvoiceNo').val(),
                 customer: $('#ddlCustomer').val(),
-                description: $('#txtDescription').val(),
+                //description: $('#txtDescription').val(),
                 createby: $('#ddlCreateBy').val(),
                 screatedate: vCreateDate,
                 startcreatedate: $('#dtCreateDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
                 endcreatedate: $('#dtCreateDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                editby: $('#ddlEditBy').val(),
-                seditdate: vEditeDate,
-                starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
-                endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                cancelby: $('#ddlCancelBy').val(),
-                scanceldate: vCancelDate,
-                startcanceldate: $('#dtCancelDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
-                endcanceldate: $('#dtCancelDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                cancelremark: $('#txtCancelRemark').val(),
+                // editby: $('#ddlEditBy').val(),
+                // seditdate: vEditeDate,
+                // starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                // endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                // cancelby: $('#ddlCancelBy').val(),
+                // scanceldate: vCancelDate,
+                // startcanceldate: $('#dtCancelDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                // endcanceldate: $('#dtCancelDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                // cancelremark: $('#txtCancelRemark').val(),
             },
             success: function (result) {
                 $('#childLayout').html(result);
@@ -590,7 +590,7 @@
         <div id="search-block" class="border py-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;">
             <div class="container-fluid p-2">
                 <div class="row">
-                    <div class="col-md-6 col-xl-4">
+                    <div class="col-md-6 col-xl-5">
                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtStatus"><b>Status</b></label>
@@ -619,14 +619,15 @@
                                 </div>
                             </div>
                         </form>
+                       
+                    </div>
+                    <div class="col-md-6 col-xl-5">
                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtInvoiceNo"><b>Invoice Number</b></label>
                                 <input class="form-control  txt-search-width-non" id="txtInvoiceNo" />
                             </div>
                         </form>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtCustomerCode"><b>Customer</b></label>
@@ -634,12 +635,7 @@
                                 </select>
                             </div>
                         </form>
-                        <form class="form-inline frm-float-right">
-                            <div class="form-group div-frm-group-search">
-                                <label class="mx-3" for="txtDescription"><b>Description</b></label>
-                                <input class="form-control  txt-search-width-non" id="txtDescription" />
-                            </div>
-                        </form>
+                       
                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtCreateBy"><b>Create By</b></label>
@@ -656,47 +652,9 @@
                                 </div>
                             </div>
                         </form>
-                        <form class="form-inline frm-float-right">
-                            <div class="form-group div-frm-group-search">
-                                <label class="mx-3" for="txtEditBy"><b>Edit By</b></label>
-                                <select id="ddlEditBy" class="form-control txt-search-width-non" asp-items="ViewBag.UserList">
-                                </select>
-                            </div>
-                        </form>
+                       
                     </div>
-                    <div class="col-md-6 col-xl-4">
-                        <form class="form-inline frm-float-right">
-                            <div class="form-group div-frm-group-search">
-                                <label class="mx-3" for="dtEditDate"><b>Edit Date</b></label>
-                                <input id="dtEditDate" name="dtEditDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
-                                <div class="arrow-datetime" onclick="$('#dtEditDate').data('daterangepicker').toggle();">
-                                    <i class="far fa-calendar-alt"></i>
-                                </div>
-                            </div>
-                        </form>
-                        <form class="form-inline frm-float-right">
-                            <div class="form-group div-frm-group-search">
-                                <label class="mx-3" for="txtCancelBy"><b>Cancel By</b></label>
-                                <select id="ddlCancelBy" class="form-control txt-search-width-non" asp-items="ViewBag.UserList">
-                                </select>
-                            </div>
-                        </form>
-                        <form class="form-inline frm-float-right">
-                            <div class="form-group div-frm-group-search">
-                                <label class="mx-3" for="dtCancelDate"><b>Cancel Date</b></label>
-                                <input id="dtCancelDate" name="dtCancelDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
-                                <div class="arrow-datetime" onclick="$('#dtCancelDate').data('daterangepicker').toggle();">
-                                    <i class="far fa-calendar-alt"></i>
-                                </div>
-                            </div>
-                        </form>
-                        <form class="form-inline frm-float-right">
-                            <div class="form-group div-frm-group-search">
-                                <label class="mx-3" for="txtCancelRemark"><b>Cancel Remark</b></label>
-                                <input class="form-control  txt-search-width-non" id="txtCancelRemark" />
-                            </div>
-                        </form>
-                    </div>
+                   
                 </div>
             </div>
             <div class="mr-3 mt-2" align="right">

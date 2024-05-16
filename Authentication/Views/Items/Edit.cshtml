@@ -99,7 +99,7 @@
                                 <input asp-for="description" id="ipDescription" class="form-control input-popup" />
                                 <span asp-validation-for="description" class="text-danger"></span>
                             </div>
-                            <div class="form-group form-group-popup">
+                           @*  <div class="form-group form-group-popup">
                                 <label asp-for="cost" class="control-label"></label>
                                 <input asp-for="cost" id="ipCost" class="form-control input-popup" type="number" min="0" max="999999" onchange="CostChanged()"/>
                                 <span asp-validation-for="cost" class="text-danger"></span>
@@ -114,7 +114,7 @@
                                 <select asp-for="QueueTypeId" id="ddlQueueType" class="form-control input-popup" asp-items="ViewBag.QueueTypeList">
                                 </select>
                                 <span asp-validation-for="QueueTypeId" class="text-danger"></span>
-                            </div>
+                            </div> *@
                             <div class="form-group form-group-popup">
                                 <label asp-for="file_name" class="control-label"></label>
                                 <div class="custom-file">

@@ -28,15 +28,15 @@
                 screatedate: vCreateDate,
                 startcreatedate: $('#dtCreateDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
                 endcreatedate: $('#dtCreateDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                editby: $('#ddlEditBy').val(),
-                seditdate: vEditeDate,
-                starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
-                endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                closeby: $('#ddlCloseBy').val(),
-                sclosedate: vCloseDate,
-                startclosedate: $('#dtCloseDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
-                endclosedate: $('#dtCloseDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                closeremark: $('#txtCloseRemark').val(),
+                // editby: $('#ddlEditBy').val(),
+                // seditdate: vEditeDate,
+                // starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                // endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                // closeby: $('#ddlCloseBy').val(),
+                // sclosedate: vCloseDate,
+                // startclosedate: $('#dtCloseDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                // endclosedate: $('#dtCloseDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                // closeremark: $('#txtCloseRemark').val(),
             },
             success: function (result) {
                 $('#childLayout').html(result);
@@ -75,15 +75,15 @@
                 screatedate: vCreateDate,
                 startcreatedate: $('#dtCreateDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
                 endcreatedate: $('#dtCreateDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                editby: $('#ddlEditBy').val(),
-                seditdate: vEditeDate,
-                starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
-                endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                closeby: $('#ddlCloseBy').val(),
-                sclosedate: vCloseDate,
-                startclosedate: $('#dtCloseDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
-                endclosedate: $('#dtCloseDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                closeremark: $('#txtCloseRemark').val(),
+                // editby: $('#ddlEditBy').val(),
+                // seditdate: vEditeDate,
+                // starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                // endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                // closeby: $('#ddlCloseBy').val(),
+                // sclosedate: vCloseDate,
+                // startclosedate: $('#dtCloseDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                // endclosedate: $('#dtCloseDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                // closeremark: $('#txtCloseRemark').val(),
             },
             success: function (result) {
                 $('#order-no').text('');
@@ -278,15 +278,15 @@
                 screatedate: vCreateDate,
                 startcreatedate: $('#dtCreateDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
                 endcreatedate: $('#dtCreateDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                editby: $('#ddlEditBy').val(),
-                seditdate: vEditeDate,
-                starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
-                endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                closeby: $('#ddlCloseBy').val(),
-                sclosedate: vCloseDate,
-                startclosedate: $('#dtCloseDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
-                endclosedate: $('#dtCloseDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
-                closeremark: $('#txtCloseRemark').val(),
+                // editby: $('#ddlEditBy').val(),
+                // seditdate: vEditeDate,
+                // starteditdate: $('#dtEditDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                // endeditdate: $('#dtEditDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                // closeby: $('#ddlCloseBy').val(),
+                // sclosedate: vCloseDate,
+                // startclosedate: $('#dtCloseDate').data('daterangepicker').startDate.format('MM/DD/YYYY'),
+                // endclosedate: $('#dtCloseDate').data('daterangepicker').endDate.format('MM/DD/YYYY'),
+                // closeremark: $('#txtCloseRemark').val(),
             },
             success: function (result) {
                 $('#childLayout').html(result);
@@ -855,40 +855,25 @@
         <div id="search-block" class="border py-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;">
             <div class="container-fluid p-2">
                 <div class="row">
-                    <div class="col-md-6 col-xl-4">
+                    <div class="col-md-6 col-xl-5">
                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtStatus"><b>Status</b></label>
-                                @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
-                                <div class="dropdown-menu">
-                                    <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
-                                    <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
-                                    <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
-                                </div>*@
+                                
                                 <input class="form-control txt-search-width-non" id="txtStatus" />
                             </div>
                         </form>
                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtOrderNumber"><b>Order Number</b></label>
-                                @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
-                                <div class="dropdown-menu">
-                                    <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
-                                    <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
-                                    <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
-                                </div>*@
+                               
                                 <input class="form-control txt-search-width-non" id="txtOrderNumber" />
                             </div>
                         </form>
                         <form class="form-inline frm-float-right" id="frm_txtOrderType" style="z-index: 10000 !important;">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtOrderType"><b>Order Type</b></label>
-                                @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
-                                <div class="dropdown-menu">
-                                    <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
-                                    <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
-                                    <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
-                                </div>*@
+                                
                                 <select id="ddlOrderType" class="form-control txt-search-width-non" asp-items="ViewBag.OrderTypeList">
                                 </select>
                             </div>
@@ -902,46 +887,26 @@
                                 </div>
                             </div>
                         </form>
+                       
+                    </div>
+                    <div class="col-md-6 col-xl-5">
                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtSupplierCode"><b>Supplier</b></label>
-                                @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
-                                <div class="dropdown-menu">
-                                    <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
-                                    <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
-                                    <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
-                                </div>*@
+
                                 <select id="ddlSupplier" class="form-control txt-search-width-non" asp-items="ViewBag.SupplierList">
                                 </select>
                             </div>
                         </form>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtCustomerCode"><b>Customer</b></label>
-                                @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
-                                <div class="dropdown-menu">
-                                    <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
-                                    <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
-                                    <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
-                                </div>*@
+                                
                                 <select id="ddlCustomer" class="form-control txt-search-width-non" asp-items="ViewBag.CustomerList">
                                 </select>
                             </div>
                         </form>
-                        <form class="form-inline frm-float-right">
-                            <div class="form-group div-frm-group-search">
-                                <label class="mx-3" for="txtDescription"><b>Description</b></label>
-                                @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
-                                <div class="dropdown-menu">
-                                    <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
-                                    <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
-                                    <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
-                                </div>*@
-                                <input class="form-control  txt-search-width-non" id="txtDescription" />
-                            </div>
-                        </form>
+                      
                         <form class="form-inline frm-float-right">
                             <div class="form-group div-frm-group-search">
                                 <label class="mx-3" for="txtCreateBy"><b>Create By</b></label>
@@ -958,53 +923,9 @@
                                 </div>
                             </div>
                         </form>
-                        <form class="form-inline frm-float-right">
-                            <div class="form-group div-frm-group-search">
-                                <label class="mx-3" for="txtEditBy"><b>Edit By</b></label>
-                                <select id="ddlEditBy" class="form-control txt-search-width-non" asp-items="ViewBag.UserList">
-                                </select>
-                            </div>
-                        </form>
+                      
                     </div>
-                    <div class="col-md-6 col-xl-4">
-                        <form class="form-inline frm-float-right">
-                            <div class="form-group div-frm-group-search">
-                                <label class="mx-3" for="dtEditDate"><b>Edit Date</b></label>
-                                <input id="dtEditDate" name="dtEditDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
-                                <div class="arrow-datetime" onclick="$('#dtEditDate').data('daterangepicker').toggle();">
-                                    <i class="far fa-calendar-alt"></i>
-                                </div>
-                            </div>
-                        </form>
-                        <form class="form-inline frm-float-right">
-                            <div class="form-group div-frm-group-search">
-                                <label class="mx-3" for="txtCloseBy"><b>Close By</b></label>
-                                <select id="ddlCloseBy" class="form-control txt-search-width-non" asp-items="ViewBag.UserList">
-                                </select>
-                            </div>
-                        </form>
-                        <form class="form-inline frm-float-right">
-                            <div class="form-group div-frm-group-search">
-                                <label class="mx-3" for="dtCloseDate"><b>Close Date</b></label>
-                                <input id="dtCloseDate" name="dtCloseDate" type='text' class="form-control text-left txt-search-width-non dt-font" style="padding-right:2.5rem;" placeholder="mm/dd/yyyy-mm/dd/yyyy" />
-                                <div class="arrow-datetime" onclick="$('#dtCloseDate').data('daterangepicker').toggle();">
-                                    <i class="far fa-calendar-alt"></i>
-                                </div>
-                            </div>
-                        </form>
-                        <form class="form-inline frm-float-right">
-                            <div class="form-group div-frm-group-search">
-                                <label class="mx-3" for="txtCloseRemark"><b>Close Remark</b></label>
-                                @*<a class="btn dropdown-option-search" data-toggle="dropdown">%</a>
-                                <div class="dropdown-menu">
-                                    <a id="none" class="dropdown-item custom-dropdown-item" href="#">none</a>
-                                    <a id="equal" class="dropdown-item custom-dropdown-item" href="#">= Equal</a>
-                                    <a id="nequal" class="dropdown-item custom-dropdown-item" href="#"><> Not Equal</a>
-                                </div>*@
-                                <input class="form-control  txt-search-width-non" id="txtCloseRemark" />
-                            </div>
-                        </form>
-                    </div>
+                     
                 </div>
             </div>
             <div class="mr-3 mt-2" align="right">
