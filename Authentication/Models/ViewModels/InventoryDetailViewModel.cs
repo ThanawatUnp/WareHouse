@@ -21,5 +21,8 @@ namespace Authentication.Models
         public string locationCode { get; set; }
         public string locationName { get; set; }
         public string status { get; set; }
+        public int reserve { get; set; }
+        public string outboundList { get; set; }
+        public string qtyList { get; set; }
     }
 }

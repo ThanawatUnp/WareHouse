@@ -4,6 +4,8 @@
     ViewData["Title"] = "Create";
 }
 <script>
+const { Alert } = require("bootstrap");
+
     function clearForm() {
         $('#ipCost').val('');
         $('#ipQty').val('');
@@ -16,6 +18,7 @@
     }
 
     function QtyChanged() {
+
         if (!Number.isInteger($('#ipQty').val())) {
             $('#ipQty').val($('#ipQty').val() | 0);
         }

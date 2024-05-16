@@ -16,7 +16,7 @@ namespace Authentication.Controllers
     public class InventoriesController : Controller
     {
         private readonly WMContext _context;
-        private string[] lHeader = { "Item Code", "Item Name", "Item Category", "Cost", "Quantity" };
+        private string[] lHeader = { "Item Code", "Item Name", "Item Category", "Quantity" };
 
         public InventoriesController(WMContext context)
         {
@@ -49,7 +49,7 @@ namespace Authentication.Controllers
                              itemName       = temp.Key.item_name,
                              itemCategory   = temp.Key.category_name,
                              cost           = temp.Sum(x => x.c.cost),
-                             unit           = temp.Sum(x => x.a.qty)
+                             unit           = temp.Sum(x => x.a.qty) - temp.Sum(x => x.a.reserve)
                          }).Skip(tempData.SkipRec).Take(tempData.PerPage);
 
             var itemCategory = _context.ItemCategory.Select(s => new { Id = s.Id.ToString(), Name = s.category_name }).ToList();

@@ -18,7 +18,7 @@ namespace Authentication.Models
 
         [Display(Name = "Quantity")]
         [Required(ErrorMessage = "Please Enter Quantity.")]
-        [Remote("CheckQuantity", "OutboundOrders")]
+        [Remote("CheckQuantity", "OutboundOrders", AdditionalFields= "Id,ItemId")]
         public int qty { get; set; }
 
         [Display(Name = "Remain Quntity")]
